@@ -1,0 +1,53 @@
+h1{
+    background-color: lightgrey;
+    font-size:50px;
+    font-family: serif;
+     }   
+h2{ font-size:36px;
+        font-family: serif;
+        margin-top: 0px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-weight:bold;
+    }   
+a:link {color: black;
+        text-decoration: none;
+    }
+a:visited {color: black;
+        text-decoration: none;
+    }
+#LeftMenu{
+     float: left;
+     width:150px;
+     margin-top: 0px;
+     margin-right: 5px;
+     margin-bottom: 0px;
+     margin-left: 5px;
+    }
+#RightMenu{
+    margin-left:175px;
+    border-bottom: 1px #AAAAAA solid
+    }
+#BottomMenu{
+    margin-left:175px;
+    font-size:10px;
+    }
+
+.images{ float:left;
+            width:150px;
+            height:120px; 
+            border-radius:50%;
+           }
+
+.TitleButtons{
+        text-align: center;
+        background-color: lightgrey;
+        border:2px solid #6e6d6d;
+        border-radius: 5px;
+        font-size:24px;
+        margin-top:0px;
+    }
+ul{padding-left:20px;
+}
+li {margin:20px;
+}
