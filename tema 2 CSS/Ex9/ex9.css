@@ -1,0 +1,58 @@
+body{
+    background-image:url("coffee.jpg");
+    background-size: contain;
+    margin: 0px; 
+    }
+
+.container{
+    margin-left:200px;
+    margin-right:200px;
+    padding-bottom:20px;
+    background-color: hsla(0, 0%, 100%, 0.555);
+    display:block;
+}
+header{
+    background-color:lightblue;
+    text-align:left;
+    padding:50px;
+}
+
+#divEmail{
+    color:darkgrey;
+    font-size:12px;
+    padding-top:15px;
+}
+
+.email{
+    margin-top:25px;
+    background-color:rgb(126, 126, 204);
+    margin-left:25px;
+    margin-right:25px;
+    padding:10px 20px 20px 20px;
+}
+
+.name{
+    margin-top:25px;
+    margin-left:25px;
+    margin-right:25px;
+    padding:10px 20px 20px 20px;
+}
+.button {
+    margin-left:25px;
+    display:inline-block;
+    color:black;
+    background-color: lightblue;
+    text-decoration: none;
+    font-size: 17px;
+    text-align:center;
+    border:solid 1px grey;
+    padding:3px;
+    width:150px;
+}
+.button a:active {color: green;
+    text-decoration: underline;
+    font-size:10px;
+}
+a:visited {color: green;
+        text-decoration: none;
+    }
