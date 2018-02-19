@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>JS 13.02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        var dayNames=["luni","marti","miercuri","joi","vineri","sambata","duminica"];
+        console.log(dayNames);
+        console.log(dayNames[2]); //afiseaza =miercuri;
+        console.log(dayNames.length);
+        
+        var pc={
+            cpu: {
+                    familie:"I7",
+                    frecventa: "2Hz",
+                    producator: "Intel",
+            },
+            ram: {
+                clockspeed: 15,
+                frecventa:"2000",
+            }
+        }
+        console.log(pc);
+
+        console.log(pc.cpu);
+        console.log(pc["cpu"]);
+    
+        console.log(pc.cpu.familie);
+        console.log(pc.cpu["familie"]);
+        console.log(pc["cpu"].familie);
+
+        var persoana={
+            inaltime: 1.75,
+            greutate: 75,
+            ochi: {
+                culoare: "caprui",
+                dioptrii: -0.25,
+                numar: 4,
+            },
+            nume: "nourescu",
+            prenume: "bogdan",
+            buletin: { 
+                serie: "rx",
+                numar: 12542,
+                cnp: 1254233,
+                locul_nasterii: "Bucuresti",
+            },
+            diploma: [
+                "bac", 
+                "licenta"]      
+        }
+    console.log(persoana);
+    console.log(persoana.buletin.locul_nasterii);
+    
+    var Names=["luni","marti","miercuri","joi","vineri","sambata","duminica"];
+    var i=0;
+    console.log("-------------1");
+    while(i<Names.length) {
+        console.log(Names[i]);
+          i=i+1;
+    }
+    console.log("-------------2");
+    for (i=0; i<Names.length; i++) {
+        console.log(Names[i]);
+    }
+    console.log("-------------3");
+    //zilele saptamanii in ordine inversa afisate
+    for(i=Names.length-1; i>=0; i--){
+        console.log(Names[i]);
+    }
+    console.log("-------------4");
+    for(var i=0; i<Names.length;i++){
+        console.log(Names[Names.length-i-1]);
+    }
+
+ console.log("-------------tema1");
+ //ex 1
+    var numere=[-5,-7,-9,-17,-2,-7]
+    //scrieti o functie care face suma numerelor primite intr-un array ca parametru. 
+    function sum(numere) {
+        var sum=0;
+        for(i=0;i<numere.length;i++){
+            sum=sum+numere[i];
+        }
+        return sum;
+    }
+    console.log(sum(numere));
+
+    console.log("-------------tema2");
+
+//ex 2
+    // faceti produsul numerelor dintr-un array
+    function prod(numere) {
+        var prod=1;
+        for(i=0;i<numere.length;i++){
+            prod=prod*numere[i];
+        }
+        return prod;
+    }
+    console.log(prod(numere));
+
+
+ console.log("-------------tema3");
+//ex3
+    //returneaza maximul elementelor unei array
+    function max(numere) {
+        var max=numere[0];
+        for(i=1;i<numere.length;i++){
+           if( numere[i]>max){
+                 max=numere[i];
+           }
+        }
+        return max;
+    }
+    console.log(max(numere));
+
+
+ console.log("-------------tema4");
+//ex 4 - primeste o lista de siruri de caractere si returneaza sirurile concatenate
+    lista=["ana","Are", "Mere"];
+
+    function concatenate(lista){
+        var arr=[];
+        for(i=0;i<lista.length;i++){
+            arr=arr+lista[i];
+        }
+        return arr;
+    }
+    console.log(concatenate(lista));
+
+ 
+
+
+//palindrom - din orice directie il citesti, este la fel - abcba
+    arr=["a","b","c","e","a"];
+    function palindrom(lista){
+       for(var i=0;i<lista.length;i++){
+            if (lista[i]=lista[lista.length-1-i]){
+                 console.log("este palindrom");
+            }
+            else{
+            console.log("nu este palindrom");
+            }
+        }
+        return arr;
+    }
+    console.log(palindrom(arr));
+
+
+
+// functie nr prim - verifica
+function prim(x){
+    for(var i=2;i<=x/2;i++){
+          if(x%i==0){
+                   return "nu e nr prim";
+            }          
+    }
+    return " e nr prim";
+}
+ //console.log(5, prim(5));
+
+for(var i=2; i<=100; i++){
+    console.log(i, prim(i));
+}
+
+</script>
+</head>
+<body>
+</body>
+
+</html>

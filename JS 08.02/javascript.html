@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -54,9 +54,10 @@
             var min=a;
             if(b<min) {
                 min=b;           
-            } 
-            if (c<min){
-                min=c;
+            } else{
+                if (c<min){
+                    min=c;
+                }
             }
             return min;          
         }

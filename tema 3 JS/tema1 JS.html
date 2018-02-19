@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tema JS 1</title>
+    <script> 
+
+//O functie care compara 2 valori si returneaza true daca sunt egale si false daca nu sunt egale
+console.log("exercitiul 1 - valori egale");
+        function egal(a, b){
+                    if( a===b ) {
+                        return true;    
+                    } else { 
+                        return false;
+                    }
+                }
+        console.log(egal(5,-5));
+        console.log(egal(5,5));
+        console.log(egal("aa","aa"));
+
+//O functie care compara 2 valori si returneaza -1 daca primul e mai mic ca al doilea, 0 daca sunt egale si 1 daca primul e mai mare ca al doilea
+console.log("exercitiul 2 - valori egale2");
+        function egal2(a, b){
+                    if( a<b ) {
+                        return -1;    
+                    } else {
+                        if (a===b) { 
+                        return 0;
+                        } else {
+                          return 1;
+                          }
+                    }
+        }
+            
+        console.log(egal2(5,-5));
+        console.log(egal2(5,5));
+        console.log(egal2("a","aa"));
+
+//O functie care primeste 2 valori si returneaza maximul dintre cele 2
+console.log("exercitiul 3 - maxim");
+        function max(a, b){
+            if( a > b ) {
+                return a;    
+            } else { 
+                return b;
+            }
+        }
+
+        console.log(max(5,7));
+        console.log(max(6,2));
+        console.log(max("aa aa","aab"));
+
+
+//O functie care primeste 2 valori si returneaza minimul dintre cele 2
+console.log("exercitiul 4 - minim");
+
+        function min(a,b) {
+            if(a<b) {
+                return a;         
+            } else
+            return b;          
+        }
+        console.log(min(-1,2));
+
+//O functie care face suma dintre 2 valori
+console.log("exercitiul 5 - suma");
+        function sum(a, b){
+             var sum=a+b;
+             return sum;
+        }
+        console.log(sum(1,2));
+
+//O functie care face diferenta dintre 2 valori
+console.log("exercitiul 6 - diferenta");
+        function dif(a, b){
+             var dif=a-b;
+             return dif;
+        }
+        console.log(dif(1,2));
+
+//O functie care imparte 2 numere si returneaza rezultatul impartirii celor 2 numere (rezultatul trebuie sa fie integer --> fara zecimale)
+console.log("exercitiul 7 - integer");
+        function division(a, b){
+             var div=a/b;
+             return Math.trunc(div);
+        }
+        console.log(division(6,13));
+
+//O functie care imparte 2 numere si returneaza rezultatul impartirii celor 2 numere (rezultatul trebuie sa fie float --> cu zecimale)
+console.log("exercitiul 8 - zecimale");
+        function division2(a, b){
+             var div=a/b;
+             return div;
+        }
+        console.log(division2(6,13));
+
+
+//O functie care imparte 2 numere si returneaza restul impartirii celor 2 numere 
+
+console.log("exercitiul 9 - rest impartire");
+        function rest(a, b){
+             var rest=a%b;
+             return rest;
+        }
+        console.log(rest(9,2));
+
+//Transforma din Miles/Galon in Litri/100KM
+console.log("exercitiul 10 - Miles/Galon");
+        function miles(a){
+             var miles=235.214583/a;
+             return miles;
+        }
+        console.log(miles(5));
+
+//Transforma din Celsius in Fahrenheit
+console.log("exercitiul 11 - celsius/Fahrenheit");
+    function grade(x){
+               var y=x*(9/5)+32;
+                return y;
+            }
+            console.log(grade(30));
+      
+//Transforma din Grade in Radiani
+console.log("exercitiul 12 - grade-radiani");
+    function rad(x){
+               var x=x*(Math.PI/180);
+                return x;
+            }
+            console.log(rad(150));
+      
+//Returneaza suplementul unui unghi (suma unghiurilor este 180)
+console.log("exercitiul 13 - suplementul unui unghi");
+
+        function suplement(x){
+            x=180-x;
+            return x;
+        }
+        console.log(suplement(180));\
+
+//Returneaza complementul unui unghi (suma unghiurilor este 180)
+console.log("exercitiul 13 - complementul unui unghi");
+        function complement(x){
+            x=90-x;
+            return x;
+        }
+        console.log(complement(70));
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

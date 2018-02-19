@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>JS 15.02</title>
+    <script>
+
+        
+        function parcurgere(arr){
+            for(var i=0; i<arr.length;i++){
+                console.log(arr[i]);
+            }
+        }
+        function parcurgereInversa(arr){
+            for(var i=arr.length-1; i>=0;i--){
+                console.log(arr[i]);
+            }
+        }
+        function parcurgereInversa2(arr){
+            for(var i=0; i<arr.length; i++){
+                console.log(arr[arr.length-1-i]);
+            }
+        }
+
+        function sum(array){
+            var total=0;
+            for(i=0;i<=array.length;i++){
+                total=total+array[i];
+                //total+=array[i]
+            }
+            return total;
+        }
+        var arr = [-3,5,10,-7];
+        var avg = sum(arr)/arr.length;
+        //average pe array. verificam care sunt elementele mai mici decat average.
+        for(var i=0; i<arr.length;i++){
+             if(avg>=arr[i]){
+                 console.log(arr[i]);
+             }
+        }     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
