@@ -36,6 +36,18 @@
                  console.log(arr[i]);
              }
         }     
+
+////O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar literele din sirul respectiv de caractere
+        function cifre(sir) {
+        var y=[];
+        for(i=0;i<sir.length;i++) {
+           if( isNaN(sir[i])){
+                 y.push(sir[i]);
+           }
+        }
+        return y;
+    }
+    console.log(cifre(sir));
     </script>
 </head>
 <body>

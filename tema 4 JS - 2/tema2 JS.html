@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tema JS 2</title>
+    <script> 
+
+    var sir=["a", "b", "z", "c", 4, 55, "f","z"];
+    var sirsir=["y", "x", 4, 55,"h"];
+    var numere=[-3, 2, -55, 5.5, 150];
+    var x=["z"];
+
+//O functie care primeste un sir de caractere si returneaza lungimea sirului
+console.log("exercitiul 1 - lungime sir");
+        function lungime(a) {
+                  return a.length;
+                }
+        console.log(lungime(sir));
+
+//O functie care primeste un array cu numere si returneaza maximul dintre acele numere
+function max(numere) {
+        var max=numere[0];
+        for(i=0;i<numere.length;i++){
+           if( numere[i]>max){
+                 max=numere[i];
+           }
+        }
+        return max;
+    }
+    console.log(max(numere));
+
+//O functie care primeste un array cu numere si returneaza minimul dintre acele numere
+function min(numere) {
+        var min=numere[0];
+        for(i=0;i<numere.length;i++){
+           if( numere[i]<min){
+                 min=numere[i];
+           }
+        }
+        return min;
+    }
+    console.log(min(numere));
+
+//O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar cifrele din sirul respectiv de caractere
+
+function cifre(sir) {
+        var y=[];
+        for(i=0;i<sir.length;i++) {
+           if( typeof(sir[i])=="number") {
+                 y.push(sir[i]);
+           }
+        }
+        return y;
+    }
+    console.log(cifre(sir));
+
+//O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar literele a-f, in aceeasi ordine ca in sirul initial
+function litere(sir) {
+        var y=[];
+        for(i=0;i<sir.length;i++) {
+           if( sir[i]=="a" || sir[i]=="b" || sir[i]=="c" || sir[i]=="d" || sir[i]=="e" || sir[i]=="e" || sir[i]=="f") {
+                 y.push(sir[i]);
+           }
+        }
+        return y;
+    }
+    console.log(litere(sir));
+
+console.log("O functie care primeste un sir de caractere si returneaza primele 5 litere din el (daca exista)");
+    function char(sir){
+       var y=[];
+       var j=0;
+        for(i=0;i<sir.length;i++) {
+                 if (typeof(sir[i])=="string"&&j<5) {
+                    y.push(sir[i]);
+                    j++;                
+                 }
+        } 
+       return y;
+    }
+    console.log(char(sir));
+
+//conditia de else in caz ca nu contine 5 litere
+//conditia sa se opreasca dupa a cincea litere
+
+
+console.log("O functie care primeste un sir de caractere si returneaza ultimele 10 litere (daca exista)");
+    function zece(sir){
+       var y=[];
+       var j=0;
+        for(var i=sir.length-1; i>=0;i--) {
+                 if (typeof(sir[i])=="string"&&j<10) {
+                    y.push(sir[i]);
+                    j++;                
+                 }
+        } 
+       return y;
+    }
+    console.log(zece(sir));
+    
+console.log("O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru prima oara in sir");    
+    function find(sir, x){
+        for(i=0;i<sir.length;i++){
+            if(sir[i]==x){
+                return i;
+            }
+        }
+  }
+
+    console.log(find(sir,x));
+    
+console.log("O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru ultima oara in sir");
+function find2(sir, x){
+        for(var i=sir.length-1; i>=0;i--){
+            if(sir[i]==x){
+                return i;
+            }
+        }
+  }
+    console.log(find2(sir,x));
+
+console.log("O functie care primeste o lista de siruri de caractere si returneaza sirurile concatenate");
+
+function concatenate(sir){
+    var y=[];
+    for(i=0;i<sir.length;i++){
+        y= y+ sir[i]; 
+    }
+    return y;
+}
+    console.log(concatenate(sir));
+
+console.log("O functie care primeste o lista de siruri de caractere si inca un sir de caractere si returneaza sirurile concatenate despartite prin respectivul sir");
+
+function concatenate2(sir){
+    var y=[];
+    for(i=0;i<sir.length;i++){
+        y= y+ sir[i]+":"; 
+    }
+    return y;
+}
+    console.log(concatenate2(sir));
+
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
