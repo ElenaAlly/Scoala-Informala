@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Formulare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+       /* function valideaza(elem,event) {
+            event.preventDefault();
+            console.log(elem,event);
+
+            var elemNume= document.getElementById("nume");
+            var elemPrenume= document.getElementById("prenume");
+            var elemPass= document.getElementById("password");
+            var elemRePass= document.getElementById("rePassword");
+            var elemToc= document.getElementById("checkbox");
+
+            console.log(elemNume);
+            console.log(elemPrenume);
+            console.log(elemPass);
+            console.log(elemRePass);
+            console.log(elemToc);
+            //se obtine inputurile si nu valorile lor. se apeleaza elementele. 
+
+             console.log(elemNume.value);
+            console.log(elemPrenume.value);
+            console.log(elemPass.value);
+            console.log(elemRePass.value);
+            console.log(elemToc.value);
+            //se obtine ce a scris utilizatorul. 
+            
+            elemNume.style.backgroundColor="red";
+
+        } */
+
+        function valideaza2(elem,event) {
+
+            var elemNume= document.getElementById("nume");
+            var elemPrenume= document.getElementById("prenume");
+            var elemPass= document.getElementById("password");
+            var elemRePass= document.getElementById("rePassword");
+            var elemToc= document.getElementById("checkbox");
+                   
+            var valoareNume= document.getElementById("nume").value;
+            var valoarePrenume= document.getElementById("prenume").value;
+            var valoarePass= document.getElementById("password").value;
+            var valoareRePass= document.getElementById("rePassword").value;
+            var valoareToc= document.getElementById("checkbox").value;
+            
+            event.preventDefault();
+
+            if(valoareNume.length<3){
+                elemNume.style.backgroundColor="green";
+            }
+            else{ elemNume.style.backgroundColor="";
+            }
+
+            if(valoarePrenume.length<3){
+                elemPrenume.style.backgroundColor="green";
+            }
+            else { elemPrenume.style.backgroundColor="";
+            }
+
+            if(valoarePass!==valoareRePass || valoarePass.length==0 || valoareRePass.length==0) {
+                elemPass.style.backgroundColor="green";
+                elemRePass.style.backgroundColor="green";
+            }
+            else{ elemPass.style.backgroundColor="";
+                elemRePass.style.backgroundColor="";
+
+            }
+            if(valoareToc==1){
+                elemToc.style.backgroundColor="green";
+            }
+            else{
+                elemToc.style.backgroundColor="";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form method="post" onsubmit="valideaza2(this,event);">
+        <fieldset>
+            <legend style="border-style: dashed; border-color:grey ">Personalia</legend>
+            <label for="nume">Nume:</label>
+                <input name="numeleMeu" id="nume" type="text"><br>
+            <label for="Prenume">Prenume:</label>
+                <input name="prenumeleMeu" id="prenume" type="text"><br>
+            <label for="Password">Password:</label>
+                <input name="parolaMea" id="password" type="password"><br>
+            <label for="rePassword">Re-type Password:</label>
+                <input name="dinNouParolaMea" id ="rePassword" type="password"><br>
+            <label for="checkbox"></label>
+                <input name="termSiCond" id="checkbox" type="checkbox"> I agree with the Terms and Conditions.<br>
+            <input type="submit" value="Salveaza">
+        </fieldset>
+
+    </form>
+
+
+    
+</body>
+</html>

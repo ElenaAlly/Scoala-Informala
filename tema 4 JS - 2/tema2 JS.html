@@ -4,8 +4,8 @@
     <title>tema JS 2</title>
     <script> 
 
-    var sir=["a", "b", "z", "c", 4, 55, "f","z"];
-    var sirsir=["y", "x", 4, 55,"h"];
+    var sir="ab542gf355vdeshgtfs77";
+    var arr=["y", "x", 4, 55,"h"];
     var numere=[-3, 2, -55, 5.5, 150];
     var x=["z"];
 
@@ -43,22 +43,22 @@ function min(numere) {
 //O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar cifrele din sirul respectiv de caractere
 
 function cifre(sir) {
-        var y=[];
+        var y="";
         for(i=0;i<sir.length;i++) {
-           if( typeof(sir[i])=="number") {
-                 y.push(sir[i]);
-           }
+           if( sir[i]>=0 && sir[i]<=9) {
+                 y=y+sir[i];
+           } 
         }
-        return y;
+       return y;
     }
     console.log(cifre(sir));
 
 //O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar literele a-f, in aceeasi ordine ca in sirul initial
 function litere(sir) {
-        var y=[];
+        var y="";
         for(i=0;i<sir.length;i++) {
            if( sir[i]=="a" || sir[i]=="b" || sir[i]=="c" || sir[i]=="d" || sir[i]=="e" || sir[i]=="e" || sir[i]=="f") {
-                 y.push(sir[i]);
+               y=y+sir[i];
            }
         }
         return y;
@@ -67,11 +67,11 @@ function litere(sir) {
 
 console.log("O functie care primeste un sir de caractere si returneaza primele 5 litere din el (daca exista)");
     function char(sir){
-       var y=[];
+       var y="";
        var j=0;
-        for(i=0;i<sir.length;i++) {
-                 if (typeof(sir[i])=="string"&&j<5) {
-                    y.push(sir[i]);
+        for(i=0;i<sir.length&&j<5;i++) {
+                 if (sir[i]>="0"&&sir[i]<"9") {
+                    y=y+sir[i];
                     j++;                
                  }
         } 
@@ -85,17 +85,19 @@ console.log("O functie care primeste un sir de caractere si returneaza primele 5
 
 console.log("O functie care primeste un sir de caractere si returneaza ultimele 10 litere (daca exista)");
     function zece(sir){
-       var y=[];
+       var y="";
        var j=0;
-        for(var i=sir.length-1; i>=0;i--) {
-                 if (typeof(sir[i])=="string"&&j<10) {
-                    y.push(sir[i]);
+        for(var i=sir.length-1 && j<10; i>=0;i--) {
+                 if (sir[i]>="a" &&  sir[i]<"z") {
+                    y=y+sir[i];
                     j++;                
                  }
         } 
        return y;
     }
     console.log(zece(sir));
+
+    //conditie???
     
 console.log("O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru prima oara in sir");    
     function find(sir, x){
@@ -106,7 +108,7 @@ console.log("O functie care primeste un sir de caractere si un caracter. Returne
         }
   }
 
-    console.log(find(sir,x));
+    console.log(find(sir,"e"));
     
 console.log("O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru ultima oara in sir");
 function find2(sir, x){
@@ -116,18 +118,18 @@ function find2(sir, x){
             }
         }
   }
-    console.log(find2(sir,x));
+    console.log(find2(sir,"g"));
 
 console.log("O functie care primeste o lista de siruri de caractere si returneaza sirurile concatenate");
 
-function concatenate(sir){
+function concatenate(arr){
     var y=[];
-    for(i=0;i<sir.length;i++){
-        y= y+ sir[i]; 
+    for(i=0;i<arr.length;i++){
+        y= y+ arr[i]; 
     }
     return y;
 }
-    console.log(concatenate(sir));
+    console.log(concatenate(arr));
 
 console.log("O functie care primeste o lista de siruri de caractere si inca un sir de caractere si returneaza sirurile concatenate despartite prin respectivul sir");
 
@@ -138,8 +140,25 @@ function concatenate2(sir){
     }
     return y;
 }
-    console.log(concatenate2(sir));
+    console.log(concatenate2(arr));
 
+console.log("Calculeaza factorialul unui numar");
+function factorial(n){
+    if(n=="0"){
+        fact=1;
+    } else{
+        var fact=1;
+         for(i=1; i<=n; i++){
+            fact=fact*i;
+        }
+            return fact;
+    }
+    }
+    console.log(factorial("4"));
+    console.log(factorial("5"));
+    console.log(factorial("11"));
+
+    
         </script>
 </head>
 <body>
