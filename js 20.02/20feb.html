@@ -46,54 +46,115 @@
             var valoarePrenume= document.getElementById("prenume").value;
             var valoarePass= document.getElementById("password").value;
             var valoareRePass= document.getElementById("rePassword").value;
-            var valoareToc= document.getElementById("checkbox").value;
+          
             
             event.preventDefault();
 
             if(valoareNume.length<3){
-                elemNume.style.backgroundColor="green";
+                elemNume.style.backgroundColor="red";
+                document.getElementById("numeParagraf").style.display="";
             }
             else{ elemNume.style.backgroundColor="";
+                 document.getElementById("numeParagraf").style.display="none";
             }
 
             if(valoarePrenume.length<3){
-                elemPrenume.style.backgroundColor="green";
+                elemPrenume.style.backgroundColor="red";
+                document.getElementById("prenumeParagraf").style.display="";
             }
             else { elemPrenume.style.backgroundColor="";
+                  document.getElementById("prenumeParagraf").style.display="none";
             }
 
-            if(valoarePass!==valoareRePass || valoarePass.length==0 || valoareRePass.length==0) {
-                elemPass.style.backgroundColor="green";
-                elemRePass.style.backgroundColor="green";
+            if(valoarePass!==valoareRePass || valoarePass.length==0 || valoareRePass.length==0 || valoarePass<6) {
+                elemPass.style.backgroundColor="red";
+                elemRePass.style.backgroundColor="red";
+                document.getElementById("parolaParagraf").style.display="";
             }
             else{ elemPass.style.backgroundColor="";
                 elemRePass.style.backgroundColor="";
+                document.getElementById("parolaParagraf").style.display="none";
 
             }
-            if(valoareToc==1){
-                elemToc.style.backgroundColor="green";
+            if(!elemToc.checked){
+               elemToc.nextElementSibling.style.backgroundColor="red";
+                document.getElementById("numeBifa").style.display="";
             }
             else{
-                elemToc.style.backgroundColor="";
+                elemToc.nextElementSibling.style.backgroundColor="";
+                document.getElementById("numeBifa").style.display="none";
             }
 
+            console.log(elemNume.value);
+			console.log(elemPrenume.value);
+			console.log(elemPass.value);
+			console.log(elemRePass.value);
+			console.log(elemToc.checked);
         }
+ 
+          function verificaNume(elem, event){
+            var x=event.key;
+            if (x==" " || x=="'" || x=="-" || (x>="a"&& x<"z") || (x>="A" && x<="Z")){
+                return x;
+            }
+            else{
+               event.preventDefault();
+            }
+          }
+    function verificaParola(elem, event){
+            var x=event.key;
+            var A=false;
+            var B=false;
+            var C=false;
+            var D=false;
+            for(i=0; i<valoarePass.length;i++){
+                var char=valoarePass[i];
+                
+                if(char>="a"&& char<="z"){
+                    var A=true;
+                }
+                if(char>="A"&& char<="Z"){
+                    var B=true;
+                }
+                if(char>="0"&& char<="9"){
+                    var C=true;
+                }
+                if(char>="!"&& char<="?"){
+                    var D=true;
+                }
+            }
+            if(A==true && B==true && C==true && D==true){
+                return x;
+              
+            }     
+            else{  
+                vent.preventDefault();    
+          
+                } 
+      }     
+       
+
+                    
     </script>
 </head>
 <body>
     <form method="post" onsubmit="valideaza2(this,event);">
         <fieldset>
-            <legend style="border-style: dashed; border-color:grey ">Personalia</legend>
+            <legend style="border-style: dashed; border-color:grey">Personalia</legend>
             <label for="nume">Nume:</label>
-                <input name="numeleMeu" id="nume" type="text"><br>
+                <input name="numeleMeu" id="nume" type="text" onkeypress="verificaNume(this, event)"><br>
+                <p style="display:none;" id="numeParagraf">Nu ai completat bine numele.</p>
             <label for="Prenume">Prenume:</label>
-                <input name="prenumeleMeu" id="prenume" type="text"><br>
+                <input name="prenumeleMeu" id="prenume" type="text" onkeypress="verificaNume(this, event)"><br>
+                <p style="display:none;" id="prenumeParagraf">Nu ai completat bine prenumele.</p>
             <label for="Password">Password:</label>
                 <input name="parolaMea" id="password" type="password"><br>
             <label for="rePassword">Re-type Password:</label>
                 <input name="dinNouParolaMea" id ="rePassword" type="password"><br>
-            <label for="checkbox"></label>
-                <input name="termSiCond" id="checkbox" type="checkbox"> I agree with the Terms and Conditions.<br>
+                <p style="display:none;" id="parolaParagraf">Verifica parola.</p>
+            
+                <input name="termSiCond" id="checkbox" type="checkbox"><label for="checkbox"> I agree with the Terms and Conditions.</label><br>
+                <p style="display:none;" id="numeBifa">Nu ai bifat.</p>
             <input type="submit" value="Salveaza">
         </fieldset>
 

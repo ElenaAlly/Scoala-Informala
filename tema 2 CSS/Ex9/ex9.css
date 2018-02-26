@@ -12,7 +12,8 @@ body{
     display:block;
 }
 header{
-    background-color:lightblue;
+background-color:lightblue;
+
     text-align:left;
     padding:50px;
 }
