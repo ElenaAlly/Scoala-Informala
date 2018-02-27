@@ -202,7 +202,7 @@ console.log(divizori(104));
 console.log("Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2]");
 
 function prim(x){
-    for(var i=2;i<=x/2;i++){
+    for(var i=2;i<x;i++){
           if(x%i==0){
                    return false;
             }          
@@ -210,21 +210,39 @@ function prim(x){
     return true;
 }
 
-function divizoriprimi(x){
+function divizoriPrimi(n){
     var y=[];
-    while(x!==0){
-        for(var i=2;i<=x/2;i++){
-           if(x%i==0 &&prim(i)==true){
+    for(var i=2;i<=n;i++){
+        while(prim(i)==true && n>=i && n%i===0){
+                   n=n/i;
                    y.push(i);
-            }          
-    }
+        }
+    }   
     return y;
 }
+
+console.log(divizoriPrimi(64));
+console.log(divizoriPrimi(21));
+
+console.log("Returneaza un array care sa contina toti divizorii primi unici a unui numar. Ex pentru 64: trebuie sa returneze [2]");
+
+function divizoriPrimiUnici(x){
+    var y=[];
+
+    for(var i=2;i<=x;i++){
+        if(x%i===0){
+            if(prim(i)){
+                y.push(i);
+            }
+        }   
+    }          
+    
+    return y;
 }
  
-console.log(divizoriprimi(64));
-console.log(divizoriprimi(21));
-
+console.log(divizoriPrimiUnici(64));
+console.log(divizoriPrimiUnici(21));
+/*
 console.log("Care primeste 2 arrayuri ca parametru si returneaza un singur array cu toate elementele");
 function oneArray(x,y){
         var z=[];
@@ -263,7 +281,7 @@ function palindrom(lista){
         return lista;
     }
     console.log(palindrom(pal));
-
+*/
         </script>
 </head>
 <body>
