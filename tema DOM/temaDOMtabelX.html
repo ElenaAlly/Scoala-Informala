@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <style>
+        img{
+            width:150px;
+            height:150px;
+        }
+        table{
+            border-collapse: collapse;
+        }  
+    </style>
+
+    <script>
+    function schimbaImaginea(imagine, event){
+            imagine.src="http://www.drodd.com/images14/x12.jpg";
+
+    }
+
+    function SchimbaInBlank(imagine, event){
+            imagine.src="http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg";
+
+    }
+    </script>
+
+</head>
+<body>
+        <table border="1">
+                <tr>  
+                        <td><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)" src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" name="image" /></td> 
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)" src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" name="image"/></td> 
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)" src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg " name="image"/></td>  
+                </tr>
+                <tr>  
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)"  src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg"/></td> 
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)" src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg"/></td> 
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)" src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg"/></td>  
+                </tr>
+                <tr>  
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)"  src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg"/></td> 
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)" src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg"/></td> 
+                        <td ><img onmouseover="schimbaImaginea(this, event)" onmouseout="SchimbaInBlank(this, event)" src=" http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg"/></td>  
+                </tr>
+       </table>
+
+       
+            
+   
+    </body>
+</html> 

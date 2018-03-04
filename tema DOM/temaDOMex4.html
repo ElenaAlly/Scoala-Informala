@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tema DOM ex 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="temaDOM.css" />
+   <script>
+   function valideaza(formular, event){
+
+        formular.querySelector("[name=lastname]").value= formular.querySelector("[name=firstname]").value + formular.querySelector("[name=middlename]").value;
+        event.preventDefault();
+    }
+    
+    </script>
+</head>
+<body>
+    <form method="post" onsubmit="valideaza(this, event)">
+        <fieldset>
+         <legend>FORM</legend>
+         <label for="fname">First Name</label>
+         <input type="text" id="fname" name="firstname" placeholder="Your name..">
+         <br/>
+         <label for="mname">Middle Name</label>
+         <input type="text" id="mname" name="middlename" placeholder="Your middle name..">
+         <br/>
+         <label for="lname">Last Name</label>
+         <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+         <br/>
+         <input type="submit" value="Submit">
+         </fieldset>
+    </form>
+
+
+</body>
+</html>

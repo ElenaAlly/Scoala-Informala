@@ -1,0 +1,61 @@
+legend{
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: grey;
+    width:300px;
+    text-align:center;
+    background-color:lightblue;
+}
+fieldset{
+    border-radius: 5px;
+    background-color:lightblue;
+    padding: 20px;
+}
+input[type=text], select, #div{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=radio], input[type=checkbox] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.class1{
+    background-color:white;
+    width:100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#div{
+
+    width:100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align:right;
+
+}
+#span1{
+    background-color:white;
+    width:150px;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

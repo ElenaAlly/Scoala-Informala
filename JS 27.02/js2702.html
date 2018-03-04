@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <script>
+    function valideaza(formular, event){
+        console.log(formular.querySelector("[name=numeleMeu]").value);
+        if(formular.querySelector("[name=numeleMeu]").value.length===0){
+            formular.querySelector("[name=numeleMeu]").style.border="1px solid red";
+        } else{
+            formular.querySelector("[name=numeleMeu]").style.border="";
+        }
+
+        event.preventDefault();
+    }
+    
+    </script>
+
+</head>
+<body>
+    <form method="post" onsubmit="valideaza(this, event)">
+        <fieldset>
+         <legend style="border-style: dashed; border-color:grey">Personalia</legend>
+         <input type="text" name="numeleMeu">Nume
+         <input type="submit" value="Salveaza">
+         </fieldset>
+    </form>
+
+    <form method="post" onsubmit="valideaza(this, event)">
+            <fieldset>
+             <legend style="border-style: dashed; border-color:grey">Personalia</legend>
+             <input type="text" name="numeleMeu">Nume
+             <input type="submit" value="Salveaza">
+             </fieldset>
+        </form>
+</body>
+</html>

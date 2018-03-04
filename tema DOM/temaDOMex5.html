@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tema DOM ex 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="temaDOM.css" />
+   <script>
+   function valideaza(formular, event){
+     
+        
+        document.getElementById("span1").innerHTML= formular.querySelector("[name=firstname]").value.length;
+        event.preventDefault();
+    }
+    
+    </script>
+</head>
+<body>
+    <form method="post" onsubmit="valideaza(this, event)">
+        <fieldset>
+         <legend>FORM</legend>
+         <label for="fname">First Name</label>
+         <input type="text" id="fname" name="firstname" placeholder="Your name..">
+         <br/>
+        <input type="submit" value="Submit">
+        <br>
+         <div id="div">Lungimea sirului de caractere este:   <span id="span1"> </span> </div>
+         </fieldset>
+    </form>
+
+
+</body>
+</html>
