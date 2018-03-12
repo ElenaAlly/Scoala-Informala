@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX 2</title>
+    <!--https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState-->
+    <style>
+        .value{ 
+            color:green;
+            font-style:italic;
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+        .currency{
+            font-size: 1.2em;          
+            }
+    </style>
+
+    <script>
+        //afisam cursul valutar de ieri si cel de azi, si le comparam.
+        var today = new Date(); //cream o variab nou obiect de tip data
+        var yesterday = new Date(today.getTime()-24*60*60*1000); //o zi in milisecunde
+        console.log(today.getDate());
+        console.log(today.getMonth()+1);
+        console.log(today.getFullYear());
+        console.log(today.getTime()); //timestamp - nr de milisecunde din 1970 pana in prezent
+  
+        console.log(yesterday.getDate());
+        console.log(yesterday.getMonth()+1);
+        console.log(yesterday.getFullYear());
+        
+        var todayString=today.getFullYear() + "-";
+       console.log(typeof("todayString"));
+       
+        todayString +=((today.getMonth()+1 <10)?"0":"")+ (today.getMonth()+1 + "-");
+         //inline IF - ((conditie)?"valoare if true":"valoare if false")
+       
+        /*if(today.getMonth()+1 <10){
+                    todayString = todayString+ "0" + (today.getMonth()+1) + "-";
+          } else {
+                    todayString = todayString + (today.getMonth()+1) + "-";
+          }*/
+
+        todayString +=((today.getDate() <10)?"0":"")+ (today.getDate());
+
+        /*if(today.getDate() <10){
+            todayString = todayString+ "0" + (today.getDate());
+        } else {
+            todayString = todayString+ (today.getDate());
+        }*/
+        console.log(todayString);
+
+        var yesterdayString = yesterday.getFullYear() + "-";
+        yesterdayString +=((yesterday.getMonth()+1 <10)?"0":"")+ (yesterday.getMonth()+1 + "-");
+        yesterdayString +=((yesterday.getDate() <10)?"0":"")+ (yesterday.getDate());
+        console.log(yesterdayString);
+
+        var todayResponse=null;
+        var yesterdayResponse=null;
+	//today
+    var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+				  todayResponse = JSON.parse(this.responseText);
+				  if(todayResponse!==null && yesterdayResponse!==null){
+					drawList(todayResponse, yesterdayResponse);
+				  }
+				}
+			};
+	xhttp.open("GET", "https://api.fixer.io/"+todayString+"?base=RON", true);
+	xhttp.send();
+			
+	//yesterday
+	var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+				    yesterdayResponse = JSON.parse(this.responseText);
+				    if(todayResponse!==null && yesterdayResponse!==null){
+						drawList(todayResponse, yesterdayResponse);
+					}
+				}
+			};
+
+	xhttp.open("GET", "https://api.fixer.io/"+yesterdayString+"?base=RON", true);
+	xhttp.send();
+
+	function drawList(cursValutar, cursValutarYesterday){
+	console.log(cursValutar,cursValutarYesterday);
+	var str="";
+
+	for(var i in cursValutar.rates) {
+	console.log(i, cursValutar.rates[i]);
+		  str += `<li>
+						<span class="currency">${i}</span>:
+						<span class="rate">${(1/cursValutar.rates[i]).toFixed(4)}</span>&nbsp;
+                        
+                        <span class="rate">${(1/cursValutarYesterday.rates[i]).toFixed(4)}</span>
+
+                        <span style="color:${(cursValutar.rates[i]> cursValutarYesterday.rates[i])?"red":"green"}")"> ${(1/cursValutar.rates[i]-1/cursValutarYesterday.rates[i]).toFixed(8)} </span>
+					</li>`
+				}
+	document.getElementById("containerCursValutar").innerHTML=str;
+	var d = cursValutarYesterday.date.substr(8,2)+"."+cursValutarYesterday.date.substr(5,2)+"."+cursValutarYesterday.date.substr(0,4);
+    d+= "-" + cursValutar.date.substr(8,2) + "."+ cursValutar.date.substr(5,2)+"."+cursValutar.date.substr(0,4);
+    document.getElementById("containerData").innerHTML=d;
+               
+	}
+
+    </script>
+</head>
+<body>
+    Cursul valutar din data de <span id="containerData"> </span> </span> este:
+    <ul id="containerCursValutar">
+        <li> 
+        <span class="currency"> USD </span> <span class="value"> 3.80</span>
+         </li>
+
+    </ul>
+     
+</body>
+</html>
