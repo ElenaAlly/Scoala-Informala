@@ -12,15 +12,10 @@ body{
  
 }
 
-table {
-    display: inline-block;
-    border:solid black 1px;
-    width:16%;
-}
-
 .input[type=text]{
     width:40%;
     padding: 5px 15px;
+
     margin: 18px 10px;
     display: inline-block;
     border: 1px solid #ccc;
