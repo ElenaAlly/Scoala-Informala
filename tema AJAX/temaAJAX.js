@@ -124,7 +124,7 @@ function loadPrognoza(){
                     str=str+rand;
                    
                document.getElementById("col").innerHTML=str;
-               document.getElementById("zi").innerHTML= todayString;     
+               document.getElementById("zi").innerHTML= "Ziua: "+ todayString;     
            }
 
                if( zi==todayString && oraString<=oraNoua) {                                                
@@ -139,7 +139,7 @@ function loadPrognoza(){
                     str=str+rand;
                    
                document.getElementById("col").innerHTML=str;
-               document.getElementById("zi").innerHTML= todayString;     
+               document.getElementById("zi").innerHTML= "Ziua: " + todayString;     
            }
 
             if( zi==tomorrowString){

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Firebase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table{
+            border-collapse:collapse;
+        }
+        .asc{
+            background-color:red;
+        }
+        .desc{
+            background-color:blue;
+        }
+    </style>
+    <script>
+    
+    function sendAsJson(form,event){
+            event.preventDefault();
+
+            var list=form.querySelectorAll("input[name]");//cauta toate elementele cu selectorul de css input are au name.
+            var obj={}; //creez un obiect gol  //list[i] este elemntul de html, este inputul (tagul)
+
+            for(var i=0; i<list.length;i++) {
+                var val=list[i].value; //returneaza valoarea  atributului
+                var name=list[i].getAttribute("name"); //returneaza numele  atributului name
+                obj[name]=val;
+            }
+            console.log(obj);
+
+        var xhttp = new XMLHttpRequest(); 
+
+        xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200)
+					{  	console.log(this.responseText);
+						
+					}
+        };
+        xhttp.open("POST", "https://projectsiit-93452.firebaseio.com/.json", true);
+        xhttp.send(JSON.stringify(obj)); //se transmit info pe server. primeste doar siruri de caractere. nu primeste obiecte. folosim stringify. avem un obiect si il transformam in text. primul parametru este ce info vreau eu sa trimit pe server (obiectul). Am urcat obiectul pe firebase.
+    
+    }
+    
+    
+    </script>
+</head>
+
+
+
+<body>
+    <form method="post" action="https://projectsiit-93452.firebaseio.com/.json" onsubmit="sendAsJson(this,event)">
+
+        <!--action este URlul la care vrem sa trimitem informatiile - cel din firebase- care la sfarsit are un .json-->
+        <!--functia trebuie sa ia info din formular, sa le transf in json ,si sa le transmita pe server-->
+
+        <fieldset>
+            <legend style="border-style: dashed; border-color:grey">Formular Firebase</legend>
+            <label for="nume">Nume:</label>
+                <input name="nume" id="nume" type="text"></br>
+            </br>
+
+            <label for="Prenume">Prenume:</label>
+                <input name="prenume" id="prenume" type="text"></br>
+            </br>
+
+            <label for="varsta">Varsta:</label>
+                <input name="varsta" id="varsta" type="text"></br>
+            </br>
+
+            <label for="telefon">Telefon:</label>
+                <input name="telefon" id ="telefon" type="text"></br>
+             </br>
+
+            <input type="submit" value="Salveaza">
+        </fieldset>
+
+    </form>
+</body>
+</html>
