@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tema AJAX </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="temaAJAX.css" />
+    <script src="temaAJAX.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmR5DNBtwZSUi911Sw6yJJKTzspeQ3g6Q&callback=initMap"> </script>
+</head>
+
+<body>
+    <div class="div">   
+            <input type="text" class="input" id="location">
+            <button class="button" onclick="loadVremeaAcum()">Afiseaza vremea</button> 
+            <button class="button" onclick="loadPrognoza()">Afiseaza prognoza</button> 
+     
+    </div>
+    <br>
+    <div class="div">
+        <h1>Vremea acum: <span id="getLocation"></span> </h1>
+        <hr/>
+             <ul id="descriere">
+                <li > 
+                <img id="image" scr="http://openweathermap.org/img/w/" ><br>
+                <span class="Descriere">Descriere:</span> <span id="descr"> </span> <br>
+                <span class="Descriere"> Umiditate:</span> <span id="umid"> </span>  <br>
+                <span class="Descriere"> Presiune:</span> <span id="press"> </span>  <br>
+                <span class="Descriere"> Temperatura curenta:</span> <span id="tCrt"> </span> <br>
+                <span class="Descriere"> Minima zilei:</span> <span id="tMin"> </span>  <br>
+                <span class="Descriere"> Maxima zilei:</span> <span id="tMax"> </span> <br>
+                </li>
+            </ul> 
+ 
+ 
+    </div>
+    
+
+    <div  class="div">
+        <h1>Vremea in urmatoarele zile </h1>
+        <hr/>
+     <div id="tabel">
+        <table>
+            <thead>
+                <tr>
+                    <td id="zi" ></td>
+                </tr>
+            </thead>
+            <tbody id="col" style="height:300px">
+            <tr  class="grid-container" style="width:15%">               
+                <td class="data">                    
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <td id="zi2"></td>
+                </tr>
+            </thead>
+            <tbody id="col1" style="height:300px">
+            <tr class="grid-container">               
+                <td class="data">         
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <table >
+            <thead>
+                <tr>
+                    <td id="zi3"></td>
+                </tr>
+            </thead>
+            <tbody id="col2" style="height:300px">
+            <tr  class="grid-container">               
+                <td class="data">                  
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <table >
+            <thead>
+                <tr>
+                    <td id="zi4" ></td>
+                </tr>
+            </thead>
+            <tbody id="col3" style="height:300px">
+            <tr  class="grid-container">               
+                <td class="data">                     
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <table >
+            <thead>
+                <tr>
+                    <td id="zi5"></td>
+                </tr>
+            </thead>
+            <tbody id="col4" style="height:300px">
+            <tr  class="grid-container">               
+                <td class="data">
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <table >
+            <thead>
+                <tr>
+                    <td id="zi6"></td>
+                </tr>
+            </thead>
+            <tbody id="col5" style="height:300px">
+            <tr  class="grid-container">               
+                <td class="data">                   
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+    </div>
+    </div>
+   </body>
+</html>

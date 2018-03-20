@@ -14,8 +14,9 @@ body{
 
 table {
     display: inline-block;
-    border:solid black 1px;
-    width:16%;
+    width:15%;
+    text-align:center;
+    
 }
 
 .input[type=text]{
@@ -30,14 +31,45 @@ table {
 }
 .button{
     border:5px;
+    background-color:lightskyblue;
+    padding:5px;
+    border-radius:2px;
+    color:white;
+    font-size:14px;
+    margin-left:20px;
 }
 
 ul{
     list-style-type:none
 }
 
+
 #getLocation{
     text-align:right;
     color:darkblue;
-    padding-left: 250px;
+    padding-left:50px;
 }
+
+#tabel{
+    margin:auto;
+    width:80%;
+
+}
+
+thead{
+    position:relative;
+    top:0;
+    background-color:lightskyblue;
+    text-align:center;
+    font-weight:bold;
+}
+
+
+tbody{
+    bottom: 0;
+    text-align:center;
+  }
+
+
+
+  
