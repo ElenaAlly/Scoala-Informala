@@ -216,4 +216,37 @@ function loadPrognoza(){
     xhttp.send();      
 } 
 
+function initMap() {
+
+        var loc="";
+        var loc=document.getElementById("location").value;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){ 
+    
+                   var vremeaAcum = JSON.parse(this.responseText);
+                   
+                   var uluru = vremeaAcum.city.coord; 
+                   console.log(uluru);
+                   var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 4,
+                        center: uluru
+                      });
+                      var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                      });
+          
+    
+            }
+        };
+        xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q="+loc, true);
+        xhttp.send();
+    } 
+    
+
+
+
+
+
 

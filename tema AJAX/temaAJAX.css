@@ -16,6 +16,7 @@ table {
     display: inline-block;
     width:15%;
     text-align:center;
+    vertical-align: text-top;
     
 }
 
@@ -43,6 +44,9 @@ ul{
     list-style-type:none
 }
 
+li{
+    width:30%;
+}
 
 #getLocation{
     text-align:right;
@@ -57,8 +61,7 @@ ul{
 }
 
 thead{
-    position:relative;
-    top:0;
+
     background-color:lightskyblue;
     text-align:center;
     font-weight:bold;
@@ -70,6 +73,13 @@ tbody{
     text-align:center;
   }
 
+#map{
+
+    float:right;
+    height: 400px;
+    width: 40%;
+    background-color:grey;
+}
 
 
   
