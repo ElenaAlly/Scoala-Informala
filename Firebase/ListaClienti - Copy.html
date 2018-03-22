@@ -8,7 +8,13 @@
 
         xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200)
-					{  	listaClienti = JSON.parse(this.responseText);
+					{  	
+						listaClienti=[];
+						var server = JSON.parse(this.responseText);
+						
+						for(var i in server){
+							listaClienti.push(server[i]);
+						}
 						drawClienti();
 					}
         };
@@ -19,7 +25,7 @@
 		function drawClienti(){
 			var tabel=document.querySelector("#listaClienti tbody");
 			var str="";
-			for(var i=0;i<listaClienti.length;i++){
+			for(var i=0; i<listaClienti.length;i++){
 				var rand = `<tr>
 					<td>${listaClienti[i].nume}</td>
 					<td>${listaClienti[i].prenume}</td>
@@ -33,29 +39,34 @@
 		}
 		var coloanaSortare="";
 		var directieSortare="asc";
+
 		function sorteaza(coloana, td){
 			var lastElem = document.querySelector(".asc,.desc");
+
 			if(lastElem!==null){
 				lastElem.classList.remove("asc");
 				lastElem.classList.remove("desc");
 			}
+
 			if (coloanaSortare!==coloana) {
 				coloanaSortare=coloana;
 				directieSortare="asc";
-			}else if(directieSortare==="asc"){
+			} else if(directieSortare==="asc"){
 				directieSortare="desc";
-			}else {
+			} else {
 				directieSortare="asc";
 			}
+			
 			listaClienti.sort(function(a,b){
 				if(a[coloana]>b[coloana]){
 					return 1;
-				}else if(a[coloana]<b[coloana]){
+				} else if(a[coloana]<b[coloana]){
 					return -1;
-				}else{
+				} else{
 					return 0;
 				}
 			});
+
 			if(directieSortare==="desc"){
 				listaClienti.reverse();
 			}

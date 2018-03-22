@@ -29,8 +29,8 @@
         console.log(yesterday.getFullYear());
         
         var todayString=today.getFullYear() + "-";
-       console.log(typeof("todayString"));
-       
+       //console.log(typeof("todayString"));
+
         todayString +=((today.getMonth()+1 <10)?"0":"")+ (today.getMonth()+1 + "-");
          //inline IF - ((conditie)?"valoare if true":"valoare if false")
        
@@ -84,11 +84,11 @@
 	xhttp.send();
 
 	function drawList(cursValutar, cursValutarYesterday){
-	console.log(cursValutar,cursValutarYesterday);
-	var str="";
+	    console.log(cursValutar,cursValutarYesterday);
+	    var str="";
 
-	for(var i in cursValutar.rates) {
-	console.log(i, cursValutar.rates[i]);
+	    for(var i in cursValutar.rates) {
+	    console.log(i, cursValutar.rates[i]);
 		  str += `<li>
 						<span class="currency">${i}</span>:
 						<span class="rate">${(1/cursValutar.rates[i]).toFixed(4)}</span>&nbsp;

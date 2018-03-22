@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tema AJAX </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="temaAJAX.css" />
+    <!--<script src="temaAJAX.js"></script>-->
+    <script>
+
+    function loadVremeaAcum(){
+        var loc="";
+        var loc=document.getElementById("location").value;
+        var xhttp = new XMLHttpRequest(); //initializeaza obiectul
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){ 
+                    //console.log(this.responseText);//raspunsul care l-a dat serverul
+                   var vremeaAcum = JSON.parse(this.responseText);
+                   
+                   var descr = vremeaAcum.weather["0"].description;  
+                   var umid = vremeaAcum.main.humidity;
+                   var press = vremeaAcum.main.pressure;
+                   var tCrt = vremeaAcum.main.temp;
+                   var tMin = vremeaAcum.main.temp_min;
+                   var tMax = vremeaAcum.main.temp_max;
+
+                   var image=vremeaAcum.weather["0"].icon;
+                  // var url= "http://openweathermap.org/img/w/"+image+".png";
+                  //  console.log(url);
+
+
+                   //umid=vremeaAcum.main[humidity];
+               /* var str="";
+                for (var i in vremeaAcum.main) {
+                // console.log(i, vremeaAcum.main[i]);
+           
+                   str+= ` <li> 
+                        </span>
+                        <span class="descriere"> ${i} </span>
+                        <span class="value"> ${vremeaAcum.main[i]}</span>
+                        </li>` 
+                } */
+               
+            document.getElementById("getLocation").innerHTML=loc;
+            document.getElementById("descr").innerHTML=descr;
+            document.getElementById("umid").innerHTML=umid;
+            document.getElementById("press").innerHTML=press;
+            document.getElementById("tCrt").innerHTML=tCrt;
+            document.getElementById("tMin").innerHTML=tMin;
+            document.getElementById("tMax").innerHTML=tMax;
+            document.getElementById("image").src ="http://openweathermap.org/img/w/"+image+".png";
+
+            }
+        };
+        xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q="+loc, true);
+        xhttp.send();
+    } 
+    
+    function loadPrognoza(){
+        var today = new Date();
+        console.log(today);
+
+       //var zero= new Date(today.getFullYear(), today.getMonth(), today.getDate())
+       //  console.log(zero);
+
+       //   var todayMilli = today.getTime(); //momentul zero in milisecunde
+       //   var zeroMilli = zero.getTime(); //momentul de acum in milisecunde
+       //  var dif="";
+
+        // dif=Math.floor((todayMilli-zeroMilli)/(1000*24*60*60));
+        //  console.log(dif);
+        
+        var loc="";
+        var loc=document.getElementById("location").value;
+
+      
+      var tabelNou=document.getElementById("tabel");
+      
+        var xhttp = new XMLHttpRequest(); //initializeaza obiectul
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){ 
+              
+                var vremeaPrognoza = JSON.parse(this.responseText);
+                var str="";
+
+// if diff == 0  for...get elem. td id = str
+//for inainte
+
+               for (var i=0;i<vremeaPrognoza.list.length; i++) {
+                     //daca este al 6-lea element sa treaca ep randul urmator
+                        var rand= ` <tr> 
+                                 <td>
+                                <img id="imgspan" src="http://openweathermap.org/img/w/${vremeaPrognoza.list[i].weather["0"].icon}.png" /> <br/>
+                                <span id="ora"> Ora: ${vremeaPrognoza.list[i].dt_txt} </span> <br/>
+                                <span id="temp"> Temperatura:  ${vremeaPrognoza.list[i].main.temp} </span> <br/> 
+                                <span id="descriere"> Descriere: ${vremeaPrognoza.list[i].weather["0"].description}  </span>
+                                <td>
+                        </tr>` 
+                        str+=rand;
+                }
+                document.getElementById("rand1").innerHTML=str;
+               
+///pozitionare in casuta in fct de i si id.
+//generare de tabel
+                   // }
+                //document.getElementById("descriere").innerHTML=descrip;
+                //document.getElementById("imagine").src ="http://openweathermap.org/img/w/"+image+".png";
+
+//???cum modific sursa img
+//pun in div si separ pe coloane
+
+            }
+        };
+        xhttp.open("GET", "https://api.openweathermap.org/data/2.5/forecast?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q="+loc, true);
+        xhttp.send();
+    } 
+    </script>
+
+</head>
+<body>
+    <div class="div">   
+            <input type="text" class="input" id="location">
+            <button class="button" onclick="loadVremeaAcum()">Afiseaza vremea</button> 
+            <button class="button" onclick="loadPrognoza()">Afiseaza prognoza</button> 
+     
+    </div>
+    <br>
+    <div class="div">
+        <h1>Vremea acum <span id="getLocation"></span> </h1>
+        <hr/>
+             <ul id="descriere">
+                <li > 
+                <img id="image" scr="http://openweathermap.org/img/w/" ><br>
+                <span class="Descriere">Descriere:</span> <span id="descr"> </span> <br>
+                <span class="Descriere"> Umiditate:</span> <span id="umid"> </span>  <br>
+                <span class="Descriere"> Presiune:</span> <span id="press"> </span>  <br>
+                <span class="Descriere"> Temperatura curenta:</span> <span id="tCrt"> </span> <br>
+                <span class="Descriere"> Minima zilei:</span> <span id="tMin"> </span>  <br>
+                <span class="Descriere"> Maxima zilei:</span> <span id="tMax"> </span> <br>
+                </li>
+            </ul> 
+ 
+         <!--  <ul id="containerVremeaAcum">
+                <li class="dreapta"> 
+                <span class="dreapta"> </span> <span class="value"> </span> <br>
+                </li>
+            </ul> 
+            <div id="googleMap" style="width:50%;height:200px;"></div>-->
+    </div>
+    
+
+    <div  class="div">
+        <h1>Vremea in urmatoarele zile </h1>
+        <hr/>
+
+        <table border="1" style="width:90%" id="tabel">
+            <thead></thead>
+            <tbody id="rand1" >
+            <tr  class="grid-container" style="width:15%">               
+                <td id="container" class="data">
+                   <ul >
+                        <li> Imagine:<img id="imagine" scr="http://openweathermap.org/img/w/" alt= "no image"> </li>
+                        <li> Ora: <span id="ora"> </span> </li>
+                        <li> Temperatura: <span id="temp"> </span> </li>
+                        <li> Descriere: <span></span></li>
+                   </ul>                        
+                </td>
+
+                <td class="data">
+                        <ul >
+                             <li> Imagine:<img id="imagine" scr="http://openweathermap.org/img/w/" alt= "no image"> </li>
+                             <li> Ora: <span id="ora"> </span> </li>
+                             <li> Temperatura: <span id="temp"> </span> </li>
+                             <li> Descriere: <span></span></li>
+                        </ul>                        
+                </td>
+                <td class="data">
+                        <ul >
+                             <li> Imagine:<img id="imagine" scr="http://openweathermap.org/img/w/" alt= "no image"> </li>
+                             <li> Ora: <span id="ora"> </span> </li>
+                             <li> Temperatura: <span id="temp"> </span> </li>
+                             <li> Descriere: <span></span></li>
+                        </ul>                        
+                </td>
+                <td class="data">
+                        <ul >
+                             <li> Imagine:<img id="imagine" scr="http://openweathermap.org/img/w/" alt= "no image"> </li>
+                             <li> Ora: <span id="ora"> </span> </li>
+                             <li> Temperatura: <span id="temp"> </span> </li>
+                             <li> Descriere: <span></span></li>
+                        </ul>                        
+                </td>
+                <td class="data">
+                        <ul >
+                             <li> Imagine:<img id="imagine" scr="http://openweathermap.org/img/w/" alt= "no image"> </li>
+                             <li> Ora: <span id="ora"> </span> </li>
+                             <li> Temperatura: <span id="temp"> </span> </li>
+                             <li> Descriere: <span></span></li>
+                        </ul>                        
+                </td>   
+                <td class="data">
+                        <ul >
+                             <li> Imagine:<img id="imagine" scr="http://openweathermap.org/img/w/" alt= "no image"> </li>
+                             <li> Ora: <span id="ora"> </span> </li>
+                             <li> Temperatura: <span id="temp"> </span> </li>
+                             <li> Descriere: <span></span></li>
+                        </ul>                        
+                </td>
+                <td class="data">
+                        <ul >
+                             <li> Imagine:<img id="imagine" scr="http://openweathermap.org/img/w/" alt= "no image"> </li>
+                             <li> Ora: <span id="ora"> </span> </li>
+                             <li> Temperatura: <span id="temp"> </span> </li>
+                             <li> Descriere: <span></span></li>
+                        </ul>                        
+                </td>           
+            </tr>
+
+            
+
+        </tbody>
+        </table>
+
+    </div>
+   </body>
+</html>

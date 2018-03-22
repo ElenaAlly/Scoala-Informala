@@ -32,9 +32,13 @@
                 str+= ` <li> 
                        <span class="currency"> ${i} </span>
                         <span class="value"> ${cursValutar.rates[i]}</span>
-                       </li>` //se poate pune un string in js pe mai multe linii
+                       </li>` //se poate pune un string in js pe mai multe linii 
+             
+
+
                 }
                 document.getElementById("containerCursValutar").innerHTML=str;
+                
             }
         };
         xhttp.open("GET", "https://api.fixer.io/latest?base=RON", true);

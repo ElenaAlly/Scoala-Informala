@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h1 {
+            display: inline-block;
+            text-align: center;
+            width:60%; 
+            margin-left:20%; 
+            margin-right:20%;
+        }
+
+        form {
+            display: inline-block;
+            background-color: goldenrod;
+            padding:25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        thead{
+            font-weight: bold;
+            text-align: center;
+ 
+        }
+        table{
+            background-color: goldenrod;
+            display: inline-block;  
+            padding:25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .center{
+            width:60%; 
+            margin-left:20%; 
+            margin-right:20%;  
+            display: inline-block;         
+        }
+ 
+    </style>
+
+    <script>
+        var agenda = [];
+        var indexModificat=-1;
+ 
+       
+        function drawAgenda() {
+            var str = "";
+            
+            for (var i = 0; i < agenda.length; i++) {
+                str += `<tr>
+                <td >${agenda[i].nume}</td>
+                <td >${agenda[i].telefon}</td>             
+                <td > <a href="#" onclick="modifica(${i})">Modifica</td> 
+                <td > <a href="#" onclick="sterge(${i})">Sterge</td>
+            </tr>`
+            }
+            document.querySelector("#listaClienti tbody").innerHTML = str;
+        }
+        
+        function test(input,event){
+            if(event.keyCode===13){
+                adauga(input,event);
+            }
+        }
+
+        function modifica(index){
+            var client=agenda[index];
+            document.querySelector("[name=nume]").value=client.nume;
+            document.querySelector("[name=telefon]").value=client.telefon;
+            indexModificat=index; //tin minte indexul pentru a pastra randul.
+
+        }
+
+        function adauga(form,event){
+            event.preventDefault();
+            if(indexModificat!==-1){ //daca am modificat un client ..am retinut clientul de la index modiifcat si il modificat aici 
+                agenda[indexModificat]={
+                    nume:form.querySelector("[name=nume]").value,
+                    telefon: form.querySelector("[name=telefon]").value,
+                }
+                indexModificat=-1;                  
+            } else{ //adaug clientii
+                agenda.push({
+                    nume:form.querySelector("[name=nume]").value,
+                    telefon: form.querySelector("[name=telefon]").value,
+                });
+            }
+
+            drawAgenda();//redeseneaza tabelul
+        }
+        //ne intereseaza indexul elementului pe care rem sa-l stergem. apelez o fct de stergere cu indexuls is terg elem .
+        function sterge(index){
+            agenda.splice(index,1);
+            drawAgenda();
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Agenda</h1>
+    <form method="post" onsubmit="adauga(this,event)" class="center">
+
+        <label for="nume">Nume:</label>
+        <input name="nume" id="nume" type="text">
+        <label for="telefon">Telefon:</label>
+        <input name="telefon" id="telefon" type="text" onkeydown="test(this,event)">
+        </br> </br>
+        <input type="submit" value="Adauga contact" >
+    </form>
+
+</br></br>
+
+    <table id="listaClienti" class="center">
+        <thead>
+            <tr>
+                <td>Nume</td>
+                <td>Telefon</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="numeTabel"></td>
+                <td id="telefonTabel"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
