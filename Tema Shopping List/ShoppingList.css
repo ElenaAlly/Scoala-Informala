@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(243, 182, 255);
+}
+
+#frame{
+    background-color:white;
+    padding:25px;
+    border-radius: 15px;
+    width:60%; 
+    margin-left:20%; 
+    margin-right:20%;  
+}
+
+.center{
+    width:60%; 
+    margin-left:20%; 
+    margin-right:20%;  
+    display: inline-block;   
+    text-align:center;
+}
+input[type=text] {
+    width:350px;
+}
+
+input[type=submit] {
+    background-color:greenyellow;
+    border-radius: 5px;
+}
+
+thead{
+    font-weight:bold;
+}
+.sort{
+    background-color:rgb(177, 128, 177);
+    border-radius: 5px;
+}
+#lista{
+    width:400px; 
+    margin:auto;
+}
+
+.buy{
+    background-color:rgb(240, 150, 33);
+    border-radius: 5px;
+    padding:2px;
+}
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="ShoppingList.css" />
+    <script src="ShoppingList.js"></script>
+</head>
+
+<body>
+    <div id="frame">
+    <h1 class="center">SHOPPING LIST</h1>
+    <form method="post" onsubmit="adauga(this,event)" class="center">
+        <label for="nume"></label>
+        <input name="nume" id="nume" type="text" >
+        <input type="submit" value="Add item" >
+    </form>
+
+</br></br>
+    <div class="center">
+    <button type="button" onclick="sorteazaAsc('nume', this)" class="sort"> Sort asc </button>
+    <button type="button" onclick="sorteazaDesc('nume', this)" class="sort"> Sort desc </button>
+    </br>   </br> </div>
+
+    <table id="lista" >
+        <thead>
+            <tr>
+                <td id="description"></td>
+                <td id="action"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="strike" id="description"></td>
+                <td ></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+
+</html>
