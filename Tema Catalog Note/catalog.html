@@ -6,19 +6,54 @@
     <title>Catalog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+    #tabelElevi {
+        background-color:lightgreen;
+        border:solid 1px black;
+    }
+    #tabelNote{
+        background-color:lightblue;
+        border:solid 1px black;
+    }
+    input[type=text] {
+    width:250px;
+    }
+    input[type=number] {
+    width:250px;
+    }
+    form{
+        border:solid 1px black; 
+        padding:5px;
+    }
+    button {
+        background-color: green;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        padding:2px;
+    }
+
+    ul{
+        list-style-type: none;
+    }
+    thead{
+        font-weight: bold;
+        }
+    #numeElev, #medieNote{
+        width:200px;
+    }
 
     </style>
+
+
     <script>
     var lista=[];
     var listaNote=[];
- //   var tabel=document.querySelector("#lista tbody");
-  //  var tabelNote=document.querySelector("#listaNote tbody");
-///un singur tabel ce contine o lista cu note  !! atentie la note..max 10
 
-//show grades - primeste indexul
     function drawLista() {
         var str = "";      
-        document.getElementById("nume").innerHTML="Nume";
+        document.getElementById("numeElev").innerHTML= "Nume Elev";
         document.getElementById("medieNote").innerHTML="Medie Note";
 
     for (var i = 0; i < lista.length; i++) {
@@ -31,8 +66,6 @@
         document.querySelector("#lista tbody").innerHTML = str;
         console.log(lista);
     }
-
-
 
     function adauga(form,event){
            event.preventDefault();
@@ -57,7 +90,7 @@
         indexElev=1;
           
         for (var i = 0; i < listaNote.length; i++) {
-        document.getElementById("numeElev").innerHTML=lista[indexElev];  
+ 
         strDoi += `<ul>
                    <li >${listaNote[i].nume}</li>              
                 </ul>`
@@ -139,7 +172,7 @@
     <table id="lista">
         <thead>
             <tr>
-                <td id="nume"></td>
+                <td id="numeElev"></td>
                 <td id="medieNote"></td>
                 <td id="action"></td>
             </tr>
@@ -161,7 +194,7 @@
                     <input name="nota" id="nota" type="number" name="note" min="1" max="10" >
                     <input type="submit" value="Adauga nota" >
         </form>
- 
+
         <button type="button" onclick="sorteazaAscNotele('nume', this)" class="sort"> Sort ascendent notele </button> </br>
         <button type="button" onclick="sorteazaDescNotele('nume', this)" class="sort"> Sort descedent notele </button> </br>       
 
@@ -179,11 +212,6 @@
             </tbody>
             </table>
         </div>
-
-
-
-
-
-    
+   
 </body>
 </html>
