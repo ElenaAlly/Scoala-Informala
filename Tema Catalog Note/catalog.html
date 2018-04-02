@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+    </style>
+    <script>
+    var lista=[];
+    var listaNote=[];
+ //   var tabel=document.querySelector("#lista tbody");
+  //  var tabelNote=document.querySelector("#listaNote tbody");
+///un singur tabel ce contine o lista cu note  !! atentie la note..max 10
+
+//show grades - primeste indexul
+    function drawLista() {
+        var str = "";      
+        document.getElementById("nume").innerHTML="Nume";
+        document.getElementById("medieNote").innerHTML="Medie Note";
+
+    for (var i = 0; i < lista.length; i++) {
+        str += `<tr>
+                   <td >${lista[i].nume}</td>
+                   <td ></td>
+                   <td > <button type="button" id="myDIV" onclick="drawNote(${i})">Vezi notele</button>
+                </tr>`
+        }
+        document.querySelector("#lista tbody").innerHTML = str;
+        console.log(lista);
+    }
+
+
+
+    function adauga(form,event){
+           event.preventDefault();
+           lista.push({
+                nume:form.querySelector("[name=nume]").value,                    
+              });
+           drawLista();
+    }
+
+    function adaugaNota(form, event){
+        event.preventDefault();
+           listaNote.push({
+                nume:form.querySelector("[name=nota]").value,                    
+              });
+           drawNote();
+ 
+    
+    }
+
+    function drawNote() {
+        var strDoi = "";   
+        indexElev=1;
+          
+        for (var i = 0; i < listaNote.length; i++) {
+        document.getElementById("numeElev").innerHTML=lista[indexElev];  
+        strDoi += `<ul>
+                   <li >${listaNote[i].nume}</li>              
+                </ul>`
+        }
+        document.querySelector("#listaNote tbody").innerHTML = strDoi;
+        console.log(listaNote);
+    }
+
+    function sorteazaAsc(coloana, td){	
+        lista.sort(function(a,b){
+            if(a[coloana]>b[coloana]){
+                return 1;
+            }else if(a[coloana]<b[coloana]){
+                return -1;
+            }else{
+                return 0;
+            }
+        });	
+    
+        drawLista();
+    }   
+    
+    function sorteazaDesc(coloana, td){
+        lista.sort(function(a,b){
+            if(a[coloana]>b[coloana]){
+                return 1;
+            }else if(a[coloana]<b[coloana]){
+                return -1;
+            }else{
+                return 0;
+            }
+        });
+            lista.reverse();
+        drawLista();
+    }
+
+
+        function sorteazaAscNotele(coloana, td){	
+            listaNote.sort(function(a,b){
+            if(a[coloana]>b[coloana]){
+                return 1;
+            }else if(a[coloana]<b[coloana]){
+                return -1;
+            }else{
+                return 0;
+            }
+        });	
+
+        drawNote();
+    }   
+    
+    function sorteazaDescNotele(coloana, td){
+        listaNote.sort(function(a,b){
+            if(a[coloana]>b[coloana]){
+                return 1;
+            }else if(a[coloana]<b[coloana]){
+                return -1;
+            }else{
+                return 0;
+            }
+        });
+        listaNote.reverse();
+        drawNote();
+    }
+    </script>
+</head>
+<body>
+    <div id="tabelElevi">
+    <h1> Lista Elevi</h1>
+    <form method="post" onsubmit="adauga(this,event)">
+                <label for="nume"></label>
+                <input name="nume" id="nume" type="text" >
+                <input type="submit" value="Adauga elev" >
+    </form>
+    
+    <button type="button" onclick="sorteazaAsc('nume', this)" class="sort"> Sort ascendent dupa medie note </button> </br>
+    <button type="button" onclick="sorteazaDesc('nume', this)" class="sort"> Sort descedent dupa medie note </button> </br>
+
+    <table id="lista">
+        <thead>
+            <tr>
+                <td id="nume"></td>
+                <td id="medieNote"></td>
+                <td id="action"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td >Niciun elev adaugat</td>              
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</br></br>
+
+  
+<div id="tabelNote">
+        <h1> Nota elev:<span id="numeElev"></span></h1>
+        <form method="post" onsubmit="adaugaNota(this,event)">
+                    <label for="nota"></label>
+                    <input name="nota" id="nota" type="number" name="note" min="1" max="10" >
+                    <input type="submit" value="Adauga nota" >
+        </form>
+ 
+        <button type="button" onclick="sorteazaAscNotele('nume', this)" class="sort"> Sort ascendent notele </button> </br>
+        <button type="button" onclick="sorteazaDescNotele('nume', this)" class="sort"> Sort descedent notele </button> </br>       
+
+
+        <table id="listaNote">
+            <thead>
+                <tr>
+                    <td id="valNota"></td>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td ></td>              
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+
+
+
+
+    
+</body>
+</html>
