@@ -1,0 +1,83 @@
+body{
+    background-color: rgb(165, 216, 213);
+    padding:20px;
+}
+
+h1 {
+    display: inline-block;
+}
+
+img { display:inline-block;
+    width:150px;
+}
+
+
+td {
+  padding:20px;
+}
+.denumire{
+  font-weight: bold;
+  font-size: 1.2em;
+  
+}
+form{
+    padding: 10px;
+}
+
+table{
+    width:100%;
+}
+a.detalii:link, a.detalii:visited  {
+    background-color: white;
+    color: black;
+    border: 1px solid red;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    float:right;
+}
+
+a.detalii:hover, a.detalii:active {
+    background-color: red;
+    color: white;
+    float:right;
+}
+
+a.contact:link, a.contact:visited  {
+    background-color:rgb(0, 132, 255);
+    width: 150px;
+    color: black;
+    border: 1px solid rgb(0, 132, 255);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    position: absolute;
+    top: 60px;
+    right: 40px;
+}
+
+#button2  {
+    background-color:rgb(201, 182, 214);
+    color: black;
+    border: 1px solid rgb(201, 182, 214);
+    padding: 5px 30px;
+    margin-left:20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  
+}
+
+
+#text_box_1{
+    width:180px;
+    padding: 5px 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+}
+
