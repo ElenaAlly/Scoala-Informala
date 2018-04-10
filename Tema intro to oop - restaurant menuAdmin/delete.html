@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Adauga reteta noua</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="delete.css" />
+    <script src="delete.js"></script>
+ 
+</head>
+<body onload="drawLista();">
+
+    <h1> Cald si bun (Admin)</h1> </br>
+    <img src="wait.gif" id="loading" alt="no image" style="display:none">
+    <h2>Esti pe cale sa stergi preparatul " <span id="produs"></span> " </h2>
+    <h2>Confirmi stergerea? </h2>
+
+    <button type="button" onclick="sterge()" class="detalii" >DA</button>
+    <button type="button" onclick="nuSterge()" class="contact">Nu</button>
+
+</body>
+</html>

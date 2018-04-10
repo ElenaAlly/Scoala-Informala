@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(165, 216, 213);
+    padding:20px;
+}
+
+h1 {
+    display: inline-block;
+    color: darkblue;
+}
+
+img { display:inline-block;
+    width:150px;
+}
+
+
+.contact{
+    background-color:rgb(0, 132, 255);
+    width: 100px;
+    color: black;
+    border: 1px solid rgb(16, 57, 95);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.detalii{
+    background-color: red;
+    width: 100px;
+    color: black;
+    border: 1px solid darkred;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
