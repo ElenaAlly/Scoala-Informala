@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Deco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+.w3-content{max-width:1200px;margin:auto}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  border:0px;
+  margin:0px;
+  background-color: white;
+}
+
+/* Style the header */
+
+.header {
+  grid-area: header;
+  background-color:white;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  max-width:1200px;margin:auto
+}
+
+
+.center{
+  margin-left:10%;
+}
+#logo{
+  width:350px;
+  margin-bottom:0px;
+}
+
+#headerPhoto{
+  width:95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.produs{
+  width:21.5%;
+  display:inline-block;
+  border:solid 1px #ccc;
+  margin:20px;
+  padding:10px;
+
+}
+
+.produs:hover {
+  width:21.5%;
+  display:inline-block;
+  border:solid 1px #777;;
+  margin:20px;
+  padding:10px;
+
+}
+
+.responsive {   
+    padding: 0 12px;
+    float: left;
+    width: 20%;
+}
+
+.none{
+  display:none;
+  width:200px;
+  border:none;
+  background-color: none;
+  
+}
+.imagine{
+  width: 100%;
+  height: auto;
+}
+
+
+ul{
+  list-style: none;
+  margin:auto;
+
+}
+
+#loading{
+  width:15%;
+  display: block;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#listaProduse{
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}
+
+.detalii{
+  float: right;
+  font-style: normal;
+}
+
+h3{
+  text-align: center;
+  font:arial;
+  font-size:20px;
+
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}
+
+
+.footer{
+
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:98%;
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search{
+  margin:auto;
+  max-width:300px;
+  display:block;
+  margin-bottom:60px;
+  
+}
+.nume{
+    padding:5px;
+    text-align: center;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+}
+
+form.search input[type=text] {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    color:rgb(173, 173, 173);
+}
+form.search button {
+    float: right;
+    width: 20%;
+    padding: 1.25px;
+    background: rgb(208, 209, 209);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+.pret{
+    padding:5px;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight: bold;
+    font-style: italic;
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: #414141;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+    
+    
+}
+
+a:hover, a:active {
+    background-color:#e7e7e7;
+    color: white;
+    border:solid 1px #777;
+}
+
+#aLogo {
+  background-color: white;
+  border: white;
+}
+
+.imgProdus:link, .imgProdus:visited{
+  background-color: white;
+   
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+hr{
+  width:98%;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+<script>
+
+var myIndex = 0;
+//carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides w3-animate-fading");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+
+
+
+function drawLista(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                listaProduse= JSON.parse(this.responseText);
+                
+                var tabel=document.querySelector("#listaProduse ");
+                var str="";
+                for(var i in listaProduse.menu){
+                  document.getElementById("loading").style.display="none";
+                  
+                   if(document.querySelector("#text_box_1").value!==""&&listaProduse.menu[i].nume.toLowerCase().indexOf(document.querySelector("#text_box_1").value.toLowerCase() )===-1) {
+                          continue;
+                    }
+                  if(listaProduse.menu[i]==null){
+                    continue;
+                  }
+
+                    str += `<ul class="produs">
+                        <li><a href="paginaDetalii.html?id=${i}" class="imgProdus"> <img  src="${listaProduse.menu[i].imagine}" alt="no image" class="imagine"/> </a> </li>
+                        <li class="nume"> ${listaProduse.menu[i].nume}</li> </br></br>
+                        <li>     <span class="pret"> ${listaProduse.menu[i].pret} LEI </span>  <a href="paginaDetalii.html?id=${i}" class="detalii">Detalii</a> </li> 
+                    </ul>`;
+                }
+                console.log(str);
+                tabel.innerHTML=str;
+            }
+        };
+        xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/.json", true);
+        xhttp.send();
+        document.getElementById("loading").style.display="";
+    }
+
+ 
+
+</script> 
+
+
+</head>
+
+<body onload="drawLista(); carousel();">
+
+
+  <div class="header">
+     <div class="center">
+      <a class="button" href="try2proiect - Copy.html">Home</a>
+      <a class="button" href="contact.html">Contact</a>
+      <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
+      <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
+      <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
+    </div>
+
+    <hr width="98%">
+
+    <!--<img src="header2.jpg" alt="no image" id="headerPhoto">-->
+    <div class="w3-content w3-section" >
+      <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
+    </div>
+    
+  
+   
+  </div> 
+    <hr>
+    <h3>Produsele noastre</h3>
+    <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
+    <form class="search" onsubmit="event.preventDefault();drawLista();">
+        <input type="text" name="text_box_1" id="text_box_1" placeholder="search product...">
+        <button type="button" id="button2" onclick="drawLista()"> <i class="fa fa-search"></i></button>          
+    </form> 
+
+    <div id="listaProduse"z class="responsive">
+      <ul>
+        <li> Imagine </li>
+        <li> Nume </li>
+        <li> <span>Pret</span> <span>Detalii</span>  </li>
+      </ul>
+    </div>
+
+  <div class="footer">
+    <hr width="98%">
+    <p >Powered by ME</p>
+  </div> 
+
+
+
+</body>
+</html>

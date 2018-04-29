@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Deco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  border:0px;
+  margin:0px;
+  background-color: white;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color:white;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+
+#logo{
+  width:350px;
+  margin-bottom:0px;
+}
+
+#headerPhoto{
+  width:95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#aLogo {
+  background-color: white;
+  border: white;
+}
+
+
+.responsive {
+    padding: 0 12px;
+    float: left;
+    width: 20%;
+}
+
+.imagine{
+  width: 100%;
+  height: auto;
+}
+
+
+#loading{
+  width:15%;
+  display: block;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#listaProduse{
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.detalii{
+  float: right;
+  font-style: normal;
+}
+
+h3{
+  text-align: left;
+  font:arial;
+  font-size:20px;
+  padding:30px;
+}
+
+.footer{
+
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:98%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search{
+  margin:auto;
+  max-width:300px;
+}
+.nume{
+    padding:5px;
+    text-align: center;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+}
+
+form.search input[type=text] {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    color:rgb(173, 173, 173);
+}
+form.search button {
+    float: right;
+    width: 20%;
+    padding: 2px;
+    background: rgb(208, 209, 209);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+.pret{
+    padding:5px;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight: bold;
+    font-style: italic;
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: #414141;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+    
+}
+
+a:hover, a:active {
+    background-color:#e7e7e7;
+    color: white;
+    border:solid 1px #777;
+}
+
+.imgProdus{
+    width:80px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+<script>
+
+var listaProduse=[];			
+
+function add(form, event){
+    event.preventDefault();            
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+
+            
+            if (this.readyState == 4 && this.status == 200) {
+               
+                window.location="admin.html";
+            }
+        };
+        xhttp.open("POST", "https://shopproject-54a8b.firebaseio.com/menu/" +window.location.search.substring(4)+".json", true);
+        
+        xhttp.send(JSON.stringify({					
+            imagine: form.querySelector("[name=imagine]").value,
+            nume: form.querySelector("[name=nume]").value,
+            descriere: form.querySelector("[name=descriere]").value,
+            pret: form.querySelector("[name=pret]").value,
+            cantitate: form.querySelector("[name=cantitate]").value,
+        }));
+        document.getElementById("loading").style.display="";
+    }
+</script> 
+
+
+</head>
+
+<body>
+
+
+  <div class="header">
+     
+     
+  
+      <a class="button" href="try2proiect - Copy.html">Home</a>
+      <a class="button" href="contact.html">Contact</a>
+      <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
+      <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
+      <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
+
+
+    <hr>
+    <img src="header2.jpg" alt="no image" id="headerPhoto">
+  
+    <hr>
+  </div> 
+   
+    <h3>Adaugare produs</h3>
+  <div><img src="wait.gif" id="loading" alt="no image" style="display:none"> <br> </div>
+
+   <form method="post" onsubmit="add(this,event);" >	  
+        <label for="imagine" class="label" >URL Imagine:</label> 
+        <input name="imagine" id="imagine" type="text" ></br> 
+        
+        <label for="nume" class="label">Nume:</label>
+        <input name="nume" id="nume" type="text"> </br>
+     
+        <label for="descriere" class="label" >Descriere:</label> 
+        <input name="descriere" id="descriere" type="text" ><br>
+
+        <label for="pret" class="label" >Pret:</label> 
+        <input name="pret" id="pret" type="text" ><br>
+
+        <label for="cantitate" class="label" >Pret:</label> 
+        <input name="cantitate" id="cantitate" type="text" ><br>
+                    
+        <div><input type="submit" value="Salveaza noul produs"/></div>
+
+    </form>
+
+    <hr width="98%">
+    <p class="footer">Powered by ME</p>
+  </div> 
+
+
+
+</body>
+</html>

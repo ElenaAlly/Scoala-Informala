@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Deco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  border:0px;
+  margin:0px;
+  background-color: white;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color:white;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+#price{
+    display:inline-block;
+    padding-top:30px;
+    font-size:16px;
+    font:arial;
+    font-style: italic;
+    font-weight:bold;
+}
+
+#stoc{
+    display:inline-block;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+#logo{
+  width:350px;
+  margin-bottom:0px;
+}
+
+#aLogo {
+  background-color: white;
+  border: white;
+}
+
+#headerPhoto{
+  width:95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.produs{
+  width:20%;
+  display:inline-block;
+  border:solid 1px #ccc;
+  margin:20px;
+  padding:10px;
+
+}
+
+.produs:hover {
+  width:20%;
+  display:inline-block;
+  border:solid 1px #777;;
+  margin:20px;
+  padding:10px;
+
+}
+
+#aLogo {
+  background-color: white;
+  border: white;
+}
+.responsive {
+    padding: 0 12px;
+    float: left;
+    width: 20%;
+}
+
+.imagine{
+  width: 100%;
+  height: auto;
+}
+
+
+ul{
+  list-style: none;
+
+}
+
+#loading{
+  width:15%;
+  display: block;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.left{
+    width:40%;
+    display: block;
+    float:left;
+    margin-left: auto;
+  margin-right: auto;
+  padding-right:300px;
+}
+
+.right{
+    width:50%;
+    display: block;
+    float:left;
+    margin-left: auto;
+  margin-right: auto;
+  
+
+}
+#listaProduse{
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.detalii{
+  float: right;
+  font-style: normal;
+}
+
+h3{
+  text-align: center;
+  font:arial;
+  font-size:20px;
+}
+
+.footer{
+
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:98%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search{
+  margin:auto;
+  max-width:300px;
+}
+
+#nume{
+    padding:5px;
+    text-align: center;
+    display: inline-block;
+    font-size:20px;
+    font:arial;
+    font-weight: bold;
+}
+
+#descriere {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid grey;
+    float: left;   
+    background: #f1f1f1;
+    color:black;
+    width:100%;
+    text-align: left;
+    font-size:14px;
+    font:arial;
+    padding-left:20px;
+}
+
+form.cantitate input[type=number] {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid grey;   
+    width: 10%;
+    background: #f1f1f1;
+    color:black;
+    display: inline-block;
+    text-align: center;
+}
+form.cantitate input[type=submit]  {
+    width: 35%; 
+    min-width:100px;
+    padding: 5px;
+    background: rgb(208, 209, 209);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    float:right;
+    font-size: 12px;
+    
+  
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: #414141;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+    
+}
+
+a:hover, a:active {
+    background-color:#e7e7e7;
+    color: white;
+    border:solid 1px #777;
+}
+
+.detaliu{
+    width:60%;
+   
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: white;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+   
+}
+
+
+@media only screen and (max-width: 700px) {
+    .detaliu {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .detaliu {
+        width: 100%;
+    }
+    .left {
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+<script>
+
+var detaliuProduse;
+
+function drawLista() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("loading").style.display="none";
+            
+            detaliuProduse= JSON.parse(this.responseText);
+            console.log(detaliuProduse);
+   
+            document.getElementById("image").src =detaliuProduse.imagine;
+            document.getElementById("nume").innerHTML= detaliuProduse.nume;
+            document.getElementById("price").innerHTML= "Pret: " + detaliuProduse.pret + " LEI";
+            document.getElementById("descriere").innerHTML= "Descriere: <br> <br>" + detaliuProduse.descriere;
+
+            if(detaliuProduse.cantitate>0) { 
+                 document.getElementById("stoc").innerHTML="Stoc: " + detaliuProduse.cantitate + " buc.";
+            } else{
+                document.getElementById("stoc").innerHTML="Out of stock";
+            }
+
+        }
+    };
+    xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/menu/"+window.location.search.substring(4)+".json", true);
+    xhttp.send();
+
+    document.getElementById("loading").style.display="";
+}
+			
+
+function adaugaProdus(form,event){
+   // var listaProduse=[];
+event.preventDefault();
+    if(detaliuProduse.cantitate>0) { 
+            
+        alert("Produsul a fost adaugat in cos");
+                
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {               
+                if (this.readyState == 4 && this.status == 200) {               
+                    window.location="try2proiect - Copy.html";                 
+                }
+            };
+            xhttp.open("POST", "https://shopproject-54a8b.firebaseio.com/cart/.json", true);           
+            xhttp.send(JSON.stringify({					
+                nume: detaliuProduse.nume,
+                pret: parseInt(detaliuProduse.pret),
+                cantitate: parseInt(document.getElementById("quantity").value),
+                
+            // nume: document.getElementById("nume").innerText,
+            // pret: document.getElementById("price").innerText,
+            //  cantitate: document.getElementById("quantity").value,           
+            }));
+        
+    }
+    else{
+        alert("Produsul nu este in stoc");
+        window.location="try2proiect - Copy.html";
+    }
+
+}
+</script> 
+
+
+</head>
+
+<body onload="drawLista();">
+
+
+  <div class="header">
+     
+      <a class="button" href="try2proiect - Copy.html">Home</a>
+      <a class="button" href="contact.html">Contact</a>
+      <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
+      <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
+      <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
+    <hr>
+    <img src="header2.jpg" alt="no image" id="headerPhoto">
+     <hr>
+  </div> 
+   
+    <h3></h3>
+     <img src="wait.gif" id="loading" alt="no image">
+     <br> 
+   
+   <div  class="detaliu">
+        
+        <div class="left" >
+                    <img src="" alt="no image" id="image" width="300px"/>
+                     
+        </div>
+
+        <div class= "right" >
+                    <div id="nume">Nume </div>
+                    <br> <br>
+                    <div id="descriere">Descriere </div>
+                    <br>
+                    
+                    <div id="price"> Pret </div> <hr>
+                    <div id="stoc">In stoc: </div>
+                    
+                    <form class="cantitate" onsubmit="adaugaProdus(this,event);">
+                        Cantitate:
+                        <input type="number" name="quantity" id="quantity" min="1" value="1">
+                        <input type="submit" value="Adauga in cos">
+                    </form>
+         </div>
+    </div>
+
+  <div >
+    <hr class="header">
+    <p class="footer">Powered by ME</p>
+  </div> 
+
+
+
+</body>
+</html>

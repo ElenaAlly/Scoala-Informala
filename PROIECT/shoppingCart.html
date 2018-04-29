@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Deco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  border:0px;
+  margin:0px;
+  background-color: white;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color:white;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+
+#logo{
+  width:350px;
+  margin-bottom:0px;
+}
+
+#headerPhoto{
+  width:95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.produs{
+  width:20%;
+  display:inline-block;
+  border:solid 1px #ccc;
+  margin:20px;
+  padding:10px;
+
+}
+
+.produs:hover {
+  width:20%;
+  display:inline-block;
+  border:solid 1px #777;;
+  margin:20px;
+  padding:10px;
+
+}
+
+.responsive {
+    padding: 0 12px;
+    float: left;
+    width: 20%;
+}
+
+.imagine{
+  width: 100%;
+  height: auto;
+}
+
+#aLogo {
+  background-color: white;
+  border: white;
+}
+
+ul{
+  list-style: none;
+
+}
+
+#loading{
+  width:15%;
+  display: block;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#listaProduse{
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.detalii{
+  float: right;
+  font-style: normal;
+}
+
+h3{
+  text-align: center;
+  font:arial;
+  font-size:20px;
+}
+
+.footer{
+
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:98%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search{
+  margin:auto;
+  max-width:300px;
+}
+.nume{
+    padding:5px;
+    text-align: center;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+}
+
+form.search input[type=text] {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    color:rgb(173, 173, 173);
+}
+form.search button {
+    float: right;
+    width: 20%;
+    padding: 2px;
+    background: rgb(208, 209, 209);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+.pret{
+    padding:5px;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight: bold;
+    font-style: italic;
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: #414141;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+    
+}
+
+a:hover, a:active {
+    background-color:#e7e7e7;
+    color: white;
+    border:solid 1px #777;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+<script>
+
+function drawCart(){
+    event.preventDefault(); 
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                listaProduse= JSON.parse(this.responseText);
+                
+                var tabel=document.querySelector("#cosCumparaturi tbody");
+                var str="";
+                var tr="";
+                var total=0;
+                var nrProd=0;
+                var fTva=0;
+                for(var i in listaProduse.cart){
+                  document.getElementById("loading").style.display="none";
+                  
+                   str += `<tr width="60%">
+                        <td width="15%"> <a href="paginaDetalii.html?id=${window.location.search.substring(4)}"> ${listaProduse.cart[i].nume} </a></td>
+                        <td width="15%"> ${parseInt(listaProduse.cart[i].pret)}</td> 
+                        <td id="cantitate" width="20%"><button type="button" onclick="maiMic('${i}',${listaProduse.cart[i].cantitate-1})"> - </button> <input type="number" value="${parseInt(listaProduse.cart[i].cantitate)}">
+                         
+                         <button type="button"  onclick="maiMare('${i}',${listaProduse.cart[i].cantitate+1})"> + </button>   </td> 
+                        <td width="15%">  ${listaProduse.cart[i].cantitate * listaProduse.cart[i].pret}</td>                              
+                        <td width="15%"> <button type="button" onclick="sterge('${i}')" class="detalii">Sterge</button>
+                      
+                    </tr>`
+                   nrProd+=listaProduse.cart[i].cantitate;
+                   total+= (listaProduse.cart[i].cantitate * listaProduse.cart[i].pret);
+                   fTva+= (listaProduse.cart[i].cantitate * listaProduse.cart[i].pret)/1.19;
+                };
+
+                              
+                
+             tabel.innerHTML=str;
+             document.getElementById("nrProd").innerHTML="Total produse: " + nrProd;
+             document.getElementById("total").innerHTML= "Total: " + total.toFixed(0);
+             document.getElementById("fTva").innerHTML= "Total fara TVA: " + fTva.toFixed(2);
+            
+            
+            }
+        };
+        xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/.json", true);
+        xhttp.send();
+        document.getElementById("loading").style.display="";
+        
+    }
+
+function maiMare(index,cantitate){
+    event.preventDefault();      
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+                  drawCart();
+
+        }
+    };
+    
+    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/" + index +"/cantitate.json", true);
+    xhttp.send(JSON.stringify(parseInt(cantitate)));
+
+}
+
+function maiMic(index,cantitate){
+    event.preventDefault();      
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+                  drawCart();
+
+        }
+    };
+    
+    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/" + index +"/cantitate.json", true);
+    xhttp.send(JSON.stringify(parseInt(cantitate)));
+
+}
+
+
+function sterge(index) {
+  
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("loading").style.display="none";           
+             window.location="shoppingCart.html";
+            }
+        };
+        xhttp.open("DELETE",  "https://shopproject-54a8b.firebaseio.com/cart/" + index +".json", true);
+        xhttp.send();
+        document.getElementById("loading").style.display="";
+    }
+        
+function cumpara(index){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("loading").style.display="none";           
+               window.location="shoppingCart.html";
+            }
+        };
+    xhttp.open("PUT",  "https://shopproject-54a8b.firebaseio.com/cart/" + index +".json", true);
+    xhttp.send(JSON.stringify({
+       cantitate: form.querySelector("[name=cantitate]").value,
+    }));
+    document.getElementById("loading").style.display="";
+
+}
+
+</script> 
+
+
+</head>
+
+<body onload="drawCart();">
+
+
+  <div class="header">
+     
+     
+      <a class="button" href="try2proiect - Copy.html">Home</a>
+      <a class="button" href="contact.html">Contact</a>
+      <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
+      <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
+      <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
+    <hr>
+    <img src="header2.jpg" alt="no image" id="headerPhoto">
+     <hr>
+  </div> 
+   
+    <h3></h3>
+
+    <div  class="esponsive">
+      <div> <img src="wait.gif" id="loading" alt="no image"> <br> </div> 
+
+      <table id="cosCumparaturi" width=100% style="background-color:#ffd100;border-radius:5px;padding: 20px;">
+          <thead>
+            <tr>
+              <td>Nume</td>
+              <td>Pret</td>
+              <td>Cantitate</td>
+              <td>Subtotal</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="nume">AAA</td>
+              <td id="pret">lei</td>
+              <td >qt</td>
+              <td id="subtotal">pret*cant</td>
+              <td> button onclick remove</td>
+            </tr>       
+
+          </tbody>          
+        </table>
+      <div id="calculTotal"width="30%" style="text-align: right" style="margin:50px">
+                <p id="nrProd">Produse:</p>
+                <p id="fTva">Pret fara TVA:</p>
+                <p id="total">TOTAL</p>
+                <button type="button" onclick="cumpara()" >Cumpara</button>
+      
+      </div>
+      
+     
+    </div>
+
+  <div >
+    <hr class="header">
+    <p class="footer">Powered by ME</p>
+  </div> 
+
+
+
+</body>
+</html>
