@@ -29,12 +29,27 @@ body {
   padding: 30px;
   text-align: center;
   font-size: 35px;
-  max-width:1200px;margin:auto
+  max-width:1200px;
+  margin:auto
 }
 
 
+.footer{
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+
+  width:90%;
+  padding:10px;
+  display: block;
+  margin-left: 5%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+  }
+
 .center{
-  margin-left:10%;
+  margin-left:7%;
+  
 }
 #logo{
   width:350px;
@@ -54,6 +69,7 @@ body {
   border:solid 1px #ccc;
   margin:20px;
   padding:10px;
+  height:350px;
 
 }
 
@@ -109,6 +125,8 @@ ul{
 .detalii{
   float: right;
   font-style: normal;
+  display:block;
+  padding-bottom:120px;
 }
 
 h3{
@@ -124,18 +142,6 @@ h3{
 }
 
 
-.footer{
-
-  background-color:rgb(173, 173, 173);
-  text-align:center;
-  color:white;
-  padding:10px;
-  width:98%;
-
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
 .search{
   margin:auto;
   max-width:300px;
@@ -148,6 +154,7 @@ h3{
     text-align: center;
     display: inline-block;
     font-size:14px;
+    width:100%;
     font:arial;
 }
 
@@ -220,16 +227,46 @@ a:hover, a:active {
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (min-width: 769px) {
     .responsive {
         width: 49.99999%;
         margin: 6px 0;
     }
+    
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .responsive {
+        width: 45%;
+        margin: 6px 0;
+      
+    }
+    .produs{
+      display:block;
+      width:45%;
+    }
+    .header{
+      width:100%;
+    }
+    
+}
+
+@media only screen and (max-width: 480px) {
     .responsive {
         width: 100%;
+   
+    }
+    .nume{
+      width:95%;
+      font-size:1em;
+    }
+    .produs{
+      display:block;
+      width:100%;
+    }
+    .detalii{
+      position:relative;
+      bottom:15px;
     }
 }
 
@@ -325,32 +362,29 @@ function drawLista(){
       <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
       <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
     </div>
-    
-  
    
   </div> 
-    <hr>
-    <h3>Produsele noastre</h3>
-    <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
-    <form class="search" onsubmit="event.preventDefault();drawLista();">
-        <input type="text" name="text_box_1" id="text_box_1" placeholder="search product...">
-        <button type="button" id="button2" onclick="drawLista()"> <i class="fa fa-search"></i></button>          
-    </form> 
 
-    <div id="listaProduse"z class="responsive">
-      <ul>
-        <li> Imagine </li>
-        <li> Nume </li>
-        <li> <span>Pret</span> <span>Detalii</span>  </li>
-      </ul>
-    </div>
+  <div class="article" style="display:inline-block;">
+      <hr class="header">
+      <h3>Produsele noastre</h3>
+      <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
+      <form class="search" onsubmit="event.preventDefault();drawLista();">
+          <input type="text" name="text_box_1" id="text_box_1" placeholder="search product...">
+          <button type="button" id="button2" onclick="drawLista()"> <i class="fa fa-search"></i></button>          
+      </form> 
 
-  <div class="footer">
-    <hr width="98%">
-    <p >Powered by ME</p>
-  </div> 
-
-
+      <div id="listaProduse"z class="responsive">
+        <ul>
+          <li> Imagine </li>
+          <li> Nume </li>
+          <li> <span>Pret</span> <span>Detalii</span>  </li>
+        </ul>
+      </div>
+      
+  </div>
+<hr class="header">
+  <div class="footer"> Powered by ME </div> 
 
 </body>
 </html>
