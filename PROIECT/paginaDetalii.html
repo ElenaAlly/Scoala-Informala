@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home Deco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     
 <style>
 * {
     box-sizing: border-box;
 }
+
+.w3-content{max-width:1200px;margin:auto}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +28,21 @@ body {
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  max-width:1200px;
+  margin:auto
 }
+
+.footer{
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom:1%;
+  } 
 
 #price{
     display:inline-block;
@@ -58,7 +75,11 @@ body {
   margin-right: auto;
 }
 
-
+.responsive {
+    padding: 0 12px;
+    float: left;
+    width: 20%;
+}
 .produs{
   width:20%;
   display:inline-block;
@@ -75,16 +96,6 @@ body {
   margin:20px;
   padding:10px;
 
-}
-
-#aLogo {
-  background-color: white;
-  border: white;
-}
-.responsive {
-    padding: 0 12px;
-    float: left;
-    width: 20%;
 }
 
 .imagine{
@@ -110,8 +121,8 @@ ul{
     display: block;
     float:left;
     margin-left: auto;
-  margin-right: auto;
-  padding-right:300px;
+    margin-right: auto;
+    padding-right:300px;
 }
 
 .right{
@@ -119,7 +130,7 @@ ul{
     display: block;
     float:left;
     margin-left: auto;
-  margin-right: auto;
+    margin-right: auto;
   
 
 }
@@ -139,18 +150,17 @@ h3{
   text-align: center;
   font:arial;
   font-size:20px;
+
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.footer{
 
-  background-color:rgb(173, 173, 173);
-  text-align:center;
-  color:white;
-  padding:10px;
-  width:98%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.center{
+  margin-left:7%;
+  
 }
 .search{
   margin:auto;
@@ -190,6 +200,17 @@ form.cantitate input[type=number] {
     display: inline-block;
     text-align: center;
 }
+
+form.cantitate input[type=number]:hover {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid rgb(51, 51, 51);
+    width: 10%;
+    background: #f1f1f1;
+    color:black;
+    display: inline-block;
+    text-align: center;
+}
 form.cantitate input[type=submit]  {
     width: 35%; 
     min-width:100px;
@@ -200,9 +221,25 @@ form.cantitate input[type=submit]  {
     border: 1px solid grey;
     float:right;
     font-size: 12px;
-    
+ 
   
 }
+
+form.cantitate input[type=submit]:hover  {
+    width: 35%; 
+    min-width:100px;
+    padding: 5px;
+    background: rgb(208, 209, 209);
+    color: white;
+    font-size: 17px;
+    border: 1px solid rgb(51, 51, 51);
+    float:right;
+    font-size: 12px;
+    font-weight:bold;
+ 
+  
+}
+
 
 a:link, a:visited {
     background-color: white;
@@ -226,13 +263,12 @@ a:hover, a:active {
 
 .detaliu{
     width:60%;
-   
     margin-left: 20%;
     margin-right: 20%;
     background-color: white;
     border: 1px solid #e7e7e7;
     padding: 10px 20px;
-    
+ 
     text-decoration: none;
     display: inline-block;
     font-size:14px;
@@ -240,24 +276,83 @@ a:hover, a:active {
    
 }
 
-
-@media only screen and (max-width: 700px) {
+ @media only screen and (min-width: 481px) and (max-width: 768px) {
     .detaliu {
-        width: 49.99999%;
-        margin: 6px 0;
+        width: 90%;
+        display: inline-block;
+        margin-right:5%;
+        margin-left:5%;
     }
-
-}
-
-@media only screen and (max-width: 500px) {
-    .detaliu {
-        width: 100%;
-    }
-    .left {
-        width: 100%;
+    .left{
+      width:100%;
+      display:block;
+ 
     }
     .right{
-        width: 100%;
+      width:100%;
+      display:block;
+  
+    }
+    .descriere{
+      width:100%;
+    }
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .header{
+      width:100%;
+    }
+    .pret{
+      display:inline-block;
+      width:90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .detaliu {
+        width: 90%;
+        display: inline-block;
+        margin-right:5%;
+        margin-left:5%;
+    }
+    .left{
+      width:100%;
+      display:inline-block;
+     padding:0;
+ 
+    }
+    .right{
+      width:100%;
+      display:block;
+  
+    }
+    .descriere{
+      width:100%;
+    }
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .header{
+      width:100%;
+    }
+    #image{
+        float:center;
+        display: block;
+        margin:auto;
+    }
+    .pret{
+      display:inline-block;
+      width:90%;
+    }
+    .footer{
+        width: 90%;
+        display: inline-block;
+        margin-right:5%;
+        margin-left:5%;
     }
 }
 
@@ -269,6 +364,21 @@ a:hover, a:active {
 </style>
 
 <script>
+
+var myIndex = 0;
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides w3-animate-fading");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+
 
 var detaliuProduse;
 
@@ -285,7 +395,7 @@ function drawLista() {
             document.getElementById("nume").innerHTML= detaliuProduse.nume;
             document.getElementById("price").innerHTML= "Pret: " + detaliuProduse.pret + " LEI";
             document.getElementById("descriere").innerHTML= "Descriere: <br> <br>" + detaliuProduse.descriere;
-
+            
             if(detaliuProduse.cantitate>0) { 
                  document.getElementById("stoc").innerHTML="Stoc: " + detaliuProduse.cantitate + " buc.";
             } else{
@@ -337,18 +447,27 @@ event.preventDefault();
 
 </head>
 
-<body onload="drawLista();">
+<body onload="drawLista(); carousel();">
 
 
   <div class="header">
-     
+    <div class="center">
       <a class="button" href="try2proiect - Copy.html">Home</a>
       <a class="button" href="contact.html">Contact</a>
       <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
       <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
       <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
+      </div>
     <hr>
-    <img src="header2.jpg" alt="no image" id="headerPhoto">
+
+    <div class="w3-content w3-section" >
+      <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
+    </div>
+   
+
      <hr>
   </div> 
    
@@ -379,11 +498,9 @@ event.preventDefault();
                     </form>
          </div>
     </div>
+    <br>    <br>
 
-  <div >
-    <hr class="header">
-    <p class="footer">Powered by ME</p>
-  </div> 
+    <div class="footer"> Powered by ME </div> 
 
 
 
