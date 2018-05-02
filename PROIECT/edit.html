@@ -6,10 +6,13 @@
     <title>Home Deco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 * {
     box-sizing: border-box;
 }
+
+.w3-content{max-width:1200px;margin:auto}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -18,13 +21,37 @@ body {
   background-color: white;
 }
 
-/* Style the header */
+h3{
+  text-align: center;
+  font:arial;
+  font-size:20px;
+
+}
+
 .header {
-  grid-area: header;
+  /* grid-area: header; */
   background-color:white;
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  max-width:1200px;
+  margin:auto
+}
+
+.footer{
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom:1%;
+  }
+
+.center{
+  margin-left:7%;
 }
 
 
@@ -38,6 +65,71 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+label{
+    width:300px;
+    display:inline-block;
+    padding:10px;
+    font-size:1.2em;
+    font-weight:bold;
+    font-style: italic;
+}
+
+form {
+  width:100%;
+  padding:30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  }
+
+form input[type=text] {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    color:rgb(173, 173, 173);
+}
+form input[type=submit] {
+    display:inline-block;
+    width:40%;
+    padding: 2px;
+    background: rgb(208, 209, 209);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+}
+
+form input[type=submit]:hover {
+    display:inline-block;
+    width:40%;
+    padding: 2px;
+    background: rgb(208, 209, 209);
+    color: white;
+    font-size: 17px;
+    border: 1.5px solid red;
+}
+
+a.cancel:link,a.cancel:hover, a.cancel:active, a.cancel:visited{
+    display:inline-block;
+    width:40%;
+    padding: 2px;
+    background: rgb(208, 209, 209);
+    color: #777;
+    font-size: 17px;
+    border: 1px solid grey;
+}
+
+a.cancel:hover{
+    display:inline-block;
+    width:40%;
+    padding: 2px;
+    background: rgb(208, 209, 209);
+    color: red;
+    font-size: 17px;
+    border: 1.5px solid red;
 }
 
 #aLogo {
@@ -56,6 +148,7 @@ body {
   width: 100%;
   height: auto;
 }
+
 
 
 #loading{
@@ -77,24 +170,14 @@ body {
   font-style: normal;
 }
 
-h3{
-  text-align: left;
-  font:arial;
-  font-size:20px;
-  padding:30px;
-}
 
-.footer{
+.hrFooter {
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  }
 
-  background-color:rgb(173, 173, 173);
-  text-align:center;
-  color:white;
-  padding:10px;
-  width:98%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 .search{
   margin:auto;
   max-width:300px;
@@ -107,16 +190,16 @@ h3{
     font:arial;
 }
 
-form.search input[type=text] {
+form input[type=text] {
     padding: 5px;
     font-size: 12px;
     border: 1px solid grey;
     float: left;
     width: 80%;
     background: #f1f1f1;
-    color:rgb(173, 173, 173);
+    color:rgb(48, 48, 48);
 }
-form.search button {
+form button {
     float: right;
     width: 20%;
     padding: 2px;
@@ -125,7 +208,7 @@ form.search button {
     font-size: 17px;
     border: 1px solid grey;
     border-left: none;
-    cursor: pointer;
+  
 }
 .pret{
     padding:5px;
@@ -167,20 +250,42 @@ a:hover, a:active {
     font-weight:bold;
 }
 
-
-@media only screen and (max-width: 700px) {
-    .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-}
-
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 769px) {
     .responsive {
         width: 100%;
+        margin: 6px 0;
     }
+    .produs{
+      vertical-align: top;
+    }
+    
 }
 
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .header{
+      width:100%;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 480px) {
+
+   #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+
+
+}
 .clearfix:after {
     content: "";
     display: table;
@@ -189,6 +294,19 @@ a:hover, a:active {
 </style>
 
 <script>
+var myIndex = 0;
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides w3-animate-fading");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
 
 var listaProduse=[];			
 var indexModificat=-1;
@@ -236,28 +354,34 @@ function drawLista(){
 
 </head>
 
-<body onload="drawLista();">
+<body onload="drawLista(); carousel();">
 
 
   <div class="header">
      
      
-  
+    <div class="center">
       <a class="button" href="try2proiect - Copy.html">Home</a>
       <a class="button" href="contact.html">Contact</a>
       <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
       <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
       <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
-
+    </div>
 
     <hr>
-    <img src="header2.jpg" alt="no image" id="headerPhoto">
+    <div class="w3-content w3-section" >
+            <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
+    </div>
   
     <hr>
   </div> 
    
     <h3>Editare produs</h3>
-  <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
+
+    <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
 
    <form method="post" onsubmit="edit(this,event);" >	  
         <label for="imagine" class="label" >URL Imagine:</label> 
@@ -272,10 +396,13 @@ function drawLista(){
         <label for="pret" class="label" >Pret:</label> 
         <input name="pret" id="pret" type="text" ><br>
 
-        <label for="cantitate" class="label" >Pret:</label> 
+        <label for="cantitate" class="label" >Stoc:</label> 
         <input name="cantitate" id="cantitate" type="text" ><br>
-                    
-        <div><input type="submit" value="Save"/></div>
+                <br> <br> <br>    
+        <div>
+            <input type="submit" value="Salveaza"/>
+            <a class="cancel" href="admin.html">Cancel</a>
+        </div>
 
     </form>
 
@@ -284,8 +411,8 @@ function drawLista(){
 
 
 
-    <hr width="98%">
-    <p class="footer">Powered by ME</p>
+    <hr class="hrFooter" >
+    <div class="footer"> Powered by ME </div>  
   </div> 
 
 

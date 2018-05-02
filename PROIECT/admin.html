@@ -6,10 +6,13 @@
     <title>Home Deco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style>
 * {
     box-sizing: border-box;
 }
+.w3-content{max-width:1200px;margin:auto}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -18,16 +21,90 @@ body {
   background-color: white;
 }
 
-/* Style the header */
+h3{
+  text-align: left;
+  font:arial;
+  font-size:20px;
+  padding:30px;
+}
 .header {
-  grid-area: header;
+  /* grid-area: header; */
   background-color:white;
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  max-width:1200px;
+  margin:auto
 }
 
+.footer{
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom:1%;
+  }
 
+.center{
+  margin-left:7%;
+}
+
+.hrFooter {
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  }
+  
+  form {
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  }
+
+  .sterge  {
+    display:inline-block;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    border:none;
+    color: rgb(153, 204, 58);
+    font-size: 1em;
+    font-weight:bold;
+    font-style: italic;
+    text-align: center;
+}
+
+.sterge:hover  {
+    display:inline-block;
+    padding: 0px;
+    font-family: arial;
+    border:none;
+    color: black;
+    font-size: 1.1em;
+    font-weight:bold;
+    font-style: italic;
+    text-align: center;
+}
+a.nume:link, a.nume:hover, a.nume:visited, a.nume:active {
+
+font-size:14px;
+font:arial;
+border:none;
+background-color: rgba(255, 255, 255, 0);
+color:  #777;
+text-align:left;
+font-weight:normal;
+padding-top:0px;
+padding-bottom: 15px;
+padding-left:0px;
+
+
+}
 #logo{
   width:350px;
   margin-bottom:0px;
@@ -46,7 +123,8 @@ body {
 }
 
 .imgProd{
-  width:80px;
+  width:50px;
+  padding:5px;
 }
 .produs{
   width:20%;
@@ -57,20 +135,34 @@ body {
 
 }
 
-.produs:hover {
-  width:20%;
-  display:inline-block;
-  border:solid 1px #777;;
-  margin:20px;
-  padding:10px;
+#listaProduse {
+    font-size:1em;
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#listaProduse tr, #listaProduse th {
+    border: 1px solid #777;
+    width:100%;
+}
+
+#listaProduse tr:nth-child(even){background-color: #f2f2f2;}
+
+thead{
+    font-weight: bold;
+    font-size:1.2em;
+    text-align:left;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: left;
+    background-color: rgb(153, 204, 58);
+    color: white;
+    border: 1px solid #777;
+    width:100%;
 
 }
 
-.responsive {
-    padding: 0 12px;
-    float: left;
-    width: 20%;
-}
+
 
 .imagine{
   width: 100%;
@@ -90,41 +182,36 @@ ul{
   margin-right: 40%;
 }
 
-#listaProduse{
+/* #listaProduse{
+  width:80%;
+  display:inline-block;
+  margin-left: 10%;
+  margin-right: 10%;
+} */
+
+h3{
+  text-align: center;
+  font:arial;
+  font-size:20px;
+}
+.detalii{
+  float: right;
+  font-style: normal;
+}
+
+.buttonAdauga{
+  width:300px;
+  display:block;
+  float:left;
   width:80%;
   display:block;
   margin-left: 10%;
   margin-right: 10%;
 }
 
-.detalii{
-  float: right;
-  font-style: normal;
-}
-
-h3{
-  text-align: left;
-  font:arial;
-  font-size:20px;
-  padding:30px;
-}
 
 
-.footer{
 
-  background-color:rgb(173, 173, 173);
-  text-align:center;
-  color:white;
-  padding:10px;
-  width:98%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.search{
-  margin:auto;
-  max-width:300px;
-}
 .nume{
     padding:5px;
     text-align: center;
@@ -162,6 +249,33 @@ form.search button {
     font-style: italic;
 }
 
+
+a.butonAdd:link, a.butonAdd:visited, a.butonAdd:active {
+    background-color: rgb(153, 204, 58);
+    color: white;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+}
+
+a.butonAdd:hover {
+    background-color: rgb(153, 204, 58);
+    color:black;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:16px;
+    font:arial;
+    font-weight:bold;
+}
+
 a:link, a:visited {
     background-color: white;
     color: #414141;
@@ -194,19 +308,71 @@ a:hover, a:active {
     font-weight:bold;
 }
 
-
-@media only screen and (max-width: 700px) {
-    .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-}
-
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 769px) {
     .responsive {
         width: 100%;
+        margin: 6px 0;
     }
+    .produs{
+      vertical-align: top;
+    }
+    
 }
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .header{
+      width:100%;
+    }
+ 
+   #listaProduse {
+    display:inline-block;
+    width:100%;
+    font-size:0.8em;
+   }
+
+
+
+}
+
+@media only screen and (max-width: 480px) {
+
+   #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+   #listaProduse {
+    display:inline-block;
+    width:99%;
+    margin:0px;
+    font-size:0.8em;
+   }
+   a.butonAdd {
+    background-color: rgb(153, 204, 58);
+    color: white;
+    border: 1px solid #e7e7e7;
+ 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+    width:100%;
+  }
+  div.buttonAdauga{
+    width:100%;
+    margin:0px;
+  }
+
+}
+
 
 .clearfix:after {
     content: "";
@@ -216,6 +382,21 @@ a:hover, a:active {
 </style>
 
 <script>
+
+var myIndex = 0;
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides w3-animate-fading");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+
 function drawLista(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -235,10 +416,10 @@ function drawLista(){
 
                     str += `<tr >
                         <td > <img  src="${listaProduse.menu[i].imagine}" alt="no image" class="imgProd"/> </td>
-                        <td> <a href="edit.html?id=${i}"> ${listaProduse.menu[i].nume} </a> </td> </br></br>
-                        <td width="15%"> ${listaProduse.menu[i].pret} LEI </td> 
-                        <td> ${listaProduse.menu[i].cantitate} buc. </td> 
-                        <td> <button type="button" onclick="sterge('${i}')" class="detalii">Sterge</button>
+                        <td> <a href="edit.html?id=${i}" class="nume"> ${listaProduse.menu[i].nume}  </a> </td> 
+                        <td width="15%" style="text-align: center"> ${listaProduse.menu[i].pret} LEI </td> 
+                        <td style="text-align: center"> ${listaProduse.menu[i].cantitate} buc. </td> 
+                        <td style="text-align: center"> <button type="button" class="sterge" onclick="sterge('${i}')" class="detalii">Sterge</button>
                     </tr>`;
                 }
                 console.log(str);
@@ -269,22 +450,27 @@ function drawLista(){
 
 </head>
 
-<body onload="drawLista();">
+<body onload="drawLista(); carousel();">
 
 
   <div class="header">
      
      
-  
+    <div class="center">
       <a class="button" href="try2proiect - Copy.html">Home</a>
       <a class="button" href="contact.html">Contact</a>
       <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
       <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
       <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
-
+    </div>
 
     <hr>
-    <img src="header2.jpg" alt="no image" id="headerPhoto">
+    <div class="w3-content w3-section" >
+        <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
+    </div>
   
     <hr>
   </div> 
@@ -293,17 +479,17 @@ function drawLista(){
     <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
 
      
-    <span > <a  href="add.html">Adauga produs nou</a> </span>     
- 
+    <div class="buttonAdauga" > <a class="butonAdd"  href="add.html">Adauga produs nou</a> <br> <br></div>     
+    
 
         <table id="listaProduse">
                 <thead>
                   <tr>
                     <td>Imagine</td>
-                    <td>Nume</td>
-                    <td>Pret</td>
-                    <td>Cantitate</td>
-                    <td>sterge</td>
+                    <td >Nume</td>
+                    <td style="text-align: center">Pret</td>
+                    <td style="text-align: center">Cantitate</td>
+                    <td style="text-align: center">Sterge</td>
                   </tr>
                 </thead>
                 <tbody>
@@ -311,10 +497,9 @@ function drawLista(){
       
                 </tbody>          
               </table>
-  <div >
-    <hr width="98%">
-    <p class="footer">Powered by ME</p>
-  </div> 
+
+              <hr class="hrFooter" >
+              <div class="footer"> Powered by ME </div>   
 
 
 

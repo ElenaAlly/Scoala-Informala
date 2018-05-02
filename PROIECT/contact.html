@@ -6,6 +6,8 @@
     <title>Home Deco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style>
 * {
     box-sizing: border-box;
@@ -18,6 +20,11 @@ body {
   background-color: white;
 }
 
+.w3-content{max-width:1200px;margin:auto}
+
+.center{
+  margin-left:7%;
+}
 /* Style the header */
 .header {
   grid-area: header;
@@ -25,9 +32,29 @@ body {
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  max-width:1200px;
+  margin:auto
 }
 
+.footer{
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom:1%;
+  } 
 
+/* #googleMap{
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+
+} */
 #logo{
   width:350px;
   margin-bottom:0px;
@@ -56,6 +83,11 @@ body {
   margin:20px;
   padding:10px;
 
+}
+
+#aLogo {
+  background-color: white;
+  border: white;
 }
 
 .responsive {
@@ -98,15 +130,14 @@ h3{
   text-align: center;
   font:arial;
   font-size:20px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.footer{
 
-  background-color:rgb(173, 173, 173);
-  text-align:center;
-  color:white;
-  padding:10px;
-}
+
 .search{
   margin:auto;
   max-width:300px;
@@ -180,24 +211,49 @@ a:hover, a:active {
     font-weight:bold;
 }
 #googleMap{
-    width:100%;
+    width:80%;
     padding-top:400px;
-    display:inline-block;
-
-    
-
+    display:block;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left:30px;
+    padding-right:30px;
 }
 
-@media only screen and (max-width: 700px) {
-    .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
+#adresa{
+  text-align: center;
+}
+
+ @media only screen and (min-width: 481px) and (max-width: 768px) {
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .header{
+      width:100%;
+    }
+
+    .footer{
+        width: 90%;
+        display: inline-block;
+        margin-right:5%;
+        margin-left:5%;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .responsive {
-        width: 100%;
+@media only screen and (max-width: 480px) {
+
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .footer{
+        width: 90%;
+        display: inline-block;
+        margin-right:5%;
+        margin-left:5%;
     }
 }
 
@@ -210,6 +266,19 @@ a:hover, a:active {
 
 <script>
 
+var myIndex = 0;
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides w3-animate-fading");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
 
  
 
@@ -218,29 +287,36 @@ a:hover, a:active {
 
 </head>
 
-<body >
+<body onload="carousel();" >
 
 
   <div class="header">
      
      
-  
+    <div class="center">
       <a class="button" href="try2proiect - Copy.html">Home</a>
       <a class="button" href="contact.html">Contact</a>
-      <img src="Logo.png" alt="no logo" id="logo">
+      <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
       <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
       <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
-
+    </div>
 
     <hr>
-    <img src="header2.jpg" alt="no image" id="headerPhoto">
+
+    <div class="w3-content w3-section" >
+      <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
+    </div>
   
     <hr>
   </div> 
    
-    <h3>CONTACT</h3>
-    <div clas="header">Adresa: Bucuresti, Romania</div>
-    <div id="googleMap"></div>
+    <h3>Contact</h3>
+    <div id="adresa">Adresa: Bucuresti, Romania</div>
+    <br>
+    <div  id="googleMap"></div>
    
     <script>
         function myMap() {
@@ -254,11 +330,9 @@ a:hover, a:active {
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC0SFIIBcShJYInztS4Jg51VW63tIFOPQ&callback=myMap"></script>
 
+    <br><br>
 
-  <div >
-    <hr width="98%">
-    <p class="footer">Powered by ME</p>
-  </div> 
+    <div class="footer"> Powered by ME </div> 
 
 
 

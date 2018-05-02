@@ -21,10 +21,7 @@ body {
   background-color: white;
 }
 
-/* Style the header */
-
 .header {
-  /* grid-area: header; */
   background-color:white;
   padding: 30px;
   text-align: center;
@@ -37,8 +34,15 @@ body {
   width:80%;
   display:block;
   margin-left: 10%;
-  margin-right: 10%;}
+  margin-right: 10%;
+  }
 
+.article{
+  display:block;
+  width:80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 .footer{
   background-color:rgb(173, 173, 173);
   text-align:center;
@@ -69,7 +73,6 @@ body {
 
 .responsive {   
     padding: 0 12px;
-    /* float: left; */
     width: 20%;
 }
 
@@ -80,7 +83,6 @@ body {
   margin:20px;
   padding:10px;
   height:320px;
-
 }
 
 .produs:hover {
@@ -90,27 +92,23 @@ body {
   margin:20px;
   padding:10px;
   height:320px;
-
 }
-
 
 .none{
   display:none;
   width:200px;
   border:none;
-  background-color: none;
-  
+  background-color: none;  
 }
+
 .imagine{
   width: 100%;
   height: auto;
 }
 
-
 ul{
   list-style: none;
   margin:auto;
-
 }
 
 #loading{
@@ -124,27 +122,34 @@ ul{
   width:70%;
   display:block;
   margin-left: 15%;
-  margin-right: 15%;
-  
+  margin-right: 15%;  
 }
 
 .detalii{
-  float: right;
   font-style: normal;
-  display:inline-block;
+  display:block;
+  width:100%;
   padding-bottom:120px;
+}
+
+.pret{
+    padding:5px;
+    display: -block;
+    font-size:14px;
+    font:arial;
+    font-weight: bold;
+    font-style: italic;
+    width:100%;   
 }
 
 h3{
   text-align: center;
   font:arial;
   font-size:20px;
-
   width:80%;
   display:block;
   margin-left: 10%;
-  margin-right: 10%;
-  
+  margin-right: 10%; 
 }
 
 
@@ -184,15 +189,7 @@ form.search button {
     border-left: none;
     cursor: pointer;
 }
-.pret{
-    padding:5px;
-    display: inline-block;
-    font-size:14px;
-    font:arial;
-    font-weight: bold;
-    font-style: italic;
-    
-}
+
 
 a:link, a:visited {
     background-color: white;
@@ -204,9 +201,7 @@ a:link, a:visited {
     display: inline-block;
     font-size:14px;
     font:arial;
-    font-weight:bold;
-    
-    
+    font-weight:bold;   
 }
 
 a:hover, a:active {
@@ -221,8 +216,7 @@ a:hover, a:active {
 }
 
 .imgProdus:link, .imgProdus:visited{
-  background-color: white;
-   
+    background-color: white;  
     border: 1px solid #e7e7e7;
     padding: 10px 20px;
     text-align: center;
@@ -233,7 +227,6 @@ a:hover, a:active {
     font-weight:bold;
 }
 
-
 @media only screen and (min-width: 769px) {
     .responsive {
         width: 100%;
@@ -241,15 +234,13 @@ a:hover, a:active {
     }
     .produs{
       vertical-align: top;
-    }
-    
+    }    
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     .responsive {
         width: 100%;
-        margin: 6px 0;
-      
+        margin: 6px 0;      
     }
     .produs{
       vertical-align: top;
@@ -264,25 +255,17 @@ a:hover, a:active {
    }
     .header{
       width:100%;
-    }
- 
+    } 
     .detalii{
       display:inline-block;
       width:100%;
- 
-      margin-bottom:10px;
-    
+      margin-bottom:10px;    
     }
     .pret{
       display:inline-block;
       width:100%;
-      text-align: center;
-    
- 
+      text-align: center; 
     }
-
-
-
 }
 
 @media only screen and (max-width: 480px) {
@@ -310,18 +293,14 @@ a:hover, a:active {
     .detalii{
       display:-block;
       width:70%;
-      float:right;
-    
+      float:right;    
     }
     .pret{
       display:block;
       width:30%;
       float:left;
     }
- 
 }
-
-
 
 .clearfix:after {
     content: "";
@@ -370,7 +349,7 @@ function drawLista(){
                     str += `<ul class="produs">
                         <li><a href="paginaDetalii.html?id=${i}" class="imgProdus"> <img  src="${listaProduse.menu[i].imagine}" alt="no image" class="imagine"/> </a> </li>
                         <li class="nume"> ${listaProduse.menu[i].nume}</li> </br></br>
-                        <li>     <div class="pret"> ${listaProduse.menu[i].pret} LEI </div>  <a href="paginaDetalii.html?id=${i}" class="detalii">Detalii</a> </li> 
+                        <li class="pretDetalii">     <div class="pret"> ${listaProduse.menu[i].pret} LEI </div>  <a href="paginaDetalii.html?id=${i}" class="detalii">Detalii</a> </li> 
                     </ul>`;
                 }
                 console.log(str);
@@ -403,7 +382,6 @@ function drawLista(){
 
     <hr>
 
-    <!--<img src="header2.jpg" alt="no image" id="headerPhoto">-->
     <div class="w3-content w3-section" >
       <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
       <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
@@ -413,7 +391,7 @@ function drawLista(){
    <hr>
   </div> 
 
-  <div class="article" style="display:inline-block;">
+  <div class="article">
       
       <h3>Produsele noastre</h3>
       <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
@@ -431,7 +409,7 @@ function drawLista(){
       </div>
       
   </div>
-<hr class="hrFooter" >
+  <hr class="hrFooter" >
   <div class="footer"> Powered by ME </div> 
 
 </body>

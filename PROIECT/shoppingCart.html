@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home Deco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 * {
     box-sizing: border-box;
@@ -18,51 +18,50 @@ body {
   background-color: white;
 }
 
-/* Style the header */
+.w3-content{max-width:1200px;margin:auto}
+
 .header {
-  grid-area: header;
+  /* grid-area: header; */
   background-color:white;
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  max-width:1200px;
+  margin:auto
 }
 
+.footer{
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom:1%;
+  }
 
-#logo{
+.hrFooter {
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  }
+
+.center{
+  margin-left:7%;
+}
+
+#cantitate{
+    text-align: center;
+
+}
+#logo {
   width:350px;
   margin-bottom:0px;
 }
 
-#headerPhoto{
-  width:95%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.produs{
-  width:20%;
-  display:inline-block;
-  border:solid 1px #ccc;
-  margin:20px;
-  padding:10px;
-
-}
-
-.produs:hover {
-  width:20%;
-  display:inline-block;
-  border:solid 1px #777;;
-  margin:20px;
-  padding:10px;
-
-}
-
-.responsive {
-    padding: 0 12px;
-    float: left;
-    width: 20%;
-}
 
 .imagine{
   width: 100%;
@@ -86,12 +85,59 @@ ul{
   margin-right: 40%;
 }
 
-#listaProduse{
+.main{
   width:80%;
-  display:block;
+  display:inline-block;
   margin-left: 10%;
   margin-right: 10%;
+  padding:30px;
 }
+
+#cosCumparaturi {
+    display:block;
+    width:80%;
+    float: left;
+    font-size:1em;
+}
+#cosCumparaturi tr, #cosCumparaturi th {
+    border: 1px solid #777;
+}
+
+#cosCumparaturi tr:nth-child(even){background-color: #f2f2f2;}
+
+#cosCumparaturi tr:hover {background-color: #ddd;}
+
+thead{
+    font-weight: bold;
+    font-size:1.2em;
+    text-align:left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(153, 204, 58);
+    color: white;
+    border: 1px solid #777;
+
+}
+#calculTotal{
+    display:inline-block;
+    width:18%;
+    margin-left:2%;
+    /* float: right; */
+    /* padding-left:2%; */
+    background-color:#ddd;
+    /* border:solid 1px #777; */
+    text-align:right;
+   
+    vertical-align: text-bottom;
+    }
+
+.textdr{
+    padding:10px;
+    font-style: italic;
+    font-weight: bold;
+}
+
 
 .detalii{
   float: right;
@@ -104,56 +150,105 @@ h3{
   font-size:20px;
 }
 
-.footer{
-
-  background-color:rgb(173, 173, 173);
-  text-align:center;
-  color:white;
-  padding:10px;
-  width:98%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 .search{
   margin:auto;
   max-width:300px;
 }
-.nume{
-    padding:5px;
-    text-align: center;
-    display: inline-block;
+
+a.nume:link, a.nume:hover, a.nume:visited, a.nume:active {
+
     font-size:14px;
     font:arial;
+    border:none;
+    background-color: rgba(255, 255, 255, 0);
+    color:  #777;
+    text-align:left;
+    font-weight:normal;
+    padding-top:0px;
+    padding-bottom: 15px;
+    padding-left:0px;
+
+
 }
 
-form.search input[type=text] {
-    padding: 5px;
-    font-size: 12px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-    color:rgb(173, 173, 173);
+.sterge  {
+    display:inline-block;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    border:none;
+    color: rgb(153, 204, 58);
+    font-size: 1em;
+    font-weight:bold;
+    font-style: italic;
+    text-align: center;
 }
-form.search button {
-    float: right;
-    width: 20%;
-    padding: 2px;
+
+.sterge:hover  {
+    display:inline-block;
+    padding: 0px;
+    font-family: arial;
+    border:none;
+    color: black;
+    font-size: 1.1em;
+    font-weight:bold;
+    font-style: italic;
+    text-align: center;
+}
+
+.mic  {
+    display:inline-block;
+    width: 20px;
+    height:20px;
+    padding: 0px;
     background: rgb(208, 209, 209);
     color: white;
-    font-size: 17px;
+    font-size: 0.8em;
     border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
+    text-align: center;
+}
+
+.mic:hover  {
+    display:inline-block;
+    width: 20px;
+    height:20px;
+    padding: 0px;
+    font-size: 0.8em;
+    border: 1px solid grey;
+    text-align: center;
+    background-color: white;
+    color: #414141;
+
+}
+
+#cumpara {
+    display:inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(153, 204, 58);
+    color: white;
+    font-size: 1em;
+    /* border: 1px solid grey; */
+    text-align: center;
+}
+
+#cumpara:hover {
+    display:inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(61, 61, 61);
+    font-weight:bold;
+    color: white;
+    font-size: 1.1em;
+    /* border: 1px solid grey; */
+    text-align: center;
+}
+
+#span{
+    width:50px;
+    display: inline-block;
 }
 .pret{
-    padding:5px;
-    display: inline-block;
-    font-size:14px;
-    font:arial;
-    font-weight: bold;
-    font-style: italic;
+    text-align: center;
 }
 
 a:link, a:visited {
@@ -176,18 +271,94 @@ a:hover, a:active {
     border:solid 1px #777;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (min-width: 769px) {
     .responsive {
-        width: 49.99999%;
+        width: 100%;
         margin: 6px 0;
+    }
+    .produs{
+      vertical-align: top;
+    }
+    
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .header{
+      width:100%;
+    }
+    .main{
+        width:99%;
+        display:inline-block;
+        margin:5px;
+       
+        padding:0px;
+        }
+    .textdr{
+        padding:0px;
+        
+    }
+ 
+   #cosCumparaturi {
+    display:inline-block;
+    width:100%;
+    font-size:0.8em;
+   }
+   .textdr{
+       padding-right:10px;
+   }
+   #calculTotal{
+    display:inline-block;
+    width:99%;
+    margin:0px;
+    padding:0px;
+    }
+
+
+}
+
+@media only screen and (max-width: 480px) {
+ 
+    .main{
+        width:99%;
+        display:inline-block;
+        margin:5px;
+       
+        padding:0px;
+        }
+    button.mic{
+        display:none;
+    }
+    .textdr{
+        padding:0px;
+    }
+   #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+   #cosCumparaturi {
+    display:inline-block;
+    width:100%;
+    font-size:0.8em;
+   }
+   .textdr{
+       padding-right:10px;
+   }
+   #calculTotal{
+    display:inline-block;
+    width:99%;
+    margin:0px;
+    padding:0px;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .responsive {
-        width: 100%;
-    }
-}
+
 
 .clearfix:after {
     content: "";
@@ -197,6 +368,20 @@ a:hover, a:active {
 </style>
 
 <script>
+
+var myIndex = 0;
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides w3-animate-fading");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
 
 function drawCart(){
     event.preventDefault(); 
@@ -212,33 +397,46 @@ function drawCart(){
                 var total=0;
                 var nrProd=0;
                 var fTva=0;
-                for(var i in listaProduse.cart){
-                  document.getElementById("loading").style.display="none";
-                  
-                   str += `<tr width="60%">
-                        <td width="15%"> <a href="paginaDetalii.html?id=${window.location.search.substring(4)}"> ${listaProduse.cart[i].nume} </a></td>
-                        <td width="15%"> ${parseInt(listaProduse.cart[i].pret)}</td> 
-                        <td id="cantitate" width="20%"><button type="button" onclick="maiMic('${i}',${listaProduse.cart[i].cantitate-1})"> - </button> <input type="number" value="${parseInt(listaProduse.cart[i].cantitate)}">
-                         
-                         <button type="button"  onclick="maiMare('${i}',${listaProduse.cart[i].cantitate+1})"> + </button>   </td> 
-                        <td width="15%">  ${listaProduse.cart[i].cantitate * listaProduse.cart[i].pret}</td>                              
-                        <td width="15%"> <button type="button" onclick="sterge('${i}')" class="detalii">Sterge</button>
-                      
-                    </tr>`
-                   nrProd+=listaProduse.cart[i].cantitate;
-                   total+= (listaProduse.cart[i].cantitate * listaProduse.cart[i].pret);
-                   fTva+= (listaProduse.cart[i].cantitate * listaProduse.cart[i].pret)/1.19;
-                };
-
-                              
                 
-             tabel.innerHTML=str;
-             document.getElementById("nrProd").innerHTML="Total produse: " + nrProd;
-             document.getElementById("total").innerHTML= "Total: " + total.toFixed(0);
-             document.getElementById("fTva").innerHTML= "Total fara TVA: " + fTva.toFixed(2);
-            
-            
+                 if(listaProduse.cart==null){
+                        document.getElementById("cosCumparaturi").innerHTML="Cosul dumneavoastra este gol!";
+                        document.getElementById("loading").style.display="none";
+                     
+                        document.getElementById("nrProd").innerHTML="Total produse: " + nrProd;
+                        document.getElementById("total").innerHTML= "Total (LEI): " + total.toFixed(0);
+                        document.getElementById("fTva").innerHTML= "Total (LEI fara TVA): " + fTva.toFixed(2);
+                    }
+                 else{
+
+                    for(var i in listaProduse.cart){
+
+                    
+                    document.getElementById("loading").style.display="none";
+                    
+                    str += `<tr>
+                            <td width="25%"> <a href="paginaDetalii.html?id=${listaProduse.cart[i].id}" class="nume"> ${listaProduse.cart[i].nume} </a></td>
+                            <td class="pret" width="8%"> ${parseInt(listaProduse.cart[i].pret)}</td> 
+                            <td id="cantitate" width="15%"><button type="button" class="mic" onclick="maiMic('${i}',${listaProduse.cart[i].cantitate-1})"> - </button> <span id="span">${parseInt(listaProduse.cart[i].cantitate)}</span>                     
+                            <button type="button" class="mic" onclick="maiMare('${i}',${listaProduse.cart[i].cantitate+1})"> + </button>   </td> 
+
+                            <td width="7%" class="pret">  ${listaProduse.cart[i].cantitate * listaProduse.cart[i].pret}</td>                              
+                            <td width="10%" style="text-align: center"> <button type="button" class="sterge" onclick="sterge('${i}')">Sterge</button>
+                            
+                        </tr>`
+                    
+                    nrProd+=listaProduse.cart[i].cantitate;
+                    total+= (listaProduse.cart[i].cantitate * listaProduse.cart[i].pret);
+                    fTva+= (listaProduse.cart[i].cantitate * listaProduse.cart[i].pret)/1.19;
+                    };               
+                tabel.innerHTML=str;
+                document.getElementById("nrProd").innerHTML="Total produse: " + nrProd;
+                document.getElementById("total").innerHTML= "Total (LEI): " + total.toFixed(0);
+                document.getElementById("fTva").innerHTML= "Total (LEI fara TVA): " + fTva.toFixed(2);
+                        
+                   }
             }
+
+         
         };
         xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/.json", true);
         xhttp.send();
@@ -293,55 +491,89 @@ function sterge(index) {
         document.getElementById("loading").style.display="";
     }
         
-function cumpara(index){
+
+ /*function stergeShoppingCart() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
               document.getElementById("loading").style.display="none";           
-               window.location="shoppingCart.html";
+               window.location="try2proiect - Copy.html";
             }
         };
-    xhttp.open("PUT",  "https://shopproject-54a8b.firebaseio.com/cart/" + index +".json", true);
-    xhttp.send(JSON.stringify({
-       cantitate: form.querySelector("[name=cantitate]").value,
-    }));
-    document.getElementById("loading").style.display="";
+        xhttp.open("DELETE",  "https://shopproject-54a8b.firebaseio.com/cart/.json", true);
+        xhttp.send();
+        document.getElementById("loading").style.display="";
+}*/
 
-}
+/*function cumpara(){
+   event.preventDefault();      
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            lista= JSON.parse(this.responseText);
+            var cant=0;
+            var ident=0;
+            for(var i in lista.menu){
+
+                
+                if(lista.menu[i].nume==document.querySelectorAll("a[class=nume]")){
+                       cant=lista.menu[i].cantitate;
+                       ident=i;
+                   
+                }
+                drawCart()
+            }
+        }
+    };
+    
+    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/menu/" + ident +".json", true);
+    xhttp.send(JSON.stringify({
+         cantitate: cant,
+    }));
+
+}*/
+
 
 </script> 
 
 
 </head>
 
-<body onload="drawCart();">
-
+<body onload="drawCart(); carousel();">
 
   <div class="header">
-     
-     
-      <a class="button" href="try2proiect - Copy.html">Home</a>
-      <a class="button" href="contact.html">Contact</a>
-      <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
-      <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
-      <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
+      <div class="center">
+        <a class="button" href="try2proiect - Copy.html">Home</a>
+        <a class="button" href="contact.html">Contact</a>
+        <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
+        <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
+        <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>
+      </div>
     <hr>
-    <img src="header2.jpg" alt="no image" id="headerPhoto">
-     <hr>
+
+    <div class="w3-content w3-section" >
+        <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
+    </div>
+
+    <hr>
   </div> 
    
-    <h3></h3>
-
-    <div  class="esponsive">
+  <h3> Cos cumparaturi</h3>
+    <div class="main">
       <div> <img src="wait.gif" id="loading" alt="no image"> <br> </div> 
 
-      <table id="cosCumparaturi" width=100% style="background-color:#ffd100;border-radius:5px;padding: 20px;">
+      <table id="cosCumparaturi">
           <thead>
             <tr>
               <td>Nume</td>
-              <td>Pret</td>
-              <td>Cantitate</td>
-              <td>Subtotal</td>
+              <td style="text-align: center">Pret</td>
+              <td style="text-align: center">Cantitate</td>
+              <td style="text-align: center">Subtotal</td>
+              <td style="text-align: center"></td>
             </tr>
           </thead>
           <tbody>
@@ -354,22 +586,22 @@ function cumpara(index){
             </tr>       
 
           </tbody>          
-        </table>
-      <div id="calculTotal"width="30%" style="text-align: right" style="margin:50px">
+      </table>
+
+      <div id="calculTotal">
+          <div class="textdr">
                 <p id="nrProd">Produse:</p>
-                <p id="fTva">Pret fara TVA:</p>
-                <p id="total">TOTAL</p>
-                <button type="button" onclick="cumpara()" >Cumpara</button>
+                <p id="fTva">Total (LEI fara TVA):</p>
+                <p id="total">TOTAL (LEI cu TVA):</p>
+          </div>
+                <button type="button" id="cumpara" onclick="cumpara();" >Cumpara</button>
       
       </div>
-      
-     
     </div>
 
-  <div >
-    <hr class="header">
-    <p class="footer">Powered by ME</p>
-  </div> 
+
+    <hr class="hrFooter" >
+    <div class="footer"> Powered by ME </div>  
 
 
 
