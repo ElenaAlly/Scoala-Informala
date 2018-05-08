@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<title>Elena Codau Portofolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("header22.jpg");
+    min-height: 100%;
+
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+
+.bar{
+    width:100%;
+    overflow:hidden;
+    background-color: rgba(246, 150, 121, 0.582);
+}
+.w3-bar-item{
+    color:white;
+}
+.w3-display-middle{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display:block;
+  width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.815);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap; 
+  color:#777;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+</style>
+<body>
+
+
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">PORTOFOLIO</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center " style="padding:24px; background-color:rgba(255, 255, 255, 0.596); border-radius:10px;">
+    <span class="w3-jumbo w3-hide-small ">Hello, I'm <span style="color:rgb(246, 150, 121)"> Elena</span>.</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium ">Hello, I'm Elena.</span><br>
+    <span class="w3-large w3-display-middle">I am a junior front end developer.</span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off ">Learn more</a></p>
+  </div> 
+</header>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+        <div class="bar w3-card" id="myNavbar">
+         
+          <!-- Center-sided navbar links -->
+          <div class="w3-center w3-hide-small">
+            <a href="#home" class="w3-bar-item w3-button w3-wide">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+            <a href="#work" class="w3-bar-item w3-button">PORTOFOLIO</a>
+            <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+          </div>
+          <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      
+          <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+</div>
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center w3-large">Top priorities</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+      <div class="w3-quarter">
+      <img src="diamond.jpg" width="25%" height="80px" class="fa w3-margin-bottom w3-jumbo">
+      <p class="w3-large">Design</p>
+      <p>Having a passion for design and an inclination towards technology, my goal is to obtain a successful combination between design and functionality.</p>
+    </div>
+    
+    
+    <div class="w3-quarter">
+      <img src="screen.png" width="25%" height="80px" class="fa w3-margin-bottom w3-jumbo w3-center">
+      <p class="w3-large">Responsive</p>
+      <p>The layouts are ment to fit any screen size, from large to small.</p>
+    </div>
+    
+      <div class="w3-quarter">
+      <img src="functionality.png" width="25%" height="80px" class="fa w3-margin-bottom w3-jumbo">
+      <p class="w3-large">Functionality</p>
+      <p>Functionality combines three key elements: the user, user's needs and the end goal. Combine that with a clarity in design and we have a winner. </p>
+    </div>
+    
+    
+    <div class="w3-quarter">
+      <img src="passion.png" width="25%" height="80px" class="fa w3-margin-bottom w3-jumbo">
+      <p class="w3-large">Passion</p>
+      <p>In order to pursue my passion for web development, I actively seek out different sources to stay up to date with the new technologies.</p>
+    </div>
+   
+  </div>
+</div>
+
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey w3-padding-64">
+        <div class="w3-row-padding">
+          <div class="w3-col m6">
+            <h3>Who am I?</h3>
+            <p> <img src="photo.png" width="25%" class="fa w3-margin-bottom w3-jumbo w3-center" ></p>
+            <p>I am a passionate and dedicated person that started a journey in the world of front end web development. I am inclined toward the technical side and I enjoy discovering the steps that lead to solving a problem. My goal is to keep on growing and learn new technologies so that I can create better web applications.</p>
+          </div>
+          <div class="w3-col m6">
+            <p class="w3-wide">HTML</p>
+            <div class="w3-grey">
+              <div class="w3-container w3-center" style="width:85%; background-color:rgb(246, 150, 121); color:white">85%</div>
+            </div>
+            <p class="w3-wide">CSS</p>
+            <div class="w3-grey">
+              <div class="w3-container w3-center" style="width:80%; background-color:rgb(246, 150, 121); color:white">80%</div>
+            </div>
+            <p class="w3-wide">JavaScript</p>
+            <div class="w3-grey">
+              <div class="w3-container w3-center" style="width:70%; background-color:rgb(246, 150, 121); color:white">70%</div>
+            </div>
+            <p class="w3-wide">AJAX</p>
+            <div class="w3-grey">
+              <div class="w3-container w3-center" style="width:65%; background-color:rgb(246, 150, 121); color:white">65%</div>
+            </div>
+            <p class="w3-wide">Photoshop</p>
+            <div class="w3-grey">
+              <div class="w3-container w3-center" style="width:90%; background-color:rgb(246, 150, 121); color:white">90%</div>
+            </div>
+            <p class="w3-wide">Illustrator</p>
+            <div class="w3-grey">
+              <div class="w3-container w3-center" style="width:80%; background-color:rgb(246, 150, 121); color:white">80%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<!-- Work Section -->
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">MY WORK</h3>
+  <p class="w3-center w3-large"></p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6 container ">
+      <a href="https://elenaally.github.io/Scoala-Informala/PROIECT/try2proiect - Copy.html"><img src="homeDeco.jpg" style="width:100%; height:250px; border:solid 1px rgb(179, 179, 179)" class="w3-hover-opacity image" alt="no image"></a>
+      <div class="overlay">
+            <div class="text">Home Deco Shop</div>
+      </div>
+    </div>
+
+
+    <div class="w3-col l3 m6 container">
+            <a href="https://elenaally.github.io/Scoala-Informala/tema%20AJAX/temaAJAX%20.html"><img src="weather.jpg" style="width:100%; height:250px" class="w3-hover-opacity image" alt="nno image"></a>
+            <div class="overlay">
+                    <div class="text">Weather App</div>
+            </div>
+    </div>
+
+    <div class="w3-col l3 m6 container">
+            <a href="https://elenaally.github.io/Scoala-Informala/Tema intro to oop - restaurant menuAdmin/MenuAdmin.html"><img src="menuAdmin.jpg" style="width:100%; height:250px" class="w3-hover-opacity image" alt="no image"></a>
+            <div class="overlay">
+                    <div class="text">Admin Menu</div>
+            </div>
+    </div>
+
+    <div class="w3-col l3 m6 container">
+            <a href="https://elenaally.github.io/Scoala-Informala/Tema%20Shopping%20List/ShoppingList.html"><img src="shoppinglist.jpg" style="width:100%; height:250px" class="w3-hover-opacity image" alt="no image"></a>
+            <div class="overlay">
+                    <div class="text">Shopping List</div>
+            </div>
+    </div>
+
+    <p class="w3-center w3-large"></p>
+
+  </div>
+  
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px; margin-top:40px;" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send me a message:</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-half">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Bucharest, Romania</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +4 0742 076 873</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: arh.elenacodau@gmail.com</p>
+      <br>
+      <form action="mailto:arh.elenacodau@gmail.com" method="get" enctype="text/plain">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button w3-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+    </div>
+    <div class="w3-half">
+      <!-- Add Google Maps -->
+      <div id="googleMap" class="w3-greyscale-max" style="width:100%;height:510px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button" style="background-color: rgba(246, 150, 121)" ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css &amp; ME</a></p>
+</footer>
+ 
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(44.439663,26.096306);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC0SFIIBcShJYInztS4Jg51VW63tIFOPQ&callback=myMap"></script>
+
+
+</body>
+</html>
