@@ -87,7 +87,7 @@ function loadPrognoza(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){ 
-          
+         
                 var vremeaPrognoza = JSON.parse(this.responseText);
 
                 var lista=vremeaPrognoza.list;
