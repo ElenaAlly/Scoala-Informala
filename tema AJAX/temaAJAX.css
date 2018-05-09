@@ -7,14 +7,13 @@ body{
     background-color: white;
     border-radius: 5px;
     border:15px;
-    margin:5px;
-    width:100%;
+    margin:25px;
+    float:center;
  
 }
 
 table {
     display: inline-block;
-
     text-align:center;
     vertical-align: text-top;
     

@@ -295,6 +295,20 @@ a:hover, a:active {
     padding:20px;
 }
 
+#alertCart{
+    background-color: rgb(0, 95, 172);
+    opacity: 0.7;
+    filter: Alpha(opacity=70);
+    position:fixed;
+    top:0px;
+    width:100%;
+    height:80px;
+    color:white;
+    text-align: center;
+    font-size:1.2em;
+    padding:20px;
+}
+
  @media only screen and (min-width: 481px) and (max-width: 768px) {
     .detaliu {
         width: 90%;
@@ -412,6 +426,7 @@ function carousel() {
 
 
 var detaliuProduse;
+//var listaCart;
 
 function drawLista() {
     var xhttp = new XMLHttpRequest();
@@ -421,17 +436,21 @@ function drawLista() {
             
             detaliuProduse= JSON.parse(this.responseText);
             console.log(detaliuProduse);
-   
+            //scrie detaliile de la un produs cf id 
             document.getElementById("image").src =detaliuProduse.imagine;
             document.getElementById("nume").innerHTML= detaliuProduse.nume;
             document.getElementById("price").innerHTML= "Pret: " + detaliuProduse.pret + " LEI";
             document.getElementById("descriere").innerHTML= "Descriere: <br> <br>" + detaliuProduse.descriere;
             
+
             if(detaliuProduse.cantitate>0) { 
                  document.getElementById("stoc").innerHTML="Stoc: " + detaliuProduse.cantitate + " buc.";
             } else{
                 document.getElementById("stoc").innerHTML="Out of stock";
             }
+
+           
+           
 
         }
     };
@@ -442,19 +461,48 @@ function drawLista() {
 }
 			
 
-function adaugaProdus(form,event){
+/*function modificaCantCart(){
 
-    event.preventDefault();
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            for (var i in listaCart){
+                if(listaCart[i].nume==detaliuProduse.nume){
+                   document.getElementById("stoc").innerHTML="Stoc: " + listaCart[i].stoc + " buc."; 
+                }
+            }
+            
+          
+        }
+    };
+    
+    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/"+window.location.search.substring(4)+"/stoc.json", true);
+    xhttp.send(JSON.stringify(parseInt(detaliuProduse.stoc) - parseInt(document.getElementById("quantity").value)));
+
+}*/
+
+
+function adaugaProdus(){
+
     if(detaliuProduse.cantitate>0) { 
 
-        
-        //alert("Produsul a fost adaugat in cos");
-                
-            var xhttp = new XMLHttpRequest();
+      var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {               
                 if (this.readyState == 4 && this.status == 200) {               
-                //    window.location="try2proiect - Copy.html";
-                  document.getElementById("alertOk").style.display="";                 
+                  //posteaza in cart
+                  drawLista();
+                  
+                  document.getElementById("alertOk").style.display="";  
+
+
+                  //document.getElementById("stoc").innerHTML="Stoc: " + (detaliuProduse.cantitate - parseInt(document.getElementById("quantity").value)) + " buc.";
+
+                   /*for (var i in listaCart){
+                        if(listaCart[i].nume==detaliuProduse.nume){
+                        document.getElementById("stoc").innerHTML="Stoc: " + listaCart[i].stoc + " buc."; 
+                         }
+                   }*/
+                  
                 }
             };
             xhttp.open("POST", "https://shopproject-54a8b.firebaseio.com/cart/.json", true);           
@@ -462,7 +510,8 @@ function adaugaProdus(form,event){
                 nume: detaliuProduse.nume,
                 pret: parseInt(detaliuProduse.pret),
                 cantitate: parseInt(document.getElementById("quantity").value),
-                id: window.location.search.substring(4)
+                id: window.location.search.substring(4),
+                stoc: detaliuProduse.cantitate - parseInt(document.getElementById("quantity").value) ,
             // nume: document.getElementById("nume").innerText,
             // pret: document.getElementById("price").innerText,
             //  cantitate: document.getElementById("quantity").value,           
@@ -475,6 +524,70 @@ function adaugaProdus(form,event){
     }
 
 }
+
+
+function verificaProdus(form,event){
+
+    event.preventDefault();
+    var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {               
+                if (this.readyState == 4 && this.status == 200) {  
+                    listaCart= JSON.parse(this.responseText);
+                     //deschide cart   si verif daca mai este in cart
+                     for(var i in listaCart ){
+                         if(listaCart[i].nume==detaliuProduse.nume){
+                            document.getElementById("alertCart").style.display="";
+                           
+                            return true;
+                         } 
+
+                     }
+                     adaugaProdus();
+                    for (var i in listaCart){
+                        if(listaCart[i].nume==detaliuProduse.nume){
+                        document.getElementById("stoc").innerHTML="Stoc: " + listaCart[i].stoc + " buc."; 
+                         }
+                   }
+                   return false;
+                }
+            };
+            xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/cart/.json", true);           
+            xhttp.send(); 
+                 
+}
+
+/*function modificaCant(index){
+
+     var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {               
+          if (this.readyState == 4 && this.status == 200) {               
+               lista= JSON.parse(this.responseText);
+
+               for( var i in lista){
+                   if( lista.menu[i]==lista.cart[i].id && )  {
+                       lista.menu[i].cantitate = lista.menu[index].cantitate - parseInt(document.getElementById("quantity").value);
+                        drawLista(); 
+                   }
+
+
+
+
+               }
+
+                        
+                
+          }
+      };
+      xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/.json", true);           
+      xhttp.send();
+
+}*/
+
+
+
+
+
+
 </script> 
 
 
@@ -486,6 +599,9 @@ function adaugaProdus(form,event){
   </div>
   <div id="alertNuOk" style="display:none" onclick=" window.location='try2proiect - Copy.html'">
     Produsul nu se afla in stoc!
+</div>
+<div id="alertCart" style="display:none" onclick=" window.location='try2proiect - Copy.html'">
+    Produsul se afla deja in cos!
 </div>
 
   <div class="header">
@@ -529,9 +645,9 @@ function adaugaProdus(form,event){
                     <div id="price"> Pret </div> <hr>
                     <div id="stoc">In stoc: </div>
                     
-                    <form class="cantitate" onsubmit="adaugaProdus(this,event);">
+                    <form class="cantitate" onsubmit="verificaProdus(this,event);">
                         Cantitate:
-                        <input type="number" name="quantity" id="quantity" min="1" value="1">
+                        <input type="number" name="quantity" id="quantity" min="1" value="0">
                         <input type="submit" value="Adauga in cos">
                     </form>
          </div>

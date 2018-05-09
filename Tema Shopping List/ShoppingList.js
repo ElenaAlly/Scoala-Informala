@@ -16,13 +16,6 @@ function drawLista() {
         document.querySelector("#lista tbody").innerHTML = str;
     }
 
-/*  function test(input,event){
-        if(event.keyCode===13){
-            adauga(input,event);
-        }
-    }*/
-    
-
 function strike(index){     
     var ele = document.getElementsByClassName("strike");
     for (j = 0; j < ele.length; j++) { 
@@ -40,7 +33,7 @@ function adauga(form,event){
       drawLista();
     }
 
-    function sorteazaAsc(coloana, td){	
+function sorteazaAsc(coloana, td){	
         lista.sort(function(a,b){
             if(a[coloana]>b[coloana]){
                 return 1;
@@ -52,9 +45,9 @@ function adauga(form,event){
         });	
         console.log(lista);
         drawLista();
-    }   
+}   
     
-    function sorteazaDesc(coloana, td){
+function sorteazaDesc(coloana, td){
         lista.sort(function(a,b){
             if(a[coloana]>b[coloana]){
                 return 1;
@@ -66,4 +59,4 @@ function adauga(form,event){
         });
             lista.reverse();
         drawLista();
-    }
+}

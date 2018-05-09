@@ -318,6 +318,9 @@ a:hover, a:active {
     margin:0px;
     padding:0px;
     }
+    .center{
+      margin:0px;
+    }
 
 
 }
@@ -355,6 +358,9 @@ a:hover, a:active {
     width:99%;
     margin:0px;
     padding:0px;
+    }
+    .center{
+      margin:0px;
     }
 }
 
@@ -450,8 +456,8 @@ function maiMare(index,cantitate){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-                  drawCart();
-
+               if(listaProduse.cart[index].cantitate<=listaProduse.cart[index].stoc){
+                  drawCart(); }
         }
     };
     
