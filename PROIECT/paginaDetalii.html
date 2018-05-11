@@ -449,9 +449,6 @@ function drawLista() {
                 document.getElementById("stoc").innerHTML="Out of stock";
             }
 
-           
-           
-
         }
     };
     xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/menu/"+window.location.search.substring(4)+".json", true);
@@ -460,28 +457,6 @@ function drawLista() {
     document.getElementById("loading").style.display="";
 }
 			
-
-/*function modificaCantCart(){
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            for (var i in listaCart){
-                if(listaCart[i].nume==detaliuProduse.nume){
-                   document.getElementById("stoc").innerHTML="Stoc: " + listaCart[i].stoc + " buc."; 
-                }
-            }
-            
-          
-        }
-    };
-    
-    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/"+window.location.search.substring(4)+"/stoc.json", true);
-    xhttp.send(JSON.stringify(parseInt(detaliuProduse.stoc) - parseInt(document.getElementById("quantity").value)));
-
-}*/
-
-
 function adaugaProdus(){
 
     if(detaliuProduse.cantitate>0) { 
@@ -490,31 +465,17 @@ function adaugaProdus(){
             xhttp.onreadystatechange = function() {               
                 if (this.readyState == 4 && this.status == 200) {               
                   //posteaza in cart
-                  drawLista();
-                  
-                  document.getElementById("alertOk").style.display="";  
-
-
-                  //document.getElementById("stoc").innerHTML="Stoc: " + (detaliuProduse.cantitate - parseInt(document.getElementById("quantity").value)) + " buc.";
-
-                   /*for (var i in listaCart){
-                        if(listaCart[i].nume==detaliuProduse.nume){
-                        document.getElementById("stoc").innerHTML="Stoc: " + listaCart[i].stoc + " buc."; 
-                         }
-                   }*/
-                  
+                  drawLista();     
                 }
             };
-            xhttp.open("POST", "https://shopproject-54a8b.firebaseio.com/cart/.json", true);           
+            
+            xhttp.open("PUT", "https://shopproject-54a8b.firebaseio.com/cart/" +window.location.search.substring(4) + ".json", true);           
             xhttp.send(JSON.stringify({					
                 nume: detaliuProduse.nume,
                 pret: parseInt(detaliuProduse.pret),
                 cantitate: parseInt(document.getElementById("quantity").value),
                 id: window.location.search.substring(4),
-                stoc: detaliuProduse.cantitate - parseInt(document.getElementById("quantity").value) ,
-            // nume: document.getElementById("nume").innerText,
-            // pret: document.getElementById("price").innerText,
-            //  cantitate: document.getElementById("quantity").value,           
+                stoc:detaliuProduse.cantitate         
             }));
         
     }
@@ -534,58 +495,22 @@ function verificaProdus(form,event){
                 if (this.readyState == 4 && this.status == 200) {  
                     listaCart= JSON.parse(this.responseText);
                      //deschide cart   si verif daca mai este in cart
-                     for(var i in listaCart ){
-                         if(listaCart[i].nume==detaliuProduse.nume){
-                            document.getElementById("alertCart").style.display="";
-                           
+               
+                     if (detaliuProduse.cantitate<parseInt(document.getElementById("quantity").value)) {    
+                            document.getElementById("alertCart").style.display="";               
                             return true;
-                         } 
-
-                     }
-                     adaugaProdus();
-                    for (var i in listaCart){
-                        if(listaCart[i].nume==detaliuProduse.nume){
-                        document.getElementById("stoc").innerHTML="Stoc: " + listaCart[i].stoc + " buc."; 
-                         }
-                   }
-                   return false;
+                      }  
+                        
+                        adaugaProdus();
+                        document.getElementById("alertOk").style.display="";  
+                        return false;    
+                     
                 }
             };
             xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/cart/.json", true);           
             xhttp.send(); 
                  
 }
-
-/*function modificaCant(index){
-
-     var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {               
-          if (this.readyState == 4 && this.status == 200) {               
-               lista= JSON.parse(this.responseText);
-
-               for( var i in lista){
-                   if( lista.menu[i]==lista.cart[i].id && )  {
-                       lista.menu[i].cantitate = lista.menu[index].cantitate - parseInt(document.getElementById("quantity").value);
-                        drawLista(); 
-                   }
-
-
-
-
-               }
-
-                        
-                
-          }
-      };
-      xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/.json", true);           
-      xhttp.send();
-
-}*/
-
-
-
-
 
 
 </script> 
@@ -601,7 +526,7 @@ function verificaProdus(form,event){
     Produsul nu se afla in stoc!
 </div>
 <div id="alertCart" style="display:none" onclick=" window.location='try2proiect - Copy.html'">
-    Produsul se afla deja in cos!
+    Stoc insuficient!
 </div>
 
   <div class="header">
@@ -647,7 +572,7 @@ function verificaProdus(form,event){
                     
                     <form class="cantitate" onsubmit="verificaProdus(this,event);">
                         Cantitate:
-                        <input type="number" name="quantity" id="quantity" min="1" value="0">
+                        <input type="number" name="quantity" id="quantity" min="1" value="1">
                         <input type="submit" value="Adauga in cos">
                     </form>
          </div>

@@ -328,7 +328,7 @@ a:hover, a:active {
 @media only screen and (max-width: 480px) {
  
     .main{
-        width:99%;
+        width:100%;
         display:inline-block;
         margin:5px;
        
@@ -376,6 +376,8 @@ a:hover, a:active {
 <script>
 
 var myIndex = 0;
+var listaProduse;
+
 
 function carousel() {
     var i;
@@ -453,33 +455,44 @@ function drawCart(){
 function maiMare(index,cantitate){
     event.preventDefault();      
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-               if(listaProduse.cart[index].cantitate<=listaProduse.cart[index].stoc){
-                  drawCart(); }
-        }
-    };
-    
-    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/" + index +"/cantitate.json", true);
-    xhttp.send(JSON.stringify(parseInt(cantitate)));
+    if (parseInt(listaProduse.cart[index].cantitate+1)<=parseInt(listaProduse.cart[index].stoc)) {
+   
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {           
+                        drawCart(); 
+                }
+            };
+            
+            xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/" + index +"/cantitate.json", true);
+            xhttp.send(JSON.stringify(parseInt(cantitate)));
+    }    
+    else{
+                alert("STOC INSUFICIENT");
+                return;
+    }
 
 }
 
 function maiMic(index,cantitate){
     event.preventDefault();      
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-                  drawCart();
+    if ( parseInt(listaProduse.cart[index].cantitate)<=parseInt(listaProduse.cart[index].stoc) && parseInt  (listaProduse.cart[index].cantitate)>=2){
 
-        }
-    };
-    
-    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/" + index +"/cantitate.json", true);
-    xhttp.send(JSON.stringify(parseInt(cantitate)));
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                        drawCart();          
+                }
+            };
+            
+            xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/cart/" + index +"/cantitate.json", true);
+            xhttp.send(JSON.stringify(parseInt(cantitate)));
 
+    } else{
+                alert("verificati cantitatea");
+                return;
+    }
 }
 
 
@@ -489,7 +502,7 @@ function sterge(index) {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
               document.getElementById("loading").style.display="none";           
-             window.location="shoppingCart.html";
+              window.location="shoppingCart.html";
             }
         };
         xhttp.open("DELETE",  "https://shopproject-54a8b.firebaseio.com/cart/" + index +".json", true);
@@ -498,47 +511,39 @@ function sterge(index) {
     }
         
 
- /*function stergeShoppingCart() {
+function stergeCos() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
               document.getElementById("loading").style.display="none";           
-               window.location="try2proiect - Copy.html";
+              drawCart(); 
             }
         };
         xhttp.open("DELETE",  "https://shopproject-54a8b.firebaseio.com/cart/.json", true);
         xhttp.send();
         document.getElementById("loading").style.display="";
-}*/
+}
 
-/*function cumpara(){
-   event.preventDefault();      
+
+
+function modifCant(){
+ for (var i in listaProduse.cart){
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            lista= JSON.parse(this.responseText);
-            var cant=0;
-            var ident=0;
-            for(var i in lista.menu){
-
-                
-                if(lista.menu[i].nume==document.querySelectorAll("a[class=nume]")){
-                       cant=lista.menu[i].cantitate;
-                       ident=i;
-                   
+            xhttp.onreadystatechange = function() {               
+                if (this.readyState == 4 && this.status == 200) {  
+                            
                 }
-                drawCart()
-            }
-        }
-    };
-    
-    xhttp.open("PUT","https://shopproject-54a8b.firebaseio.com/menu/" + ident +".json", true);
-    xhttp.send(JSON.stringify({
-         cantitate: cant,
-    }));
+            };
+        xhttp.open("PUT", "https://shopproject-54a8b.firebaseio.com/menu/" + i +"/cantitate.json", true);           
+        xhttp.send (JSON.stringify(parseInt(listaProduse.menu[i].cantitate)) - parseInt(listaProduse.cart[i].cantitate)); 
+           }  
+    stergeCos();  
+    alert ("cumparaturile sunt gata!")   ;   
 
-}*/
+}
+
+
 
 
 </script> 
@@ -568,7 +573,7 @@ function sterge(index) {
     <hr>
   </div> 
    
-  <h3> Cos cumparaturi</h3>
+  <h3>Cos cumparaturi</h3>
     <div class="main">
       <div> <img src="wait.gif" id="loading" alt="no image"> <br> </div> 
 
@@ -600,7 +605,7 @@ function sterge(index) {
                 <p id="fTva">Total (LEI fara TVA):</p>
                 <p id="total">TOTAL (LEI cu TVA):</p>
           </div>
-                <button type="button" id="cumpara" onclick="cumpara();" >Cumpara</button>
+                <button type="button" id="cumpara" onclick="modifCant();" >Cumpara</button>
       
       </div>
     </div>

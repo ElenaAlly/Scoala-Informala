@@ -88,12 +88,7 @@ body {
 }
 
 .produs:hover {
-  width:21%;
-  display:inline-block;
   border:solid 2px #777;
-  margin:20px;
-  padding:10px;
-  height:370px;
 }
 
 .none{
@@ -356,9 +351,9 @@ function drawLista(){
                    if(document.querySelector("#text_box_1").value!==""&&listaProduse.menu[i].nume.toLowerCase().indexOf(document.querySelector("#text_box_1").value.toLowerCase() )===-1) {
                           continue;
                     }
-                  if(listaProduse.menu[i]==null){
+                   if(listaProduse.menu[i]==null){
                     continue;
-                  }
+                   }
 
                     str += `<ul class="produs">
                         <li><a href="paginaDetalii.html?id=${i}" class="imgProdus"> <img  src="${listaProduse.menu[i].imagine}" alt="no image" class="imagine"/> </a> </li>
