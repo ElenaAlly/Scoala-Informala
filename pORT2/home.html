@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+     background-color: black;
+     color:white;
+  }
+
+  h2{
+      display: block;
+      width:60%;
+      margin:auto;
+      margin-top:200px;
+  }
+   
+#titlu{
+    padding:40px;
+    text-align:left;
+    padding-left:0px;
+
+}
+div[class="animation"]  {
+    width: 200px;
+    height: 50px;
+    border-radius:5px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s; 
+ 
+}
+
+h3{
+    opacity:0;
+    transition: .5s ease;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color:blue; left:0px; top:0px; transform: rotate(0deg); display:none; }
+    25%  {background-color:rgb(96, 138, 252); left:200px; top:0px; transform: rotate(90deg); border-radius:20px;}
+    50%  {background-color:rgb(113, 113, 247); left:400px; top:0px; transform: rotate(180deg); border-radius:50px;}
+    75%  {background-color:green; left:600px; top:0px; transform: rotate(90deg); border-radius:20px;}
+    100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
+    height: 50px; border-radius:0px; width: 100px; height: 100px; }
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:blue; left:0px; top:0px; transform: rotate(0deg); width: 100px;
+    height: 100px; opacity:0; }
+    25%  {background-color:rgb(96, 138, 252); left:200px; top:200px; transform: rotate(90deg); width: 100px;
+    height: 100px; border-radius:20px;}
+    50%  {background-color:rgb(113, 113, 247); left:400px; top:-200px; transform: rotate(180deg); 
+        width: 100px;
+    height: 100px;border-radius:50px;}
+    75%  {background-color:green; left:600px; top:0px; transform: rotate(90deg); border-radius:20px; width: 100px;
+    height: 100px;}
+    100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
+    height: 50px; border-radius:5px; width: 100px; height: 100px; opacity:1}
+}
+  
+
+
+
+  </style>
+
+<script>
+$(document).ready(function(){
+        $("h3").fadeTo("10", 1);
+        $("h4").delay("slow").fadeIn();
+});
+
+</script>
+
+</head>
+
+<body>
+  
+    <div class="container-fluid">
+        <h2>
+        <div id="titlu"> <h3>Hello! I am Elena.</h3> 
+          <h4> Check out my work!</h4>  
+        </div>
+        <div class="animation"></div>
+
+        </h2>
+    </div>
+
+
+</body>
+</html>
