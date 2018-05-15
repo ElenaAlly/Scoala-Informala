@@ -5,15 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-  body {
+body {
      background-color: black;
      color:white;
   }
 
-  h2{
+h2{
       display: block;
       width:60%;
       margin:auto;
@@ -21,9 +21,9 @@
   }
    
 #titlu{
-    padding:40px;
-    text-align:left;
-    padding-left:0px;
+
+    text-align:center;
+
 
 }
 div[class="animation"]  {
@@ -36,37 +36,69 @@ div[class="animation"]  {
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
     animation-name: example;
     animation-duration: 4s; 
+    visibility:hidden;
+    
  
 }
 
 h3{
     opacity:0;
-    transition: .5s ease;
+    transition: 4.50s ease-in;
+    font-size:1.8em;
+    padding-bottom:10px;
 }
 
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes example {
-    0%   {background-color:blue; left:0px; top:0px; transform: rotate(0deg); display:none; }
-    25%  {background-color:rgb(96, 138, 252); left:200px; top:0px; transform: rotate(90deg); border-radius:20px;}
-    50%  {background-color:rgb(113, 113, 247); left:400px; top:0px; transform: rotate(180deg); border-radius:50px;}
-    75%  {background-color:green; left:600px; top:0px; transform: rotate(90deg); border-radius:20px;}
-    100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
-    height: 50px; border-radius:0px; width: 100px; height: 100px; }
+h4{
+    opacity:0;
+    transition: 4.50s ease-in;
+    font-size:1.4em;
 }
+
+.view{
+    width: 200px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50px;
+    -webkit-animation-name: view; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 05s; /* Safari 4.0 - 8.0 */
+    animation-name: view;
+    animation-duration: 4s; 
+
+
+    -webkit-transition: 0.50s ease-in; /* Safari */
+    -webkit-transition-delay: 4s; /* Safari */
+    transition: 4s ease-in;
+    animation-delay: 4s;
+
+}
+
+
+@keyframes view {
+    from {opacity: 0;}
+    to {opacity: 100;}
+}
+/* Safari 4.0 - 8.0 */
+/*@-webkit-keyframes example {
+    0%   {background-color:blue; left:0px; top:0px; transform: rotate(0deg); visibility: visible; }
+    25%  {background-color:rgb(96, 138, 252); left:200px; top:0px; transform: rotate(90deg); border-radius:20px;visibility: visible;}
+    50%  {background-color:rgb(113, 113, 247); left:400px; top:0px; transform: rotate(180deg); border-radius:50px; visibility: visible;}
+    75%  {background-color:green; left:600px; top:0px; transform: rotate(90deg); border-radius:20px; visibility: visible;}
+    100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
+    height: 50px; border-radius:0px; width: 100px; height: 100px;display:none; visibility: visible;}
+}*/
 
 /* Standard syntax */
 @keyframes example {
-    0%   {background-color:blue; left:0px; top:0px; transform: rotate(0deg); width: 100px;
-    height: 100px; opacity:0; }
+    0%   {background-color:blue; left:400px; top:0px; transform: rotate(0deg); width: 100px;
+    height: 100px; opacity:0; visibility: visible;}
     25%  {background-color:rgb(96, 138, 252); left:200px; top:200px; transform: rotate(90deg); width: 100px;
-    height: 100px; border-radius:20px;}
+    height: 100px; border-radius:20px;visibility: visible;}
     50%  {background-color:rgb(113, 113, 247); left:400px; top:-200px; transform: rotate(180deg); 
-        width: 100px;
-    height: 100px;border-radius:50px;}
+        width: 100px; height: 100px;border-radius:50px; visibility: visible;}
     75%  {background-color:green; left:600px; top:0px; transform: rotate(90deg); border-radius:20px; width: 100px;
-    height: 100px;}
+    height: 100px; visibility: visible;}
     100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
-    height: 50px; border-radius:5px; width: 100px; height: 100px; opacity:1}
+    height: 50px; border-radius:5px; width: 100px; height: 100px; opacity:1; visibility: visible;}
 }
   
 
@@ -75,10 +107,7 @@ h3{
   </style>
 
 <script>
-$(document).ready(function(){
-        $("h3").fadeTo("10", 1);
-        $("h4").delay("slow").fadeIn();
-});
+
 
 </script>
 
@@ -90,6 +119,7 @@ $(document).ready(function(){
         <h2>
         <div id="titlu"> <h3>Hello! I am Elena.</h3> 
           <h4> Check out my work!</h4>  
+          <button class="view">view more</button>
         </div>
         <div class="animation"></div>
 
