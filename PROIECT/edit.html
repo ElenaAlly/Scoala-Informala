@@ -90,13 +90,13 @@ form input[type=text] {
     float: left;
     width: 80%;
     background: #f1f1f1;
-    color:rgb(173, 173, 173);
+    color:black;
 }
 form input[type=submit] {
     display:inline-block;
     width:40%;
     padding: 2px;
-    background: rgb(208, 209, 209);
+    background:rgb(153, 204, 58);
     color: white;
     font-size: 17px;
     border: 1px solid grey;
@@ -106,29 +106,26 @@ form input[type=submit]:hover {
     display:inline-block;
     width:40%;
     padding: 2px;
-    background: rgb(208, 209, 209);
-    color: white;
+    background: white;
+    color: rgb(153, 204, 58);
     font-size: 17px;
-    border: 1.5px solid red;
+    border: 1.5px solid rgb(153, 204, 58);
+    font-weight:bold;
 }
 
-a.cancel:link,a.cancel:hover, a.cancel:active, a.cancel:visited{
+a.cancel:link, a.cancel:active, a.cancel:visited{
     display:inline-block;
     width:40%;
     padding: 2px;
     background: rgb(208, 209, 209);
-    color: #777;
+    color: darkred;
     font-size: 17px;
     border: 1px solid grey;
 }
 
 a.cancel:hover{
-    display:inline-block;
-    width:40%;
-    padding: 2px;
-    background: rgb(208, 209, 209);
+    background: white;
     color: red;
-    font-size: 17px;
     border: 1.5px solid red;
 }
 
@@ -234,8 +231,8 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-    background-color:#e7e7e7;
-    color: white;
+    background-color:rgb(153, 204, 58);
+    color: black;
     border:solid 1px #777;
 }
 
@@ -364,11 +361,11 @@ function drawLista(){
      
      
     <div class="center">
-      <a class="button" href="try2proiect - Copy.html">Home</a>
+      <a class="button" href="home.html">Home</a>
       <a class="button" href="contact.html">Contact</a>
-      <a id="aLogo" href="try2proiect - Copy.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
-      <a class="button" href="shoppingCart.html"><img src="shoppingcart.png" height="14px">Shopping Cart</a>
-      <a class="button" href="admin.html"><img src="admin.png" height="14px">  Admin</a>  
+      <a id="aLogo" href="home.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
+      <a class="button" href="shoppingCart.html"><i class="fa fa-shopping-cart"></i>  Shopping Cart</a>
+      <a class="button" href="admin.html"><i class="fa fa-lock"></i>  Admin</a>  
     </div>
 
     <hr>

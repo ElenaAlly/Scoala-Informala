@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Deco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+<style>
+* {
+    box-sizing: border-box;
+}
+
+
+.w3-content{max-width:1200px;margin:auto}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  border:0px;
+  margin:0px;
+  background-color: white;
+}
+
+.header {
+  background-color:white;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  max-width:1200px;
+  margin:auto
+}
+
+.hrFooter {
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  }
+
+.article{
+  display:block;
+  width:80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.footer{
+  background-color:rgb(173, 173, 173);
+  text-align:center;
+  color:white;
+  padding:10px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom:1%;
+  }
+
+.center{
+  margin-left:7%;
+  
+}
+#logo{
+  width:350px;
+  margin-bottom:0px;
+}
+
+#headerPhoto{
+  width:95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.responsive {   
+    padding: 0 12px;
+    width: 20%;
+}
+
+.produs{
+  width:21%;
+  display:inline-block;
+  border:solid 1px #ccc;
+  margin:20px;
+  padding:10px;
+  height:370px;
+}
+
+.produs:hover {
+  border:solid 2px #777;
+}
+
+.none{
+  display:none;
+  width:200px;
+  border:none;
+  background-color: none;  
+}
+
+.imagine{
+  width: 100%;
+  height: auto;
+}
+
+ul{
+  list-style: none;
+  margin:auto;
+}
+
+#loading{
+  width:15%;
+  display: block;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#listaProduse{
+  width:90%;
+  /* display:block; */
+  margin-left: 5%;
+  margin-right: 5%;  
+}
+
+.detalii{
+  font-style: normal;
+  display:block;
+  width:100%;
+  padding-bottom:120px;
+}
+
+.pret{
+    padding:5px;
+    display: -block;
+    font-size:14px;
+    font:arial;
+    font-weight: bold;
+    font-style: italic;
+    width:100%;   
+}
+
+h3{
+  text-align: center;
+  font:arial;
+  font-size:20px;
+  width:80%;
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%; 
+}
+
+
+.search{
+  margin:auto;
+  max-width:300px;
+  display:block;
+  margin-bottom:60px;
+  
+}
+.nume{
+    padding:5px;
+    text-align: center;
+    display: inline-block;
+    font-size:14px;
+    width:100%;
+    font:arial;
+}
+
+form.search input[type=text] {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    color:black;
+}
+form.search button {
+    float: right;
+    width: 20%;
+    padding: 1.25px;
+    background: rgb(153, 204, 58);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+
+a:link, a:visited {
+    background-color: white;
+    color: #414141;
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;   
+}
+
+a:hover, a:active {
+    background-color: rgb(153, 204, 58);
+    color: black;
+    border:solid 1px #777;
+}
+
+#aLogo {
+  background-color: white;
+  border: white;
+}
+
+.imgProdus:link, .imgProdus:visited{
+    background-color: white;  
+    border: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    font:arial;
+    font-weight:bold;
+}
+
+@media only screen and (min-width: 769px) {
+    .responsive {
+        width: 100%;
+        margin: 6px 0;
+    }
+    .produs{
+      vertical-align: top;
+    }    
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .responsive {
+        width: 100%;
+        margin: 6px 0;      
+    }
+    .produs{
+      vertical-align: top;
+      width:40%;
+      height:370px;
+      min-width:130px;
+    }
+    #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .header{
+      width:100%;
+    } 
+    .detalii{
+      display:inline-block;
+      width:100%;
+      margin-bottom:10px;    
+    }
+    .pret{
+      display:inline-block;
+      width:100%;
+      text-align: center; 
+    }
+    .center{
+      margin:0px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .responsive {
+        width: 100%;
+        margin:0;
+   
+    }
+    .nume{
+      width:95%;
+      font-size:1em;
+    }
+    /* #listaProduse{
+      width:100%;
+      margin:0px;
+    } */
+    .produs{
+      display:block;
+      width:90%;
+      margin-right:5%;
+      margin-left:5%;
+      min-height:370px;
+      height:21%;
+
+    }
+   #logo{
+     width:100%;
+     display: block;
+     float:center;
+   }
+    .detalii{
+      display:-block;
+      width:70%;
+      float:right;    
+    }
+    .pret{
+      display:block;
+      width:30%;
+      float:left;
+    }
+    .center{
+      margin:0px;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+<script>
+
+var myIndex = 0;
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides w3-animate-fading");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+
+
+
+function drawLista(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                listaProduse= JSON.parse(this.responseText);
+                
+                var tabel=document.querySelector("#listaProduse ");
+                var str="";
+                for(var i in listaProduse.menu){
+                  document.getElementById("loading").style.display="none";
+                  
+                   if(document.querySelector("#text_box_1").value!==""&&listaProduse.menu[i].nume.toLowerCase().indexOf(document.querySelector("#text_box_1").value.toLowerCase() )===-1) {
+                          continue;
+                    }
+                   if(listaProduse.menu[i]==null){
+                    continue;
+                   }
+
+                    str += `<ul class="produs">
+                        <li><a href="paginaDetalii.html?id=${i}" class="imgProdus"> <img  src="${listaProduse.menu[i].imagine}" alt="no image" class="imagine"/> </a> </li>
+                        <li class="nume"> ${listaProduse.menu[i].nume}</li> </br></br>
+                        <li class="pretDetalii">     <div class="pret"> ${listaProduse.menu[i].pret} LEI </div>  <a href="paginaDetalii.html?id=${i}" class="detalii">Detalii</a> </li> 
+                    </ul>`;
+                }
+                console.log(str);
+                tabel.innerHTML=str;
+            }
+        };
+        xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/.json", true);
+        xhttp.send();
+        document.getElementById("loading").style.display="";
+    }
+
+ 
+
+</script> 
+
+
+</head>
+
+<body onload="drawLista(); carousel();">
+
+
+  <div class="header">
+     <div class="center">
+      <a class="button" href="home.html">Home</a>
+      <a class="button" href="contact.html">Contact</a>
+      <a id="aLogo" href="home.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
+      <a class="button" href="shoppingCart.html"><i class="fa fa-shopping-cart"></i>  Shopping Cart</a>
+      <a class="button" href="admin.html"><i class="fa fa-lock"></i>  Admin</a>  
+    </div>
+
+    <hr>
+
+    <div class="w3-content w3-section" >
+      <img class="mySlides w3-animate-fading" src="header5.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
+      <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
+    </div>
+   <hr>
+  </div> 
+
+  <div class="article">
+      
+      <h3>Produsele noastre</h3>
+      <div><img src="wait.gif" id="loading" alt="no image"> <br> </div>
+      <form class="search" onsubmit="event.preventDefault();drawLista();">
+          <input type="text" name="text_box_1" id="text_box_1" placeholder="search product...">
+          <button type="button" id="button2" onclick="drawLista()"> <i class="fa fa-search"></i></button>          
+      </form> 
+
+      <div id="listaProduse" >
+        <ul>
+          <li> Imagine </li>
+          <li> Nume </li>
+          <li> <span>Pret</span> <span>Detalii</span>  </li>
+        </ul>
+      </div>
+      
+  </div>
+  <hr class="hrFooter" >
+  <div class="footer"> Powered by ME </div> 
+
+</body>
+</html>

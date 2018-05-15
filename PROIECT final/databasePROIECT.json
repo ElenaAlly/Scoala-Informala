@@ -1,0 +1,87 @@
+{
+    "menu": [
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/5.%20Bloomingville/Lampa%20de%20birou%20alama%20si%20marmura%20Bloomingville%2048500001-1000x1000.jpg",
+            "nume": "LAMPA DE BIROU ALAMA SI MARMURA BLOOMINGVILLE",
+            "descriere":"Lampa de birou alama si marmura Bloomingville<br> Dimensiuni: <br> - Diametru: 15 cm <br> - Inaltime: 55 cm <br> Lungime cablu: 2,5 m; E27 <br> Putere: 40W <br> Material: metal si marmura",
+            "pret": "750",
+            "cantitate": "20",
+            "categorie": "corp de iluminat",
+            "id": "11"
+            
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/CL0981-1000x1000.jpg",
+            "nume": "VEIOZA ALAMA GLEAM HOUSE DOCTOR",
+            "descriere": "Veioza alama Gleam House Doctor<br><br> Dimensiuni: <br> - Diametru: 12 cm <br> - Inaltime: 10,5 cm <br> Lungime cablu: 2 m <br> Material: metal si alama <br> Fasung E27, max 40W",
+            "pret": "569",
+            "cantitate": "35",
+            "categorie": "corp de iluminat",
+            "id": "12"
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/L-1298BW-1000x1000.jpg",
+            "nume": "VEIOZA ALAMA SI METAL ALB MADAM STOLTZ",
+            "descriere": "Veioza alama si metal alb Madam Stoltz<br> Dimensiuni: 16x36 cm <br> Material: alama si metal <br> Fasung E27",
+            "pret": "299",
+            "cantitate": "15",
+            "categorie": "corp de iluminat",
+            "id": "31"
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/Nordal/2468-1000x1000.jpg",
+            "nume": "RAMA FOTO CU SUPORT 18X15 CM NORDAL",
+            "descriere": "Rama foto cu suport 18x15 cm Nordal<br> Dimensiuni: <br> - Latime: 15 cm <br> - Inaltime: 18 cm <br> - Adancime: 2 cm <br> Material: metal si sticla",
+            "pret": "65",
+            "cantitate": "75",
+            "categorie": "rama foto",
+            "id": "41"
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/5.%20Bloomingville/Lampa%20de%20birou%20alama%20si%20marmura%20Bloomingville%2048500001-1000x1000.jpg",
+            "nume": "LAMPA DE BIROU ALAMA SI MARMURA BLOOMINGVILLE",
+            "descriere":"Lampa de birou alama si marmura Bloomingville<br> Dimensiuni: <br> - Diametru: 15 cm <br> - Inaltime: 55 cm <br> Lungime cablu: 2,5 m; E27 <br> Putere: 40W <br> Material: metal si marmura",
+            "pret": "750",
+            "cantitate": "20",
+            "categorie": "corp de iluminat",
+            "id": "52"
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/CL0981-1000x1000.jpg",
+            "nume": "VEIOZA ALAMA GLEAM HOUSE DOCTOR",
+            "descriere": "Veioza alama Gleam House Doctor<br><br> Dimensiuni: <br> - Diametru: 12 cm <br> - Inaltime: 10,5 cm <br> Lungime cablu: 2 m <br> Material: metal si alama <br> Fasung E27, max 40W",
+            "pret": "569",
+            "cantitate": "35",
+            "categorie": "corp de iluminat",
+            "id": "62"
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/L-1298BW-1000x1000.jpg",
+            "nume": "VEIOZA ALAMA SI METAL ALB MADAM STOLTZ",
+            "descriere": "Veioza alama si metal alb Madam Stoltz<br> Dimensiuni: 16x36 cm <br> Material: alama si metal <br> Fasung E27",
+            "pret": "299",
+            "cantitate": "15",
+            "categorie": "corp de iluminat",
+            "id": "72"
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/Nordal/2468-1000x1000.jpg",
+            "nume": "RAMA FOTO CU SUPORT 18X15 CM NORDAL",
+            "descriere": "Rama foto cu suport 18x15 cm Nordal<br> Dimensiuni: <br> - Latime: 15 cm <br> - Inaltime: 18 cm <br> - Adancime: 2 cm <br> Material: metal si sticla",
+            "pret": "65",
+            "cantitate": "75",
+            "categorie": "rama foto",
+            "id": "28"
+        },
+        {
+            "imagine":"http://www.thehome.ro/image/cache/catalog/Nordal/2468-1000x1000.jpg",
+            "nume": "RAMA FOTO CU SUPORT 18X15 CM NORDAL",
+            "descriere": "Rama foto cu suport 18x15 cm Nordal<br> Dimensiuni: <br> - Latime: 15 cm <br> - Inaltime: 18 cm <br> - Adancime: 2 cm <br> Material: metal si sticla",
+            "pret": "65",
+            "cantitate": "0",
+            "categorie": "rama foto",
+            "id": "29"
+        }
+
+    ]
+}
