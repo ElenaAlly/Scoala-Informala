@@ -7,508 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    
-<style>
-* {
-    box-sizing: border-box;
-}
-
-.w3-content{max-width:1200px;margin:auto}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  border:0px;
-  margin:0px;
-  background-color: white;
-}
-
-/* Style the header */
-.header {
-  grid-area: header;
-  background-color:white;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  max-width:1200px;
-  margin:auto
-}
-
-.footer{
-  background-color:rgb(173, 173, 173);
-  text-align:center;
-  color:white;
-  padding:10px;
-  width:80%;
-  display:block;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom:1%;
-  } 
-
-#price{
-    display:inline-block;
-    padding-top:30px;
-    font-size:16px;
-    font:arial;
-    font-style: italic;
-    font-weight:bold;
-}
-
-#stoc{
-    display:inline-block;
-    padding-top:15px;
-    padding-bottom:15px;
-}
-#logo{
-  width:350px;
-  margin-bottom:0px;
-}
-
-#aLogo {
-  background-color: white;
-  border: white;
-}
-
-#headerPhoto{
-  width:95%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.responsive {
-    padding: 0 12px;
-    float: left;
-    width: 20%;
-}
-.produs{
-  width:20%;
-  display:inline-block;
-  border:solid 1px #ccc;
-  margin:20px;
-  padding:10px;
-
-}
-
-.produs:hover {
-  width:20%;
-  display:inline-block;
-  border:solid 1px #777;;
-  margin:20px;
-  padding:10px;
-
-}
-
-.imagine{
-  width: 100%;
-  height: auto;
-}
-
-
-ul{
-  list-style: none;
-
-}
-
-#loading{
-  width:15%;
-  display: block;
-  margin-left: 40%;
-  margin-right: 40%;
-}
-
-.left{
-    width:40%;
-    display: block;
-    float:left;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right:300px;
-}
-
-.right{
-    width:50%;
-    display: block;
-    float:left;
-    margin-left: auto;
-    margin-right: auto;
-  
-
-}
-#listaProduse{
-  width:80%;
-  display:block;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.detalii{
-  float: right;
-  font-style: normal;
-}
-
-h3{
-  text-align: center;
-  font:arial;
-  font-size:20px;
-  width:80%;
-  display:block;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-
-.center{
-  margin-left:7%;
-}
-
-.search{
-  margin:auto;
-  max-width:300px;
-}
-
-#nume{
-    padding:5px;
-    text-align: center;
-    display: inline-block;
-    font-size:20px;
-    font:arial;
-    font-weight: bold;
-}
-
-#descriere {
-    padding: 5px;
-    font-size: 12px;
-    border: 1px solid grey;
-    float: left;   
-    background: #f1f1f1;
-    color:black;
-    width:100%;
-    text-align: left;
-    font-size:14px;
-    font:arial;
-    padding-left:20px;
-}
-
-form.cantitate input[type=number] {
-    padding: 5px;
-    font-size: 12px;
-    border: 1px solid grey;   
-    width: 10%;
-    background: #f1f1f1;
-    color:black;
-    display: inline-block;
-    text-align: center;
-}
-
-form.cantitate input[type=number]:hover {
-    padding: 5px;
-    font-size: 12px;
-    border: 1px solid rgb(51, 51, 51);
-    width: 10%;
-    background: #f1f1f1;
-    color:black;
-    display: inline-block;
-    text-align: center;
-}
-form.cantitate input[type=submit]  {
-    width: 35%; 
-    min-width:100px;
-    padding: 5px;
-    background: rgb(153, 204, 58);
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    float:right;
-    font-size: 12px; 
-}
-
-form.cantitate input[type=submit]:hover  {
-
-    font-weight:bold; 
-}
-
-
-a:link, a:visited {
-    background-color: white;
-    color: #414141;
-    border: 1px solid #e7e7e7;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size:14px;
-    font:arial;
-    font-weight:bold;    
-}
-
-a:hover, a:active {
-    background-color:rgb(153, 204, 58);
-    color: black;
-    border:solid 1px #777;
-}
-
-.detaliu{
-    width:60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    background-color: white;
-    border: 1px solid #e7e7e7;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    font-size:14px;
-    font:arial;  
-}
-#alertOk{
-    background-color: #777;
-    opacity: 0.7;
-    filter: Alpha(opacity=70);
-    position:fixed;
-    top:0px;
-    width:100%;
-    height:80px;
-    color:white;
-    text-align: center;
-    font-size:1.2em;
-    padding:20px;
-}
-
-#alertNuOk{
-    background-color: rgb(172, 0, 0);
-    opacity: 0.7;
-    filter: Alpha(opacity=70);
-    position:fixed;
-    top:0px;
-    width:100%;
-    height:80px;
-    color:white;
-    text-align: center;
-    font-size:1.2em;
-    padding:20px;
-}
-
-#alertCart{
-    background-color: rgb(0, 95, 172);
-    opacity: 0.7;
-    filter: Alpha(opacity=70);
-    position:fixed;
-    top:0px;
-    width:100%;
-    height:80px;
-    color:white;
-    text-align: center;
-    font-size:1.2em;
-    padding:20px;
-}
-
- @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .detaliu {
-        width: 90%;
-        display: inline-block;
-        margin-right:5%;
-        margin-left:5%;
-    }
-    .left{
-        width:100%;
-        display:inline-block;
-        padding:0;
- 
-    }
-    .right{
-      width:100%;
-      display:block;
-  
-    }
-    #image{
-        float:center;
-        display: block;
-        margin:auto;
-    }
-    .descriere{
-      width:100%;
-    }
-    #logo{
-     width:100%;
-     display: block;
-     float:center;
-   }
-    .header{
-      width:100%;
-    }
-    .pret{
-      display:inline-block;
-      width:90%;
-    }
-    .footer{
-        width: 90%;
-        display: inline-block;
-        margin-right:5%;
-        margin-left:5%;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .detaliu {
-        width: 90%;
-        display: inline-block;
-        margin-right:5%;
-        margin-left:5%;
-    }
-    .left{
-      width:100%;
-      display:inline-block;
-     padding:0;
- 
-    }
-    .right{
-      width:100%;
-      display:block;
-  
-    }
-    .descriere{
-      width:100%;
-    }
-    #logo{
-     width:100%;
-     display: block;
-     float:center;
-   }
-    .header{
-      width:100%;
-    }
-    #image{
-        float:center;
-        display: block;
-        margin:auto;
-    }
-    .pret{
-      display:inline-block;
-      width:90%;
-    }
-    .footer{
-        width: 90%;
-        display: inline-block;
-        margin-right:5%;
-        margin-left:5%;
-    }
-}
-
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-</style>
-
-<script>
-
-var myIndex = 0;
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides w3-animate-fading");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 9000);    
-}
-
-
-var detaliuProduse;
-//var listaCart;
-
-function drawLista() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("loading").style.display="none";
-            
-            detaliuProduse= JSON.parse(this.responseText);
-            console.log(detaliuProduse);
-            //scrie detaliile de la un produs cf id 
-            document.getElementById("image").src =detaliuProduse.imagine;
-            document.getElementById("nume").innerHTML= detaliuProduse.nume;
-            document.getElementById("price").innerHTML= "Pret: " + detaliuProduse.pret + " LEI";
-            document.getElementById("descriere").innerHTML= "Descriere: <br> <br>" + detaliuProduse.descriere;
-            
-
-            if(detaliuProduse.cantitate>0) { 
-                 document.getElementById("stoc").innerHTML="Stoc: " + detaliuProduse.cantitate + " buc.";
-            } else{
-                document.getElementById("stoc").innerHTML="Out of stock";
-            }
-
-        }
-    };
-    xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/menu/"+window.location.search.substring(4)+".json", true);
-    xhttp.send();
-
-    document.getElementById("loading").style.display="";
-}
-			
-function adaugaProdus(){
-
-    if(detaliuProduse.cantitate>0) { 
-
-      var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {               
-                if (this.readyState == 4 && this.status == 200) {               
-                  //posteaza in cart
-                  drawLista();     
-                }
-            };
-            
-            xhttp.open("PUT", "https://shopproject-54a8b.firebaseio.com/cart/" +window.location.search.substring(4) + ".json", true);           
-            xhttp.send(JSON.stringify({					
-                nume: detaliuProduse.nume,
-                pret: parseInt(detaliuProduse.pret),
-                cantitate: parseInt(document.getElementById("quantity").value),
-                id: window.location.search.substring(4),
-                stoc:detaliuProduse.cantitate         
-            }));
-        
-    }
-    else{
-        document.getElementById("alertNuOk").style.display="";   
-
-    }
-
-}
-
-
-function verificaProdus(form,event){
-
-    event.preventDefault();
-    var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {               
-                if (this.readyState == 4 && this.status == 200) {  
-                    listaCart= JSON.parse(this.responseText);
-                     //deschide cart   si verif daca mai este in cart
-               
-                     if (detaliuProduse.cantitate<parseInt(document.getElementById("quantity").value)) {    
-                            document.getElementById("alertCart").style.display="";               
-                            return true;
-                      }  
-                        
-                        adaugaProdus();
-                        document.getElementById("alertOk").style.display="";  
-                        return false;    
-                     
-                }
-            };
-            xhttp.open("GET", "https://shopproject-54a8b.firebaseio.com/cart/.json", true);           
-            xhttp.send(); 
-                 
-}
-
-</script> 
-
-
+    <link rel="stylesheet" type="text/css" media="screen" href="paginaDetalii.css" />
+    <script src="paginaDetalii.js"></script>
 </head>
 
 <body onload="drawLista(); carousel();">
@@ -518,10 +18,10 @@ function verificaProdus(form,event){
 
   <div id="alertNuOk" style="display:none" onclick=" window.location='home.html'">
     Produsul nu se afla in stoc!
-</div>
-<div id="alertCart" style="display:none" onclick="document.getElementById('alertCart').style.display='none';" >
+  </div>
+  <div id="alertCart" style="display:none" onclick="document.getElementById('alertCart').style.display='none';" >
     Stoc insuficient!
-</div>
+   </div>
 
   <div class="header">
     <div class="center">
@@ -530,7 +30,7 @@ function verificaProdus(form,event){
       <a id="aLogo" href="home.html"> <img src="Logo.png" alt="no logo" id="logo"> </a>
       <a class="button" href="shoppingCart.html"><i class="fa fa-shopping-cart"></i>  Shopping Cart</a>
       <a class="button" href="admin.html"><i class="fa fa-lock"></i>  Admin</a>  
-      </div>
+    </div>
     <hr>
 
     <div class="w3-content w3-section" >
@@ -539,31 +39,25 @@ function verificaProdus(form,event){
       <img class="mySlides w3-animate-fading" src="header3.jpg" style="width:100%">
       <img class="mySlides w3-animate-fading" src="header4.jpg" style="width:100%">
     </div>
-   
-
      <hr>
   </div> 
    
-    <h3></h3>
-     <img src="wait.gif" id="loading" alt="no image">
-     <br> 
+  <h3></h3>
+  <img src="wait.gif" id="loading" alt="no image">
+  <br> 
    
-   <div  class="detaliu">
-        
+   <div  class="detaliu">       
         <div class="left" >
-                    <img src="" alt="no image" id="image" width="300px"/>
-                     
+            <img src="" alt="no image" id="image" width="300px"/>                     
         </div>
 
         <div class= "right" >
                     <div id="nume">Nume </div>
                     <br> <br>
                     <div id="descriere">Descriere </div>
-                    <br>
-                    
+                    <br>                    
                     <div id="price"> Pret </div> <hr>
-                    <div id="stoc">In stoc: </div>
-                    
+                    <div id="stoc">In stoc: </div>                    
                     <form class="cantitate" onsubmit="verificaProdus(this,event);">
                         Cantitate:
                         <input type="number" name="quantity" id="quantity" min="1" value="1">
@@ -571,11 +65,7 @@ function verificaProdus(form,event){
                     </form>
          </div>
     </div>
-    <br>    <br>
-
+    <br><br>
     <div class="footer"> Powered by ME </div> 
-
-
-
 </body>
 </html>
