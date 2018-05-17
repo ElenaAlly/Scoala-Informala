@@ -40,10 +40,14 @@ function drawCart(){
                  else{
 
                     for(var i in listaProduse.cart){
-
+   
                     
                     document.getElementById("loading").style.display="none";
                     
+                    if(listaProduse.cart[i]==null){
+                        continue;
+                       }
+
                     str += `<tr>
                             <td width="25%"> <a href="paginaDetalii.html?id=${listaProduse.cart[i].id}" class="nume"> ${listaProduse.cart[i].nume} </a></td>
                             <td class="pret" width="8%"> ${parseInt(listaProduse.cart[i].pret)}</td> 
@@ -153,11 +157,15 @@ function stergeCos() {
 
 function modifCant(){
  for (var i in listaProduse.cart){
+     
+    if(listaProduse.cart[i]==null){
+        continue;
+       }
 
     var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {               
                 if (this.readyState == 4 && this.status == 200) {  
-                            
+                  
                 }
             };
         xhttp.open("PUT", "https://shopproject-54a8b.firebaseio.com/menu/" + i +"/cantitate.json", true);           

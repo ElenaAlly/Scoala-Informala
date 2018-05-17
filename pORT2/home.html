@@ -13,19 +13,13 @@ body {
      color:white;
   }
 
-h2{
+.content{
       display: block;
       width:60%;
       margin:auto;
       margin-top:200px;
   }
    
-#titlu{
-
-    text-align:center;
-
-
-}
 div[class="animation"]  {
     width: 200px;
     height: 50px;
@@ -37,58 +31,50 @@ div[class="animation"]  {
     animation-name: example;
     animation-duration: 4s; 
     visibility:hidden;
-    
- 
 }
 
 h3{
     opacity:0;
     transition: 4.50s ease-in;
-    font-size:1.8em;
+    font-size:4em;
     padding-bottom:10px;
 }
 
 h4{
     opacity:0;
     transition: 4.50s ease-in;
-    font-size:1.4em;
+    font-size:3em;
 }
 
-.view{
+.textButton{
     width: 200px;
     height: 50px;
     background-color: blue;
     border-radius: 50px;
+}
+
+.view{
     -webkit-animation-name: view; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 05s; /* Safari 4.0 - 8.0 */
     animation-name: view;
-    animation-duration: 4s; 
-
-
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
     /*-webkit-transition: 0.50s ease-in; /* Safari */
     -webkit-transition-delay: 4s; /* Safari */
-    transition: 4s ease-in;
+    *transition: 6s linear;
     animation-delay: 4s;
-
+    opacity: 0;
 }
 
 
 @keyframes view {
-    from {opacity: 0;}
-    to {opacity: 100;}
+    0% {opacity: 0; }
+    25% {opacity: 25; }
+    50% {opacity: 50; }
+    100% {opacity: 100; }   
 }
 /* Safari 4.0 - 8.0 */
 /*@-webkit-keyframes example {
-    0%   {background-color:blue; left:0px; top:0px; transform: rotate(0deg); visibility: visible; }
-    25%  {background-color:rgb(96, 138, 252); left:200px; top:0px; transform: rotate(90deg); border-radius:20px;visibility: visible;}
-    50%  {background-color:rgb(113, 113, 247); left:400px; top:0px; transform: rotate(180deg); border-radius:50px; visibility: visible;}
-    75%  {background-color:green; left:600px; top:0px; transform: rotate(90deg); border-radius:20px; visibility: visible;}
-    100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
-    height: 50px; border-radius:0px; width: 100px; height: 100px;display:none; visibility: visible;}
-}*/
-
-/* Standard syntax */
-@keyframes example {
     0%   {background-color:blue; left:400px; top:0px; transform: rotate(0deg); width: 100px;
     height: 100px; opacity:0; visibility: visible;}
     25%  {background-color:rgb(96, 138, 252); left:200px; top:200px; transform: rotate(90deg); width: 100px;
@@ -99,12 +85,23 @@ h4{
     height: 100px; visibility: visible;}
     100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
     height: 50px; border-radius:5px; width: 100px; height: 100px; opacity:1; visibility: visible;}
+}*/
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:blue; left:400px; top:0px; transform: rotate(0deg); width: 100px;
+    height: 100px; opacity:0; visibility: visible; }
+    25%  {background-color:rgb(96, 138, 252); left:200px; top:200px; transform: rotate(90deg); width: 100px;
+    height: 100px; border-radius:20px;visibility: visible;}
+    50%  {background-color:rgb(113, 113, 247); left:400px; top:-200px; transform: rotate(180deg); 
+        width: 100px; height: 100px;border-radius:50px; visibility: visible;}
+    75%  {background-color:green; left:600px; top:0px; transform: rotate(90deg); border-radius:20px; width: 100px;
+    height: 100px; visibility: visible;}
+    100% {background-color:red; left:800px; top:0px; transform: rotate(0deg);    width: 50px;
+    height: 50px; border-radius:5px; width: 100px; height: 100px; opacity:1; visibility: visible;}
 }
-  
-
-
-
-  </style>
+ 
+</style>
 
 <script>
 
@@ -116,14 +113,15 @@ h4{
 <body>
   
     <div class="container-fluid">
-        <h2>
-        <div id="titlu"> <h3>Hello! I am Elena.</h3> 
-          <h4> Check out my work!</h4> </div> 
-          <button class="view">view more</button>
+        <div class="content">
+            <div class="text-center" >                
+              <h3 class="view ">Hello! I am Elena.</h3> 
+              <h4 class="view"> Check out my work!</h4> 
+              <a href="index.html" class="view textButton">view More</a>                
+            </div> 
+            <div class="animation"></div>  
+        </div>
         
-        <div class="animation"></div>
-
-        </h2>
     </div>
 
 
