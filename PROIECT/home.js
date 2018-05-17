@@ -35,7 +35,7 @@ function drawLista(){
 
                     str += `<ul class="produs">
                         <li><a href="paginaDetalii.html?id=${i}" class="imgProdus"> <img  src="${listaProduse.menu[i].imagine}" alt="no image" class="imagine"/> </a> </li>
-                        <li class="nume"> ${listaProduse.menu[i].nume}</li> </br></br>
+                        <li class="nume"> ${listaProduse.menu[i].nume}</li> </br>
                         <li class="pretDetalii">     <div class="pret"> ${listaProduse.menu[i].pret} LEI </div>  <a href="paginaDetalii.html?id=${i}" class="detalii">Detalii</a> </li> 
                     </ul>`;
                 }

@@ -73,7 +73,7 @@ body {
   border:solid 1px #ccc;
   margin:20px;
   padding:10px;
-  height:370px;
+  height:400px;
 }
 
 .produs:hover {
@@ -115,12 +115,14 @@ ul{
   font-style: normal;
   display:block;
   width:100%;
+
   padding-bottom:120px;
+
 }
 
 .pret{
-    padding:5px;
-    display: -block;
+    padding:15px;
+    display: block;
     font-size:14px;
     font:arial;
     font-weight: bold;
@@ -221,7 +223,12 @@ a:hover, a:active {
     }
     .produs{
       vertical-align: top;
+
     }    
+    .pret{
+      display:block;
+    }
+
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -252,6 +259,8 @@ a:hover, a:active {
       display:inline-block;
       width:100%;
       text-align: center; 
+      position:relative;
+     
     }
     .center{
       margin:0px;
@@ -284,16 +293,19 @@ a:hover, a:active {
    }
     .detalii{
       display:-block;
-      width:70%;
+      width:100%;
       float:right;    
     }
     .pret{
       display:block;
-      width:30%;
+      width:100%;
       float:left;
     }
     .center{
       margin:0px;
+    }
+    .image{
+      width:85%;
     }
 }
 
